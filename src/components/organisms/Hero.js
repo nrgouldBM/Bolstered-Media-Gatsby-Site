@@ -18,12 +18,15 @@ const MainContentContainer = styled.div`
 `;
 const StyledHeroTitle = styled.h1`
   font-size: 2.5rem;
+  margin: 0;
   margin-bottom: 1rem;
 `;
 
 const StyledHeroSubTitle = styled.h2`
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin: 0;
+  font-weight: 500;
+  margin-bottom: 1rem;
   max-width: 30rem;
 `;
 
