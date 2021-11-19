@@ -27,7 +27,7 @@ export default function Navbar() {
 	return (
 		<StyledContainer>
 			<StyledLogo>
-				<h2>Navbar</h2>
+				<h2>Bolstered Media</h2>
 			</StyledLogo>
 			<StyledNavLinks>
 				<StyledLink to='/'>Home</StyledLink>
