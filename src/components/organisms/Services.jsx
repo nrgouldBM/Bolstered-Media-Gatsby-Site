@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BackgroundSvg from '../atoms/BackgroundSvg'
+import { Body } from '../atoms/Body'
 import Card from '../atoms/Card'
 import { SubTitle } from '../atoms/SubTitle'
 import { Title } from '../atoms/Title'
@@ -31,16 +32,27 @@ const BGSvg = styled(BackgroundSvg)`
     overflow: hidden;
 `
 
+const CardText = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 25rem;
+    overflow: hidden;
+    white-space: normal;
+
+`
+
 export default function Services() {
     return (
          <Container>
             <Title style={{ marginLeft: '10rem'}}>Services</Title>
             <CardContainer>
                 <Card flexDir="column" alignItems="space-evenly" justifyContent="center">
-                    <SubTitle>Paid Media Advertising</SubTitle>
-                    <SubTitle>Paid Media Advertising</SubTitle>
-                    <SubTitle>Paid Media Advertising</SubTitle>
-                    <SubTitle>Paid Media Advertising</SubTitle>
+                    <CardText>
+                        <SubTitle>Paid Media Advertising</SubTitle>
+                        <Body>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sunt dicta nihil perferendis fuga culpa nesciunt molestiae. Adipisci, consequatur voluptatum.</Body>
+                    </CardText>
                 </Card>
                 <Card flexDir="column" alignItems="space-evenly" justifyContent="center">
                     <SubTitle>Paid Media Advertising</SubTitle>

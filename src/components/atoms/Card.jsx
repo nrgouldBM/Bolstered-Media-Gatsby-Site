@@ -11,13 +11,12 @@ const flexStyles = css`
 `
 
 const Container = styled.div`
-    display: inline-block;
+    /* overflow: hidden; */
     border-radius: 16px;
     background-color: #fff;
     box-shadow: ${SHADOW.normal};
     ${p => p.flexDir && flexStyles}
     padding: 2rem 1rem;
-    /* border: 1px solid #dbdbdb; */
     margin: 1rem 2rem;
 `
 
