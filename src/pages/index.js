@@ -1,7 +1,8 @@
 import * as React from 'react';
 import '../index.css';
-import Hero from '../sections/home/Hero';
-import Navbar from '../sections/Navbar';
+import Hero from '../components/organisms/Hero';
+import Navbar from '../components/organisms/Navbar';
+import BrandLogos from '../components/organisms/BrandLogos';
 
 const IndexPage = () => {
 	return (
@@ -9,6 +10,7 @@ const IndexPage = () => {
 			<Navbar />
 			<main>
 				<Hero />
+				<BrandLogos />
 			</main>
 		</React.Fragment>
 	);

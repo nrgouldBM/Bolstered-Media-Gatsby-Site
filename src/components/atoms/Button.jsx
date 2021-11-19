@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
-import { COLORS, SHADOW } from '../constants';
+import { COLORS, SHADOW } from '../../constants';
 
 export const StyledButton = styled.button`
 	color: ${COLORS.primaryText};
     border: none;
 	text-decoration: none;
 	font-weight: 600;
+    font-size: 1rem;
 	background: ${COLORS.primary};
 	padding: 1rem 2.5rem;
 	border-radius: 12px;

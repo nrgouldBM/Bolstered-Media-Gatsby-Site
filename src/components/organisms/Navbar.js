@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StyledLink } from '../components/nav/StyledLink';
-import { StyledButtonLink } from '../components/nav/StyledButtonLink';
+import { StyledLink } from '../atoms/nav/StyledLink';
+import { StyledButtonLink } from '../atoms/nav/StyledButtonLink';
 
 const StyledNavLinks = styled.ul`
 	display: flex;
