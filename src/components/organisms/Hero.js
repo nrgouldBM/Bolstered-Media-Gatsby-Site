@@ -70,16 +70,16 @@ export default function Hero() {
             We scale e-commerce stores and influencer brands to profitability
             and beyond.
           </StyledHeroSubTitle>
-          <Button primary>Request a Proposal</Button>
+          <Button primary text="Request a Proposal"></Button>
         </StyledTextContainer>
         <StyledImageContainer>
           <StyledHeroImage src={HeroImage} />
         </StyledImageContainer>
       </MainContentContainer>
       <StatsContainer>
-        <Statistic stat="100,000" desc="Conv rate" />
-        <Statistic stat="100,000" desc="Conv rate" />
-        <Statistic stat="100,000" desc="Conv rate" />
+        <Statistic stat="$542,736" desc="Monthly Spend" />
+        <Statistic stat="113,913,721" desc="Users Reached" />
+        <Statistic stat="4.79%" desc="Avg. Conv. Rate" />
       </StatsContainer>
     </StyledContainer>
   );
