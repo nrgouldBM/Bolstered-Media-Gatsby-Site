@@ -18,7 +18,20 @@ const Container = styled.div`
   box-shadow: ${SHADOW.normal};
   ${(p) => p.flexDir && flexStyles}
   padding: 2rem 1rem;
-  margin: 3rem 2rem;
+  margin: 3rem 0;
+  transition: all 200ms ease;
+
+  &:not(:first-child) {
+    margin-left: -4rem;
+  }
+
+  &:not(:last-child):hover,
+  &:not(:last-child):focus-within {
+    transform: translateY(-1rem);
+    & ~ div {
+      transform: translateX(6rem);
+    }
+  }
 `;
 
 export default function Card({
