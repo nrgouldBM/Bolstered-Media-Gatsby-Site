@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Avatar from '../atoms/Avatar'
 import BackgroundSvg from '../atoms/BackgroundSvg'
 import { Body } from '../atoms/Body'
 import Card from '../atoms/Card'
@@ -70,7 +71,7 @@ export default function Services() {
                     <SubTitle>Paid Media Advertising</SubTitle>
                 </Card>
             </CardContainer>
-            <BGSvg />
+            {/* <BGSvg /> */}
          </Container>
     )
 }

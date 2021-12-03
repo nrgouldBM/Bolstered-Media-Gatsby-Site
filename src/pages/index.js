@@ -5,6 +5,7 @@ import Navbar from "../components/organisms/Navbar";
 import BrandLogos from "../components/organisms/BrandLogos";
 import CaseStudy from "../components/organisms/CaseStudy";
 import Services from "../components/organisms/Services";
+import Experience from "../components/organisms/Experience";
 
 const IndexPage = () => {
   return (
@@ -15,6 +16,7 @@ const IndexPage = () => {
         <BrandLogos />
         <CaseStudy />
         <Services />
+        <Experience />
       </main>
     </React.Fragment>
   );

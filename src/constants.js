@@ -2,6 +2,9 @@ export const COLORS = {
   primary: "#F2E822",
   primarySoft: "#f8f6c7",
 
+  secondary: "#305F6A",
+  secondarySoft: "#567279",
+
   primaryText: "#121111",
   secondaryText: "#9da4ba",
 
@@ -18,6 +21,8 @@ export const COLORS = {
   blueSoft: "#ccd8ff",
 
   gray: "#F2F5F5",
+
+  white: "#ffffff",
 };
 
 export const SHADOW = {

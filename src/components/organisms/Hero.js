@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "../atoms/Button";
 import HeroImage from "../../images/hero_image.png";
 import Statistic from "../molecules/Statistic";
+import { TextSpan } from "../atoms/TextSpan";
 
 const StyledContainer = styled.section`
   width: 80%;
@@ -20,6 +21,8 @@ const StyledHeroTitle = styled.h1`
   font-size: 2.5rem;
   margin: 0;
   margin-bottom: 1rem;
+  z-index: 10;
+  position: relative;
 `;
 
 const StyledHeroSubTitle = styled.h2`
@@ -61,22 +64,22 @@ export default function Hero() {
       <MainContentContainer>
         <StyledTextContainer>
           <StyledHeroTitle>
-            <span>Full Service Digital</span> <br /> Marketing Partner
+            <TextSpan>Full Service</TextSpan> Digital <br /> Marketing Partner
           </StyledHeroTitle>
           <StyledHeroSubTitle>
             We scale e-commerce stores and influencer brands to profitability
             and beyond.
           </StyledHeroSubTitle>
-          <Button>Request a Proposal</Button>
+          <Button primary>Request a Proposal</Button>
         </StyledTextContainer>
         <StyledImageContainer>
           <StyledHeroImage src={HeroImage} />
         </StyledImageContainer>
       </MainContentContainer>
       <StatsContainer>
-        <Statistic stat='100,000' desc='Conv rate' />
-        <Statistic stat='100,000' desc='Conv rate' />
-        <Statistic stat='100,000' desc='Conv rate' />
+        <Statistic stat="100,000" desc="Conv rate" />
+        <Statistic stat="100,000" desc="Conv rate" />
+        <Statistic stat="100,000" desc="Conv rate" />
       </StatsContainer>
     </StyledContainer>
   );
