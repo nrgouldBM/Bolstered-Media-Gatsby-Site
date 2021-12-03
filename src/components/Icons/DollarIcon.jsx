@@ -23,9 +23,9 @@ export default function DollarIcon() {
         data-name="$"
         transform="translate(44 87)"
         fill="#37bc64"
-        font-size="72"
-        font-family="Helvetica-Bold, Helvetica"
-        font-weight="700"
+        fontSize="72"
+        fontFamily="Helvetica-Bold, Helvetica"
+        fontWeight="700"
       >
         <tspan x="0" y="0">
           $

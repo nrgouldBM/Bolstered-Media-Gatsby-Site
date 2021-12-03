@@ -1,16 +1,43 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
+import { COLORS } from "../../constants";
+import Profile from "../../images/Profile.jpg";
 
 const Container = styled.div`
-    display: inline-flex;
-    flex-direction: row-reverse;
-`
+  display: inline-flex;
+  flex-direction: row-reverse;
 
-export default function AvatarGroup({ children }) {
+  &:not(:first-child) {
+    margin-left: -60px;
+  }
+`;
 
-    return (
-        <Container>
-            {children}
-        </Container>
-    )
+const Avatar = styled.div`
+  position: relative;
+  border: 4px solid ${COLORS.white};
+  border-radius: 50%;
+  overflow: hidden;
+  width: 150px;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  &:not(:last-child) {
+    margin-left: -40px;
+  }
+`;
+
+export default function AvatarGroup() {
+  return (
+    <Container>
+      <Avatar>
+        <img src={Profile} />
+      </Avatar>
+      <Avatar>
+        <img src={Profile} />
+      </Avatar>
+    </Container>
+  );
 }

@@ -8,7 +8,7 @@ export const StyledLink = styled(Link)`
   font-weight: 500;
 
   &:hover {
-    color: ${COLORS.primary};
+    color: ${COLORS.secondary};
   }
 
   transition: all 200ms ease;
