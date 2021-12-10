@@ -1,36 +1,40 @@
 import React from "react";
+import styled from "styled-components";
 import { motion, Transition } from "framer-motion";
+import { COLORS } from "../../../theme";
 
 interface Props {
-    isOpen?: Boolean;
-    color?: string;
-    strokeWidth?: string | number;
-    width?: string | number;
-    height?: string | number
-    transition?: Transition;
-    lineProps?: any;
-    onClick?: () => void
+  isOpen?: Boolean;
+  color?: string;
+  strokeWidth?: string | number;
+  width?: string | number;
+  height?: string | number;
+  transition?: Transition;
+  lineProps?: any;
+  onClick?: () => void;
 }
 
-// const Container = styled(motion.svg)`
-//   /* display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center; */
-//   padding: 1rem;
-//   cursor: pointer;
-// `;
+const Container = styled(motion.div)`
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  padding: 1rem;
+  padding-right: 0;
+  z-index: 21;
+  cursor: pointer;
+`;
 
-// const BurgerLine = styled(motion.line)`
-//   /* width: 2rem;
-//   height: 0.35rem;
-//   background-color: ${COLORS.primaryText};
-//   border-radius: 4px; */
+const BurgerLine = styled(motion.div)`
+  width: 30px;
+  height: 4px;
+  background-color: ${COLORS.primaryText};
+  border-radius: 4px;
 
-//   /* &:not(:last-child) {
-//     margin-bottom: 4px;
-//   } */
-// `;
+  &:not(:last-child) {
+    margin-bottom: 4px;
+  }
+`;
 
 export default function Burger({
   isOpen,
@@ -50,7 +54,7 @@ export default function Burger({
     },
     opened: {
       rotate: 45,
-      translateY: 2,
+      translateY: 8,
     },
   };
   const center = {
@@ -68,55 +72,21 @@ export default function Burger({
     },
     opened: {
       rotate: -45,
-      translateY: 2,
+      translateY: -8,
     },
   };
 
   lineProps = {
-    stroke: color,
-    strokeWidth: strokeWidth,
-    vectorEffect: "non-scaling-stroke",
     initial: "closed",
     animate: variant,
     transition,
     ...lineProps,
   };
-
-  const unitHeight = 4;
-  const unitWidth = (unitHeight * (width as number)) / (height as number);
   return (
-    <motion.svg
-      viewBox={`0 0 ${unitWidth} ${unitHeight}`}
-      overflow="visible"
-      preserveAspectRatio="none"
-      width={width}
-      height={height}
-      {...props}
-    >
-      <motion.line
-        x1="0"
-        x2={unitWidth}
-        y1="0"
-        y2="0"
-        variant={top}
-        {...lineProps}
-      />
-      <motion.line
-        x1="0"
-        x2={unitWidth}
-        y1="2"
-        y2="2"
-        variant={center}
-        {...lineProps}
-      />
-      <motion.line
-        x1="0"
-        x2={unitWidth}
-        y1="4"
-        y2="4"
-        variant={bottom}
-        {...lineProps}
-      />
-    </motion.svg>
+    <Container {...props}>
+      <BurgerLine variants={top} {...lineProps} />
+      <BurgerLine variants={center} {...lineProps} />
+      <BurgerLine variants={bottom} {...lineProps} />
+    </Container>
   );
 }

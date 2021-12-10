@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Avatar from "../atoms/Avatar";
 import BackgroundSvg from "../atoms/BackgroundSvg";
-import { Body } from "../atoms/Body";
-import Card from "../atoms/Card";
-import { SubTitle } from "../atoms/SubTitle";
 import { Title } from "../atoms/Title";
 import ServiceCard from "../molecules/ServiceCard";
 import DollarIcon from "../Icons/DollarIcon";
@@ -25,26 +21,15 @@ const CardContainer = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
-  margin-left: 10rem;
 `;
 
-const BGSvg = styled(BackgroundSvg)`
-  height: 40rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-`;
-
-const CardText = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  max-width: 25rem;
-  overflow: hidden;
-  white-space: normal;
-`;
+// const BGSvg = styled(BackgroundSvg)`
+//   height: 40rem;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   overflow: hidden;
+// `;
 
 export default function Services() {
   return (

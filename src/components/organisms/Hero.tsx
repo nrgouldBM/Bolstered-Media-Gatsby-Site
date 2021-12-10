@@ -16,6 +16,7 @@ const MainContentContainer = styled.div`
   justify-content: space-between;
   max-width: 100vw;
   margin-top: 5rem;
+  flex-wrap: wrap;
 `;
 const StyledHeroTitle = styled.h1`
   font-size: 2.5rem;
@@ -39,10 +40,17 @@ const StyledTextContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex: 1;
+
+  @media (max-width: 750px) {
+    align-items: center;
+  }
 `;
 
 const StyledImageContainer = styled.div`
   flex: 1;
+  @media (max-width: 750px) {
+    display: none;
+  }
 `;
 
 const StatsContainer = styled.div`
@@ -56,10 +64,6 @@ const StatsContainer = styled.div`
 
 const StyledHeroImage = styled.img`
   max-width: 35rem;
-
-  @media (max-width: 750px) {
-    display: none;
-  }
 `;
 
 export default function Hero() {
@@ -74,7 +78,7 @@ export default function Hero() {
             We scale e-commerce stores and influencer brands to profitability
             and beyond.
           </StyledHeroSubTitle>
-          <Button primary text="Request a Proposal"></Button>
+          <Button primary text="Request a Proposal" />
         </StyledTextContainer>
         <StyledImageContainer>
           <StyledHeroImage src={HeroImage} />

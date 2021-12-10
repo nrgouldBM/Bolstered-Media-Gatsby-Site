@@ -27,7 +27,14 @@ const Background = styled.div`
   left: 5px;
 `;
 
-export default function Avatar({ img, size, background, style }) {
+interface Props {
+  img: React.FC;
+  background?: boolean;
+  size?: number | string;
+  style?: object;
+}
+
+export default function Avatar({ img, size, background, style }: Props) {
   return (
     <Container size={size} style={style}>
       <Img src={img} size={size} />

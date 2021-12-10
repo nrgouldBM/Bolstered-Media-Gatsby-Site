@@ -1,15 +1,23 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { COLORS, SHADOW } from "../../theme";
+import { SHADOW } from "../../theme";
 
-const flexStyles = css`
+interface styleProps {
+  flexDir?: any;
+  alignItems?: any;
+  justifyContent?: any;
+  width?: any;
+  height?: any;
+}
+
+const flexStyles = css<styleProps>`
   display: flex;
   flex-direction: ${(p) => p.flexDir};
   align-items: ${(p) => p.alignItems};
   justify-content: ${(p) => p.justifyContent};
 `;
 
-const Container = styled.div`
+const Container = styled.div<styleProps>`
   /* overflow: hidden; */
   border-radius: 16px;
   width: ${(p) => p.width || "20rem"};
@@ -34,6 +42,15 @@ const Container = styled.div`
   }
 `;
 
+interface Props {
+  children?: any;
+  flexDir?: any;
+  alignItems?: any;
+  justifyContent?: any;
+  width?: any;
+  height?: any;
+}
+
 export default function Card({
   width,
   height,
@@ -41,7 +58,7 @@ export default function Card({
   flexDir,
   alignItems,
   justifyContent,
-}) {
+}: Props) {
   return (
     <Container
       flexDir={flexDir}

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Body } from "../atoms/Body";
 import Card from "../atoms/Card";
 import InverseButton from "../atoms/InverseButton";
-import { Title } from "../atoms/Title";
 import ArrowRight from "../Icons/ArrowRight";
 
 const Container = styled.div`
@@ -29,7 +28,13 @@ const CardText = styled(Body)`
   margin-bottom: 2rem;
 `;
 
-export default function ServiceCard({ title, text, icon }) {
+interface Props {
+  title: string;
+  text: string;
+  icon?: any;
+}
+
+export default function ServiceCard({ title, text, icon }: Props) {
   return (
     <Card
       width="25rem"

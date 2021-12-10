@@ -1,6 +1,12 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { COLORS, SHADOW } from "../../theme";
+import { COLORS } from "../../theme";
+
+interface styleProps {
+  hasIcon?: boolean;
+  primary?: boolean;
+  secondary?: boolean;
+}
 
 const primaryStyles = css`
   color: ${COLORS.primary};
@@ -21,7 +27,7 @@ const iconStyles = css`
   transition: all 200ms ease;
 `;
 
-const ButtonText = styled.p`
+const ButtonText = styled.p<styleProps>`
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -30,7 +36,7 @@ const ButtonText = styled.p`
   ${(p) => p.hasIcon && iconStyles};
 `;
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<styleProps>`
   border: none;
   background: none;
   cursor: pointer;
@@ -45,7 +51,19 @@ export const StyledButton = styled.button`
   ${(p) => p.secondary && secondaryStyles};
 `;
 
-export default function InverseButton({ text, icon, primary, secondary }) {
+interface Props {
+  text: string;
+  icon?: any;
+  primary?: boolean;
+  secondary?: boolean;
+}
+
+export default function InverseButton({
+  text,
+  icon,
+  primary,
+  secondary,
+}: Props) {
   const hasIcon = !!icon;
   return (
     <StyledButton hasIcon={hasIcon} primary={primary} secondary={secondary}>
