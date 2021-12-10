@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { COLORS, SHADOW } from "../../constants";
+import { COLORS, SHADOW } from "../../theme";
 
 const flexStyles = css`
   display: flex;

@@ -1,11 +1,11 @@
 import React from "react";
 import { Title } from "../components/atoms/Title";
-import Navbar from "../components/organisms/Navbar";
+import NavbarDesktop from "../components/organisms/NavbarDesktop";
 
 export default function Team() {
   return (
     <React.Fragment>
-      <Navbar />
+      <NavbarDesktop />
       <Title>Team</Title>
     </React.Fragment>
   );

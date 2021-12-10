@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { COLORS } from "../../constants";
+import { COLORS } from "../../theme";
 import FlexRow from "../atoms/FlexRow";
 
 const activeStyles = css`

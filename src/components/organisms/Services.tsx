@@ -25,6 +25,7 @@ const CardContainer = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
+  margin-left: 10rem;
 `;
 
 const BGSvg = styled(BackgroundSvg)`

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { COLORS } from '../../constants'
+import { COLORS } from '../../theme'
 
 const StatText = styled.h2`
     font-size: 2rem;

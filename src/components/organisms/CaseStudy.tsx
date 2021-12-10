@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { COLORS } from '../../constants'
+import { COLORS } from '../../theme'
 import { Body } from '../atoms/Body'
 import FlexRow from '../atoms/FlexRow'
 import TextBox from '../atoms/TextBox'

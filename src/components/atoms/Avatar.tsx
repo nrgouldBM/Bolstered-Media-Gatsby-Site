@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { COLORS } from "../../constants";
+import { COLORS } from "../../theme";
 
 const Container = styled.div`
   width: ${(p) => p.size || "10rem"};

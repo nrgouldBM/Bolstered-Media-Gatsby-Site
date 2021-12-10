@@ -56,6 +56,10 @@ const StatsContainer = styled.div`
 
 const StyledHeroImage = styled.img`
   max-width: 35rem;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
 `;
 
 export default function Hero() {

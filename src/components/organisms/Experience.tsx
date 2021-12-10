@@ -6,8 +6,9 @@ import Profile from "../../images/Profile.jpg";
 import Avatar from "../atoms/Avatar";
 import { TextSpan } from "../atoms/TextSpan";
 import ArrowRight from "../Icons/ArrowRight";
-import { COLORS } from "../../constants";
+import { COLORS } from "../../theme";
 import AvatarGroup from "../molecules/AvatarGroup";
+import ButtonLink from "../atoms/ButtonLink";
 
 const Container = styled.div`
   margin: 10rem 0;
@@ -54,7 +55,12 @@ export default function Experience() {
         of digital marketing <br />
         experience
       </Title>
-      <Button secondary text="Meet The Team" icon={<ArrowRight />} />
+      <ButtonLink
+        secondary
+        text="Meet The Team"
+        link="/team"
+        icon={<ArrowRight />}
+      />
       <Box1 />
       <Box2 />
     </Container>

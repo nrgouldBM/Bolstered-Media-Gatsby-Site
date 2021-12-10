@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLORS } from "../../constants";
+import { COLORS } from "../../theme";
 import hexRgb from 'hex-rgb';
 
 console.log(hexRgb(COLORS.primary))

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledLink } from "../atoms/nav/StyledLink";
-import { StyledButtonLink } from "../atoms/nav/StyledButtonLink";
+import { StyledNavLink } from "../atoms/nav/StyledNavLink";
+import { StyledNavButton } from "../atoms/nav/StyledNavButton";
 
 const StyledNavLinks = styled.ul`
   display: flex;
@@ -23,17 +23,17 @@ const StyledLogo = styled.div`
   flex: 1;
 `;
 
-export default function Navbar() {
+export default function NavbarDesktop() {
   return (
     <StyledContainer>
       <StyledLogo>
         <h2>Bolstered Media</h2>
       </StyledLogo>
       <StyledNavLinks>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/team/">Team</StyledLink>
-        <StyledLink to="/services">Services</StyledLink>
-        <StyledButtonLink to="/contact">Contact</StyledButtonLink>
+        <StyledNavLink to="/">Home</StyledNavLink>
+        <StyledNavLink to="/team/">Team</StyledNavLink>
+        <StyledNavLink to="/services">Services</StyledNavLink>
+        <StyledNavButton to="/contact">Contact</StyledNavButton>
       </StyledNavLinks>
     </StyledContainer>
   );
