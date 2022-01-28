@@ -40,3 +40,5 @@ export const SIZES = {
   lengthLg2: "3rem",
   lengthLg3: "4rem",
 };
+
+export const breakpoint = 767;

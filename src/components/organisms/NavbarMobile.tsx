@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Burger from "../atoms/nav/Burger";
 import { COLORS, SHADOW } from "../../theme";
 import { motion } from "framer-motion";
@@ -8,13 +8,13 @@ interface Props {
   isOpen?: boolean;
 }
 
-const StyledNavLinks = styled.ul`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  flex: 1;
-`;
+// const StyledNavLinks = styled.ul`
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: space-evenly;
+//   flex: 1;
+// `;
 
 const StyledContainer = styled.div<Props>`
   display: flex;
@@ -43,8 +43,10 @@ export default function NavbarMobile() {
   const [isOpen, setOpen] = useState(false);
 
   function handleOpen() {
-    document.body.style.overflow = isOpen ? "hidden" : "unset";
-    setOpen(!isOpen);
+    setOpen(isOpen ? false : true);
+    console.log(isOpen);
+    document.body.style.overflow = isOpen ? "unset" : "hidden";
+    console.log(document.body.style.overflow);
   }
 
   return (
