@@ -69,7 +69,6 @@ const Backdrop = styled(motion.div)`
 export default function NavbarMobile() {
   const { width } = useWindowDimensions();
 
-  console.log(width);
   const [isOpen, setOpen] = useState(false);
 
   function handleOpen() {

@@ -1,5 +1,5 @@
 export const COLORS = {
-  primary: "#F2E822",
+  primary: "#fff533",
   primarySoft: "#f8f6c7",
 
   secondary: "#305F6A",
@@ -25,6 +25,8 @@ export const COLORS = {
   white: "#ffffff",
 
   brown: "#3A3335",
+
+  border: "#dbdbdb",
 };
 
 export const SHADOW = {

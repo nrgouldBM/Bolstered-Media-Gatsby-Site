@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { StyledNavLink } from "../atoms/nav/StyledNavLink";
 import { StyledNavButton } from "../atoms/nav/StyledNavButton";
+import { Link } from "gatsby";
 
 const StyledNavLinks = styled.ul`
   display: flex;
@@ -19,14 +20,16 @@ const StyledContainer = styled.div`
   padding: 0 2rem;
 `;
 
-const StyledLogo = styled.div`
+const StyledLogo = styled(Link)`
   flex: 1;
+  text-decoration: none;
+  color: inherit;
 `;
 
 export default function NavbarDesktop() {
   return (
     <StyledContainer>
-      <StyledLogo>
+      <StyledLogo to="/">
         <h2>Bolstered Media</h2>
       </StyledLogo>
       <StyledNavLinks>

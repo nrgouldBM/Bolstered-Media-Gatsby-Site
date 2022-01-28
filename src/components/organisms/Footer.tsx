@@ -10,6 +10,7 @@ const FooterContainer = styled.div`
   justify-content: space-around;
   background-color: ${COLORS.brown};
   padding: 2rem;
+  flex-wrap: wrap;
 `;
 
 const FooterLink = styled(StyledNavLink)`
