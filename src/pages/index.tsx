@@ -12,7 +12,7 @@ import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import { breakpoint } from "../theme";
 
 const IndexPage = () => {
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   console.log(width);
   return (
     <React.Fragment>
