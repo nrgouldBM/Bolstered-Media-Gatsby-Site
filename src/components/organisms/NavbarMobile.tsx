@@ -96,7 +96,7 @@ export default function NavbarMobile() {
       <Drawer
         initial={{ x: width }}
         animate={isOpen ? { x: width / 3 } : { x: width }}
-        transition={{ type: "inertia" }}
+        transition={{ type: "tween", ease: "easeInOut" }}
       >
         <StyledNavLinks>
           <MobileNavLink to="/">Home</MobileNavLink>

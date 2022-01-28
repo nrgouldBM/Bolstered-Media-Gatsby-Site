@@ -10,6 +10,7 @@ import NavbarDesktop from "../components/organisms/NavbarDesktop";
 import NavbarMobile from "../components/organisms/NavbarMobile";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import { breakpoint } from "../theme";
+import Footer from "../components/organisms/Footer";
 
 const IndexPage = () => {
   const { width } = useWindowDimensions();
@@ -24,6 +25,7 @@ const IndexPage = () => {
         <Services />
         <Experience />
         <Testimonials />
+        <Footer />
       </main>
     </React.Fragment>
   );

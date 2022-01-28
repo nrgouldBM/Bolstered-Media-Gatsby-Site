@@ -23,6 +23,8 @@ export const COLORS = {
   gray: "#F2F5F5",
 
   white: "#ffffff",
+
+  brown: "#3A3335",
 };
 
 export const SHADOW = {
