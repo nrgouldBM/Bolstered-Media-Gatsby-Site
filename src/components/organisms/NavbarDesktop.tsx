@@ -8,7 +8,8 @@ const StyledNavLinks = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  max-width: 35vw;
   flex: 1;
 `;
 

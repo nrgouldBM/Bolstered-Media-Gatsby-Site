@@ -1,34 +1,34 @@
 import React from "react";
-import { Formik, Field, Form } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
-import { SHADOW, COLORS } from "../../theme";
+import { breakpoint } from "../../theme";
 import Button from "../atoms/Button";
+import TextInput from "../molecules/TextInput";
+import DropDownInput from "../molecules/DropDownInput";
+import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import TextArea from "../molecules/TextArea";
 
 const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
   margin-bottom: 2rem;
 `;
 
-const StyledField = styled(Field)`
-  border-radius: 8px;
-  border: 1px solid ${COLORS.border};
-  padding: 0.75rem 1rem;
-  box-shadow: ${SHADOW.normal};
-  margin-bottom: 1.5rem;
+const FormRow = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
-const StyledLabel = styled.label`
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
-  color: ${COLORS.primaryText};
-`;
+interface Props {
+  style?: object;
+}
 
-export default function ContactForm() {
+export default function ContactForm({ style }: Props) {
+  const { width } = useWindowDimensions();
   const initialValues = {
     name: "",
     email: "",
@@ -39,6 +39,10 @@ export default function ContactForm() {
 
   const validationSchema = Yup.object({
     name: Yup.string().required(),
+    email: Yup.string().email().required(),
+    website: Yup.string().required(),
+    adSpend: Yup.string(),
+    description: Yup.string(),
   });
   return (
     <React.Fragment>
@@ -50,38 +54,43 @@ export default function ContactForm() {
         }}
       >
         {({}) => (
-          <StyledForm>
-            <StyledLabel>Name</StyledLabel>
-            <StyledField name="name" type="text" placeholder="Full Name" />
-            <StyledLabel>Email</StyledLabel>
-            <StyledField name="email" type="email" placeholder="Email" />
-            <StyledLabel>Website</StyledLabel>
-            <StyledField
-              name="website"
-              type="text"
-              placeholder="Company Website"
-            />
-            <StyledLabel>Estimated Monthly Ad Spend</StyledLabel>
-            <StyledField
-              name="adSpend"
-              as="select"
-              placeholder="Estimated Monthly Ad Spend"
-            >
-              <option hidden disabled selected>
-                – select an option –
-              </option>
-              <option>Less Than $2,000</option>
-              <option>$5,000</option>
-              <option>$10,000</option>
-              <option>Greater Than $20,000</option>
-            </StyledField>
-            <StyledLabel>Tell us about your business</StyledLabel>
-            <StyledField
+          <StyledForm style={style}>
+            <FormRow>
+              <TextInput label="Name" placeholder="Full Name" name="name" />
+              <TextInput
+                label="Email"
+                placeholder="you@website.com"
+                name="email"
+              />
+            </FormRow>
+            <FormRow>
+              <TextInput
+                label="Website"
+                name="website"
+                placeholder="www.yourcompany.com"
+              />
+
+              <DropDownInput name="adSpend" label="Monthly Ad Spend">
+                <option hidden disabled selected>
+                  – select an option –
+                </option>
+                <option>Less Than $2,000</option>
+                <option>$2,000 - $5,000</option>
+                <option>$5,000 - $10,000</option>
+                <option>Greater Than $20,000</option>
+              </DropDownInput>
+            </FormRow>
+            <TextArea
+              label="Tell us about your business"
               name="description"
-              as="textarea"
-              placeholder="Description"
+              placeholder="description"
             />
-            <Button primary text="Submit" type="submit" />
+            <Button
+              secondary
+              text="Submit"
+              type="submit"
+              style={{ width: width < breakpoint ? width / 2 : "15rem" }}
+            />
           </StyledForm>
         )}
       </Formik>

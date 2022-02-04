@@ -78,7 +78,7 @@ export default function Hero() {
             We scale e-commerce stores and influencer brands to profitability
             and beyond.
           </StyledHeroSubTitle>
-          <Button primary text="Request a proposal" />
+          <Button secondary text="Request a proposal" />
         </StyledTextContainer>
         <StyledImageContainer>
           <StyledHeroImage src={HeroImage} />

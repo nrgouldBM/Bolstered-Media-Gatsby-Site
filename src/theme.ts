@@ -30,7 +30,7 @@ export const COLORS = {
 };
 
 export const SHADOW = {
-  normal: `0px 6px 24px 0 rgba(0, 0, 0, 0.1);`,
+  normal: `0px 4px 16px 0 rgba(0, 0, 0, 0.1);`,
 };
 
 export const SIZES = {

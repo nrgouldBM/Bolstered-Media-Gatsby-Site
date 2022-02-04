@@ -44,6 +44,7 @@ const ButtonText = styled.p<styleProps>`
 
 export const StyledButton = styled.button<styleProps>`
   border: none;
+  text-align: center;
   cursor: pointer;
   padding: 1rem 2.5rem;
   border-radius: 8px;
@@ -61,13 +62,27 @@ interface Props extends React.HTMLProps<HTMLButtonElement> {
   icon?: React.FC;
   primary?: boolean;
   secondary?: boolean;
+  style?: object;
 }
 
-export default function Button({ text, icon, primary, secondary }: Props) {
+export default function Button({
+  text,
+  icon,
+  primary,
+  secondary,
+  style,
+}: Props) {
   const hasIcon = !!icon;
   return (
-    <StyledButton hasIcon={hasIcon} primary={primary} secondary={secondary}>
-      <ButtonText hasIcon={hasIcon}>{text}</ButtonText>
+    <StyledButton
+      style={style}
+      hasIcon={hasIcon}
+      primary={primary}
+      secondary={secondary}
+    >
+      <ButtonText style={style} hasIcon={hasIcon}>
+        {text}
+      </ButtonText>
       {icon}
     </StyledButton>
   );
