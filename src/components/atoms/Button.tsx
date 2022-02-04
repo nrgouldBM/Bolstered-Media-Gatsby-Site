@@ -39,6 +39,7 @@ const ButtonText = styled.p<styleProps>`
   font-size: 1rem;
   padding: 0;
   margin: 0;
+  font-family: "sora";
   ${(p) => p.hasIcon && iconStyles};
 `;
 
@@ -74,6 +75,7 @@ export default function Button({
   style,
   type,
   onClick,
+  disabled,
 }: Props) {
   const hasIcon = !!icon;
   return (
@@ -84,6 +86,7 @@ export default function Button({
       secondary={secondary}
       type={type}
       onClick={onClick}
+      disabled={disabled}
     >
       <ButtonText style={style} hasIcon={hasIcon}>
         {text}

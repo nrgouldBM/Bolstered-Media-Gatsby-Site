@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../atoms/Button";
 import HeroImage from "../../images/hero_image.png";
 import Statistic from "../molecules/Statistic";
 import { TextSpan } from "../atoms/TextSpan";
+import ButtonLink from "../atoms/ButtonLink";
 
 const StyledContainer = styled.section`
   width: 80%;
@@ -78,7 +78,7 @@ export default function Hero() {
             We scale e-commerce stores and influencer brands to profitability
             and beyond.
           </StyledHeroSubTitle>
-          <Button secondary text="Request a proposal" />
+          <ButtonLink secondary link="/contact" text="Request a proposal" />
         </StyledTextContainer>
         <StyledImageContainer>
           <StyledHeroImage src={HeroImage} />

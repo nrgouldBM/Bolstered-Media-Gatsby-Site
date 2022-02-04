@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Body } from "../atoms/Body";
-import Card from "../atoms/Card";
+import Card from "../atoms/CardSlider";
 import InverseButton from "../atoms/InverseButton";
 import ArrowRight from "../Icons/ArrowRight";
 

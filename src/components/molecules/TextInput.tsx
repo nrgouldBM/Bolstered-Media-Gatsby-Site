@@ -10,9 +10,12 @@ const StyledField = styled(Field)`
   padding: 0.75rem 1rem;
   box-shadow: ${SHADOW.normal};
   box-sizing: border-box;
-  /* &::placeholder {
-    padding-left: 1rem;
-  } */
+  font-family: "sora";
+  font-weight: 500;
+  &::placeholder {
+    font-family: "sora";
+    font-weight: 500;
+  }
 `;
 
 const StyledLabel = styled.label`
@@ -46,7 +49,6 @@ interface Props {
   error: string | null;
   handleChange: any;
   value: string;
-  setFieldValue?: any;
 }
 
 export default function TextInput({
@@ -55,16 +57,14 @@ export default function TextInput({
   placeholder,
   error,
   handleChange,
-  setFieldValue,
   value,
 }: Props) {
   const { width } = useWindowDimensions();
-  console.log("textinput");
   return (
     <Container style={width < breakpoint ? null : { marginRight: 16 }}>
       <StyledLabel>{label}</StyledLabel>
       <StyledField
-        style={{ width: width < breakpoint ? width / 2 : "15rem" }}
+        style={{ width: width < breakpoint ? width / 1.3 : "15rem" }}
         name={name}
         type="text"
         placeholder={placeholder}

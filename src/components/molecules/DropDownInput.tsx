@@ -10,6 +10,12 @@ const StyledField = styled(Field)`
   padding: 0.75rem 1rem;
   box-shadow: ${SHADOW.normal};
   margin-bottom: 1.5rem;
+  font-family: "sora";
+  font-weight: 500;
+  &::placeholder {
+    font-family: "sora";
+    font-weight: 500;
+  }
 `;
 
 const StyledLabel = styled.label`
@@ -31,6 +37,7 @@ interface Props {
   name: string;
   placeholder?: string;
   children?: JSX.Element | JSX.Element[];
+  handleChange: any;
 }
 
 export default function DropDownInput({
@@ -38,16 +45,18 @@ export default function DropDownInput({
   name,
   placeholder,
   children,
+  handleChange,
 }: Props) {
   const { width } = useWindowDimensions();
   return (
     <Container style={width < breakpoint ? null : { marginRight: 16 }}>
       <StyledLabel>{label}</StyledLabel>
       <StyledField
-        style={{ width: width < breakpoint ? width / 2 : "15rem" }}
+        style={{ width: width < breakpoint ? width / 1.3 : "15rem" }}
         name={name}
         as="select"
         placeholder={placeholder}
+        onChange={handleChange}
       >
         {children}
       </StyledField>

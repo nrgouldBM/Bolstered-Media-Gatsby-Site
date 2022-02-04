@@ -7,12 +7,13 @@ import CoastLandLogo from "../../images/logos/coastland.png";
 import FTSLogo from "../../images/logos/fts.png";
 import OldSouthLogo from "../../images/logos/old-south.png";
 import { COLORS } from "../../theme";
+import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 
 const Container = styled.section`
-  width: 100vw;
-  margin: auto;
-  background-color: ${COLORS.gray};
+  margin: auto
   margin-top: 5rem;
+  background-color: ${COLORS.gray};
+  box-sizing: border-box;
 `;
 
 const LogosContainer = styled.div`
@@ -41,8 +42,9 @@ const LogosText = styled.h3`
 `;
 
 export default function BrandLogos() {
+  const { width } = useWindowDimensions();
   return (
-    <Container>
+    <Container style={{ width: width }}>
       <LogosText>Trusted By These Brands</LogosText>
       <LogosContainer>
         <Logo src={UbumpLogo} />

@@ -18,18 +18,37 @@ const StyledNavLinks = styled.ul`
   align-items: flex-start;
   justify-content: space-evenly;
   flex: 1;
+  &:last-child {
+    margin-top: 2rem;
+  }
 `;
 
 const MobileNavLink = styled(StyledNavLink)`
-  margin-bottom: 1.5rem;
   font-size: 1.25rem;
   font-weight: 600;
+  width: 15rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  &:hover {
+    background-color: ${COLORS.primarySoft};
+  }
+  &:last-of-type {
+    margin-bottom: 2rem;
+  }
 `;
 
 const MobileNavButton = styled(StyledNavButton)`
   font-weight: 600;
-  width: 8rem;
+  width: 15rem;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
   text-align: center;
+  background-color: ${COLORS.secondary};
+  color: white;
+  &:hover {
+    background-color: ${COLORS.secondarySoft};
+  }
 `;
 
 const StyledContainer = styled.div<Props>`
@@ -80,7 +99,7 @@ export default function NavbarMobile() {
 
   return (
     <React.Fragment>
-      <StyledContainer isOpen={isOpen}>
+      <StyledContainer style={{ width: width }} isOpen={isOpen}>
         <StyledLogo>
           <h2>Bolstered Media</h2>
         </StyledLogo>

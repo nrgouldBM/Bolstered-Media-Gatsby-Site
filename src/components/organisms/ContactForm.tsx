@@ -14,6 +14,7 @@ const StyledForm = styled(Form)`
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
+  flex: 1 1;
 `;
 
 const FormRow = styled.div`
@@ -38,9 +39,14 @@ export default function ContactForm({ style }: Props) {
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string().required("Required").min(4).max(20),
-    email: Yup.string().email().required("Required"),
-    website: Yup.string().required("Required"),
+    name: Yup.string().required("Please enter name").min(4).max(20),
+    email: Yup.string().email().required("Please enter email"),
+    website: Yup.string()
+      .matches(
+        /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
+        "Enter valid url!"
+      )
+      .required("Please enter website"),
     adSpend: Yup.string(),
     description: Yup.string(),
   });
@@ -65,9 +71,9 @@ export default function ContactForm({ style }: Props) {
           touched,
           values,
           handleChange,
-          handleSubmit,
-          handleReset,
-          setFieldValue,
+          isSubmitting,
+          isValid,
+          dirty,
         }) => (
           <StyledForm style={style}>
             <FormRow>
@@ -78,7 +84,6 @@ export default function ContactForm({ style }: Props) {
                 error={errors.name && touched.name ? errors.name : null}
                 value={values.name}
                 handleChange={handleChange}
-                setFieldValue={setFieldValue}
               />
               <TextInput
                 label="Email"
@@ -101,7 +106,11 @@ export default function ContactForm({ style }: Props) {
                 handleChange={handleChange}
               />
 
-              <DropDownInput name="adSpend" label="Monthly Ad Spend">
+              <DropDownInput
+                handleChange={handleChange}
+                name="adSpend"
+                label="Monthly Ad Spend"
+              >
                 <option hidden disabled selected>
                   – select an option –
                 </option>
@@ -115,13 +124,15 @@ export default function ContactForm({ style }: Props) {
               label="Tell us about your business"
               name="description"
               placeholder="description"
+              handleChange={handleChange}
+              value={values.description}
             />
             <Button
               secondary
+              disabled={isSubmitting || !isValid || !dirty}
               text="Submit"
               type="submit"
-              onClick={() => console.log("test")}
-              style={{ width: width < breakpoint ? width / 2 : "15rem" }}
+              style={{ width: width < breakpoint ? width / 1.3 : "15rem" }}
             />
           </StyledForm>
         )}

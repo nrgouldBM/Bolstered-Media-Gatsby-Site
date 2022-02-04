@@ -10,14 +10,18 @@ import TestimonialCol from "../molecules/TestimonialCol";
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap-reverse;
-  width: 80%;
+  width: 90%;
   margin: auto;
 `;
 
 const ContactContainer = styled.div`
   display: flex:
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const TestimonialContainer = styled.div`
@@ -30,6 +34,7 @@ const TestimonialContainer = styled.div`
   border-radius: 8px;
   margin-bottom: 2rem;
   min-width: 25rem;
+  max-width: 40rem;
 `;
 
 export default function ContactSection() {

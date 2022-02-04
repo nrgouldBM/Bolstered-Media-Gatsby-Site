@@ -12,6 +12,12 @@ const StyledTextArea = styled(Field)`
   box-shadow: ${SHADOW.normal};
   margin-bottom: 2rem;
   resize: vertical;
+  &::placeholder {
+    font-family: "sora";
+    font-weight: 500;
+  }
+  font-family: "sora";
+  font-weight: 500;
 `;
 
 const StyledLabel = styled.label`
@@ -33,26 +39,38 @@ interface Props {
   name: string;
   placeholder?: string;
   style?: object;
+  handleChange: any;
+  value: string;
 }
 
-export default function TextArea({ label, name, placeholder, style }: Props) {
+export default function TextArea({
+  label,
+  name,
+  placeholder,
+  style,
+  handleChange,
+  value,
+}: Props) {
   const { width } = useWindowDimensions();
   return (
     <Container
       style={{
-        width: width < breakpoint ? width / 2 : `100%`,
+        width: width < breakpoint ? width / 1.3 : `100%`,
         ...style,
       }}
     >
       <StyledLabel>{label}</StyledLabel>
       <StyledTextArea
         style={{
-          width: width < breakpoint ? width / 2 : `calc(100% - 16px)`,
+          width: width < breakpoint ? width / 1.3 : `calc(100% - 16px)`,
           ...style,
         }}
         name={name}
-        type="textarea"
+        as="textarea"
         placeholder={placeholder}
+        rows={5}
+        onChange={handleChange}
+        value={value}
       />
     </Container>
   );

@@ -28,7 +28,13 @@ const iconStyles = css`
   transition: all 200ms ease;
 `;
 
-const ButtonText = styled.p`
+interface ButtonProps {
+  hasIcon?: boolean;
+  primary?: boolean;
+  secondary?: boolean;
+}
+
+const ButtonText = styled.p<ButtonProps>`
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -37,7 +43,7 @@ const ButtonText = styled.p`
   ${(p) => p.hasIcon && iconStyles};
 `;
 
-export const StyledButton = styled(Link)`
+export const StyledButton = styled(Link)<ButtonProps>`
   border: none;
   cursor: pointer;
   padding: 1rem 2.5rem;
@@ -49,9 +55,24 @@ export const StyledButton = styled(Link)`
   align-items: center;
   justify-content: space-around ${(p) => p.primary && primaryStyles};
   ${(p) => p.secondary && secondaryStyles};
+  text-decoration: none;
 `;
 
-export default function ButtonLink({ text, icon, primary, secondary, link }) {
+interface Props {
+  text: string;
+  icon?: JSX.Element;
+  primary?: boolean;
+  secondary?: boolean;
+  link: string;
+}
+
+export default function ButtonLink({
+  text,
+  icon,
+  primary,
+  secondary,
+  link,
+}: Props) {
   const hasIcon = !!icon;
   return (
     <StyledButton
