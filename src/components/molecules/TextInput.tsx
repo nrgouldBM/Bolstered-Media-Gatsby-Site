@@ -9,7 +9,6 @@ const StyledField = styled(Field)`
   border: 1px solid ${COLORS.border};
   padding: 0.75rem 1rem;
   box-shadow: ${SHADOW.normal};
-  margin-bottom: 1.5rem;
   box-sizing: border-box;
   /* &::placeholder {
     padding-left: 1rem;
@@ -28,16 +27,39 @@ const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+  margin-bottom: 2rem;
+  position: relative;
+`;
+
+const ErrorMessage = styled.p`
+  color: ${COLORS.error};
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: -32px;
+  left: 5px;
 `;
 
 interface Props {
   label: string;
   name: string;
   placeholder?: string;
+  error: string | null;
+  handleChange: any;
+  value: string;
+  setFieldValue?: any;
 }
 
-export default function TextInput({ label, name, placeholder }: Props) {
+export default function TextInput({
+  label,
+  name,
+  placeholder,
+  error,
+  handleChange,
+  setFieldValue,
+  value,
+}: Props) {
   const { width } = useWindowDimensions();
+  console.log("textinput");
   return (
     <Container style={width < breakpoint ? null : { marginRight: 16 }}>
       <StyledLabel>{label}</StyledLabel>
@@ -46,7 +68,10 @@ export default function TextInput({ label, name, placeholder }: Props) {
         name={name}
         type="text"
         placeholder={placeholder}
+        onChange={handleChange}
+        value={value}
       />
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </Container>
   );
 }

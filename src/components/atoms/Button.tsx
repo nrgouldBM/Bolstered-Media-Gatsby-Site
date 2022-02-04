@@ -63,6 +63,7 @@ interface Props extends React.HTMLProps<HTMLButtonElement> {
   primary?: boolean;
   secondary?: boolean;
   style?: object;
+  type?: "button" | "submit" | "reset";
 }
 
 export default function Button({
@@ -71,6 +72,8 @@ export default function Button({
   primary,
   secondary,
   style,
+  type,
+  onClick,
 }: Props) {
   const hasIcon = !!icon;
   return (
@@ -79,6 +82,8 @@ export default function Button({
       hasIcon={hasIcon}
       primary={primary}
       secondary={secondary}
+      type={type}
+      onClick={onClick}
     >
       <ButtonText style={style} hasIcon={hasIcon}>
         {text}

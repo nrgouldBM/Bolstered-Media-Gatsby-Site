@@ -53,6 +53,18 @@ export default function Services() {
           title="Paid Media Advertising"
           text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
         />
+        <ServiceCard
+          title="Paid Media Advertising"
+          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
+        />
+        <ServiceCard
+          title="Paid Media Advertising"
+          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
+        />
+        <ServiceCard
+          title="Paid Media Advertising"
+          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
+        />
       </CardContainer>
       {/* <BGSvg /> */}
     </Container>

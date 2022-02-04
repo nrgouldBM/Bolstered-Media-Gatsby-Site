@@ -38,9 +38,9 @@ export default function ContactForm({ style }: Props) {
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string().required(),
-    email: Yup.string().email().required(),
-    website: Yup.string().required(),
+    name: Yup.string().required("Required").min(4).max(20),
+    email: Yup.string().email().required("Required"),
+    website: Yup.string().required("Required"),
     adSpend: Yup.string(),
     description: Yup.string(),
   });
@@ -49,18 +49,44 @@ export default function ContactForm({ style }: Props) {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={(data) => {
-          console.log(data);
+        onSubmit={(data, { setSubmitting, setErrors }) => {
+          try {
+            console.log("submitting");
+            console.log(data);
+          } catch (error) {
+            setErrors(error);
+          } finally {
+            setSubmitting(false);
+          }
         }}
       >
-        {({}) => (
+        {({
+          errors,
+          touched,
+          values,
+          handleChange,
+          handleSubmit,
+          handleReset,
+          setFieldValue,
+        }) => (
           <StyledForm style={style}>
             <FormRow>
-              <TextInput label="Name" placeholder="Full Name" name="name" />
+              <TextInput
+                label="Name"
+                placeholder="Full Name"
+                name="name"
+                error={errors.name && touched.name ? errors.name : null}
+                value={values.name}
+                handleChange={handleChange}
+                setFieldValue={setFieldValue}
+              />
               <TextInput
                 label="Email"
                 placeholder="you@website.com"
                 name="email"
+                error={errors.email && touched.email ? errors.email : null}
+                value={values.email}
+                handleChange={handleChange}
               />
             </FormRow>
             <FormRow>
@@ -68,6 +94,11 @@ export default function ContactForm({ style }: Props) {
                 label="Website"
                 name="website"
                 placeholder="www.yourcompany.com"
+                error={
+                  errors.website && touched.website ? errors.website : null
+                }
+                value={values.website}
+                handleChange={handleChange}
               />
 
               <DropDownInput name="adSpend" label="Monthly Ad Spend">
@@ -89,6 +120,7 @@ export default function ContactForm({ style }: Props) {
               secondary
               text="Submit"
               type="submit"
+              onClick={() => console.log("test")}
               style={{ width: width < breakpoint ? width / 2 : "15rem" }}
             />
           </StyledForm>
