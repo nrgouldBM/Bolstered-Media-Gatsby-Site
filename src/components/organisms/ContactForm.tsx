@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
@@ -35,6 +35,7 @@ interface Props {
 }
 
 export default function ContactForm({ style }: Props) {
+  const [isSent, setIsSent] = useState(false);
   const { width } = useWindowDimensions();
   const initialValues = {
     name: "",
@@ -56,12 +57,17 @@ export default function ContactForm({ style }: Props) {
     adSpend: Yup.string(),
     description: Yup.string(),
   });
+
+  if (isSent) {
+    return <div>thanks for your submission</div>;
+  }
+
   return (
     <React.Fragment>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={async (values, { setSubmitting, setErrors }) => {
+        onSubmit={async (values, { setSubmitting, setErrors, resetForm }) => {
           try {
             console.log("submitting");
             fetch("/?no-cache=1", {
@@ -71,6 +77,8 @@ export default function ContactForm({ style }: Props) {
             });
             console.log(values);
             console.log("success");
+            setIsSent(true);
+            resetForm();
           } catch (error) {
             setErrors(error);
             console.log("Error");
