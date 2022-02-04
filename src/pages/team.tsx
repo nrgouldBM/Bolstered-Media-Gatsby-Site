@@ -6,6 +6,7 @@ import NavbarDesktop from "../components/organisms/NavbarDesktop";
 import NavbarMobile from "../components/organisms/NavbarMobile";
 import TeamMembers from "../components/organisms/TeamMembers";
 import { Main } from "../components/atoms/Main";
+import Footer from "../components/organisms/Footer";
 
 export default function Team() {
   const { width } = useWindowDimensions();
@@ -16,6 +17,7 @@ export default function Team() {
         <Title>Team</Title>
         <TeamMembers />
       </Main>
+      <Footer />
     </React.Fragment>
   );
 }

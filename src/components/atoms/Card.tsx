@@ -26,7 +26,7 @@ const Container = styled.div<styleProps>`
   background-color: ${(p) => (p.secondary ? COLORS.gray : "#fff")};
   box-shadow: ${SHADOW.normal};
   ${(p) => p.flexDir && flexStyles}
-  padding: 2rem 1rem;
+  padding: 3rem 2rem;
   margin: 3rem 0;
   transition: all 200ms ease;
 `;

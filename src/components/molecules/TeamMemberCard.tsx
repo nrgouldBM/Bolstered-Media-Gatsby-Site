@@ -16,7 +16,7 @@ interface Props {
 export default function TeamMemberCard({ description, name, title }: Props) {
   //   const { width, height } = useWindowDimensions();
   return (
-    <Card secondary style={{ boxShadow: "none" }}>
+    <Card secondary width="25rem" height="35rem" style={{ boxShadow: "none" }}>
       <FlexColumn
         wrap="wrap"
         alignItems="center"
@@ -46,7 +46,17 @@ export default function TeamMemberCard({ description, name, title }: Props) {
         </SubTitle>
       </FlexColumn>
       <FlexColumn wrap="wrap" alignItems="flex-start" justifyContent="center">
-        <Body>{description}</Body>
+        <Body
+          style={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            wordWrap: "break-word",
+            maxHeight: "14rem",
+            lineHeight: "2rem",
+          }}
+        >
+          {description}
+        </Body>
       </FlexColumn>
     </Card>
   );

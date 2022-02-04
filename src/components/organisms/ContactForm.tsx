@@ -9,6 +9,12 @@ import DropDownInput from "../molecules/DropDownInput";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import TextArea from "../molecules/TextArea";
 
+const encode = (data: any) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
@@ -55,12 +61,19 @@ export default function ContactForm({ style }: Props) {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={(data, { setSubmitting, setErrors }) => {
+        onSubmit={async (values, { setSubmitting, setErrors }) => {
           try {
             console.log("submitting");
-            console.log(data);
+            fetch("/?no-cache=1", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: encode({ "form-name": "contact", ...values }),
+            });
+            console.log(values);
+            console.log("success");
           } catch (error) {
             setErrors(error);
+            console.log("Error");
           } finally {
             setSubmitting(false);
           }
@@ -74,8 +87,15 @@ export default function ContactForm({ style }: Props) {
           isSubmitting,
           isValid,
           dirty,
+          handleReset,
         }) => (
-          <StyledForm style={style}>
+          <StyledForm
+            name="contact"
+            style={style}
+            onReset={handleReset}
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
             <FormRow>
               <TextInput
                 label="Name"
