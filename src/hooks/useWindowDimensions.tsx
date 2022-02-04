@@ -6,9 +6,12 @@ function getWindowDimensions() {
 }
 
 export function useWindowDimensions(): { width: number; height: number } {
-  //   const isBrowser = typeof window !== "undefined";
+  function isBrowser() {
+    return typeof window !== "undefined";
+  }
+
   const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
+    isBrowser() && getWindowDimensions()
   );
 
   useEffect(() => {
