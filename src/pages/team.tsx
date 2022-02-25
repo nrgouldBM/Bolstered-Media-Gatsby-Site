@@ -24,12 +24,12 @@ export default function Team({ data }) {
   );
 }
 
-export const pageQuery = graphql`
-  query ($id: String!) {
-    markdownRemark {
-      title
-      name
-      description
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query ($id: String!) {
+//     markdownRemark {
+//       title
+//       name
+//       description
+//     }
+//   }
+// `;
