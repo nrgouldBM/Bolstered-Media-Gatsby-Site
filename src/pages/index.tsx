@@ -15,7 +15,6 @@ import { Main } from "../components/atoms/Main";
 
 const IndexPage = () => {
   const { width } = useWindowDimensions();
-  console.log(width);
   return (
     <React.Fragment>
       {width > breakpoint ? <NavbarDesktop /> : <NavbarMobile />}

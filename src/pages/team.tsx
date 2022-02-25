@@ -25,7 +25,11 @@ export default function Team({ data }) {
 }
 
 export const pageQuery = graphql`
-  query {
-    team
+  query ($id: String!) {
+    markdownRemark {
+      title
+      name
+      description
+    }
   }
 `;

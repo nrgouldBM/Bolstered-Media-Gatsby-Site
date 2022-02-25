@@ -17,7 +17,7 @@ collections:
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
   - name: team
-    label: team
+    label: Team
     folder: team
     create: true
     fields:
