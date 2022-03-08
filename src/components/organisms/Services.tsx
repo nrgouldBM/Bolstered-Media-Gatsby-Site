@@ -4,6 +4,8 @@ import BackgroundSvg from "../atoms/BackgroundSvg";
 import { Title } from "../atoms/Title";
 import ServiceCard from "../molecules/ServiceCard";
 import DollarIcon from "../Icons/DollarIcon";
+import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import { breakpoint } from "../../theme";
 
 const Container = styled.section`
   /* width: 80%; */
@@ -32,9 +34,13 @@ const CardContainer = styled.div`
 // `;
 
 export default function Services() {
+  const { width } = useWindowDimensions();
+
   return (
     <Container>
-      <Title style={{ marginLeft: "10rem" }}>Services</Title>
+      <Title style={{ marginLeft: width > breakpoint ? "10rem" : 0 }}>
+        Services
+      </Title>
       <CardContainer>
         <ServiceCard
           icon={<DollarIcon />}

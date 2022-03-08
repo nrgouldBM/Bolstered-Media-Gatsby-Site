@@ -6,9 +6,9 @@ import { Link } from "gatsby";
 const primaryStyles = css`
   color: ${COLORS.primaryText};
   background: ${COLORS.primary};
+  text-decoration: none
 
   &:hover {
-    background: ${COLORS.primarySoft};
     transform: scale(1.01);
   }
 `;
@@ -53,7 +53,8 @@ export const StyledButton = styled(Link)<ButtonProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around ${(p) => p.primary && primaryStyles};
+  justify-content: space-around;
+  ${(p) => p.primary && primaryStyles};
   ${(p) => p.secondary && secondaryStyles};
   text-decoration: none;
 `;

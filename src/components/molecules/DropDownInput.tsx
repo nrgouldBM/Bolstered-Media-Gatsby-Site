@@ -9,7 +9,6 @@ const StyledField = styled(Field)`
   border: 1px solid ${COLORS.border};
   padding: 0.75rem 1rem;
   box-shadow: ${SHADOW.normal};
-  margin-bottom: 1.5rem;
   font-family: "sora";
   font-weight: 500;
   &::placeholder {
@@ -29,6 +28,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 2rem;
   justify-content: space-between;
 `;
 

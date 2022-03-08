@@ -30,7 +30,7 @@ const StyledHeroSubTitle = styled.h2`
   font-size: 1.5rem;
   margin: 0;
   font-weight: 500;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   max-width: 30rem;
 `;
 
@@ -59,6 +59,7 @@ const StatsContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   margin-top: 3rem;
+  margin-bottom: 3rem;
   flex-wrap: wrap;
 `;
 
@@ -78,7 +79,7 @@ export default function Hero() {
             We scale e-commerce stores and influencer brands to profitability
             and beyond.
           </StyledHeroSubTitle>
-          <ButtonLink secondary link="/contact" text="Request a proposal" />
+          <ButtonLink primary link="/contact" text="Request a proposal" />
         </StyledTextContainer>
         <StyledImageContainer>
           <StyledHeroImage src={HeroImage} />

@@ -76,9 +76,9 @@ export default function Testimonials() {
           What our clients are saying
         </Title>
         {testimonial}
-        <ArrowRightContainer>
+        {/* <ArrowRightContainer>
           <Arrow />
-        </ArrowRightContainer>
+        </ArrowRightContainer> */}
       </Container>
       <DotGroup num={num} setNum={setNum} />
     </React.Fragment>

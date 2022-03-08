@@ -7,7 +7,6 @@ import NavbarMobile from "../components/organisms/NavbarMobile";
 import TeamMembers from "../components/organisms/TeamMembers";
 import { Main } from "../components/atoms/Main";
 import Footer from "../components/organisms/Footer";
-import { graphql } from "gatsby";
 
 export default function Team({ data }) {
   console.log({ data });
@@ -23,13 +22,3 @@ export default function Team({ data }) {
     </React.Fragment>
   );
 }
-
-// export const pageQuery = graphql`
-//   query ($id: String!) {
-//     markdownRemark {
-//       title
-//       name
-//       description
-//     }
-//   }
-// `;

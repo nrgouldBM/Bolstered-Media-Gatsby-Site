@@ -10,6 +10,7 @@ export const StyledNavButton = styled(Link)`
   padding: 0.5rem 1.5rem;
   border-radius: 6px;
   box-shadow: ${SHADOW.normal};
+  cursor: pointer;
 
   &:hover {
     background: ${COLORS.primarySoft};

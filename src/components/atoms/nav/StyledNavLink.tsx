@@ -6,6 +6,7 @@ export const StyledNavLink = styled(Link)`
   color: ${COLORS.primaryText};
   text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
 
   &:hover {
     color: ${COLORS.secondary};

@@ -25,6 +25,7 @@ const StyledLogo = styled(Link)`
   flex: 1;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 `;
 
 export default function NavbarDesktop() {
