@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 import styled, { css } from "styled-components";
 import { COLORS } from "../../theme";
@@ -36,7 +37,7 @@ const ButtonText = styled.p<styleProps>`
   ${(p) => p.hasIcon && iconStyles};
 `;
 
-export const StyledButton = styled.button<styleProps>`
+export const StyledButton = styled(Link)<styleProps>`
   border: none;
   background: none;
   cursor: pointer;
@@ -47,6 +48,7 @@ export const StyledButton = styled.button<styleProps>`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
   ${(p) => p.primary && primaryStyles};
   ${(p) => p.secondary && secondaryStyles};
 `;
@@ -56,6 +58,7 @@ interface Props {
   icon?: any;
   primary?: boolean;
   secondary?: boolean;
+  link: string;
 }
 
 export default function InverseButton({
@@ -63,10 +66,16 @@ export default function InverseButton({
   icon,
   primary,
   secondary,
+  link,
 }: Props) {
   const hasIcon = !!icon;
   return (
-    <StyledButton hasIcon={hasIcon} primary={primary} secondary={secondary}>
+    <StyledButton
+      to={link}
+      hasIcon={hasIcon}
+      primary={primary}
+      secondary={secondary}
+    >
       <ButtonText hasIcon={hasIcon}>{text}</ButtonText>
       {icon}
     </StyledButton>

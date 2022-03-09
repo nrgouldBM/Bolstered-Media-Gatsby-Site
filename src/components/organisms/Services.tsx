@@ -46,30 +46,37 @@ export default function Services() {
           icon={<DollarIcon />}
           title="Paid Media Advertising"
           text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
+          link="/services"
         />
         <ServiceCard
           title="Paid Media Advertising"
           text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
+          link="/services"
         />
         <ServiceCard
           title="Paid Media Advertising"
           text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
+          link="/services"
         />
         <ServiceCard
           title="Paid Media Advertising"
           text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
+          link="/services"
         />
         <ServiceCard
           title="Paid Media Advertising"
           text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
+          link="/services"
         />
         <ServiceCard
           title="Paid Media Advertising"
           text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
+          link="/services"
         />
         <ServiceCard
           title="Paid Media Advertising"
           text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
+          link="/services"
         />
       </CardContainer>
       {/* <BGSvg /> */}

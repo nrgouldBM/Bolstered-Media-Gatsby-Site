@@ -43,14 +43,17 @@ export default function ContactSection() {
     <Container
       style={
         width < breakpoint
-          ? { alignItems: "center", justifyContent: "center" }
-          : null
+          ? {
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom: "5rem",
+            }
+          : { marginBottom: "5rem" }
       }
     >
       <ContactContainer
         style={width > breakpoint ? { marginRight: "5rem" } : null}
       >
-        <Title>Contact Us</Title>
         <ContactForm style={{ marginBottom: "5rem" }} />
       </ContactContainer>
       <TestimonialContainer>

@@ -1,24 +1,26 @@
-import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import React from "react";
-import { breakpoint } from "../theme";
 import { Title } from "../components/atoms/Title";
-import NavbarDesktop from "../components/organisms/NavbarDesktop";
-import NavbarMobile from "../components/organisms/NavbarMobile";
 import TeamMembers from "../components/organisms/TeamMembers";
-import { Main } from "../components/atoms/Main";
-import Footer from "../components/organisms/Footer";
+import { Body } from "../components/atoms/Body";
+import CallToAction from "../components/organisms/CallToAction";
+import Layout from "../components/organisms/Layout";
 
 export default function Team({ data }) {
   console.log({ data });
-  const { width } = useWindowDimensions();
   return (
-    <React.Fragment>
-      {width > breakpoint ? <NavbarDesktop /> : <NavbarMobile />}
-      <Main style={{ width: "80%", margin: "auto" }}>
+    <Layout>
+      <div style={{ marginBottom: "2rem" }}>
         <Title>Team</Title>
-        <TeamMembers />
-      </Main>
-      <Footer />
-    </React.Fragment>
+        <Body>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
+          voluptas sed illum optio ex reiciendis provident quas, tempore quia
+          quibusdam ducimus natus distinctio atque inventore, ab magni quos
+          repellendus hic quidem! Expedita sunt recusandae fuga quasi culpa odit
+          sint nulla?
+        </Body>
+      </div>
+      <TeamMembers />
+      <CallToAction />
+    </Layout>
   );
 }

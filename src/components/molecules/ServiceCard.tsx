@@ -32,9 +32,10 @@ interface Props {
   title: string;
   text: string;
   icon?: any;
+  link: string;
 }
 
-export default function ServiceCard({ title, text, icon }: Props) {
+export default function ServiceCard({ title, text, icon, link }: Props) {
   return (
     <Card
       width="25rem"
@@ -47,7 +48,12 @@ export default function ServiceCard({ title, text, icon }: Props) {
         <IconContainer>{icon}</IconContainer>
         <CardTitle>{title}</CardTitle>
         <CardText>{text}</CardText>
-        <InverseButton secondary text="Learn More" icon={<ArrowRight />} />
+        <InverseButton
+          link={link}
+          secondary
+          text="Learn More"
+          icon={<ArrowRight />}
+        />
       </Container>
     </Card>
   );

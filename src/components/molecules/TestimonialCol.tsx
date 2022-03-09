@@ -6,7 +6,11 @@ import Avatar from "../atoms/Avatar";
 
 export default function TestimonialCol({ img, name, title, company, text }) {
   return (
-    <FlexColumn alignItems="center" justifyContent="space-evenly">
+    <FlexColumn
+      style={{ minHeight: "30rem" }}
+      alignItems="center"
+      justifyContent="space-evenly"
+    >
       <FlexColumn
         wrap="wrap"
         alignItems="center"

@@ -9,7 +9,14 @@ interface styleProps {
   width?: any;
   height?: any;
   secondary?: boolean;
+  hoverStyles?: boolean;
 }
+
+const hoverStyles = css<styleProps>`
+  &:hover {
+    background-color: COLORS.success;
+  }
+`;
 
 const flexStyles = css<styleProps>`
   display: flex;
@@ -30,6 +37,7 @@ const Container = styled.div<styleProps>`
   padding: 3rem 2rem;
   margin: 2rem 1rem;
   transition: all 200ms ease;
+  ${(p) => p.hoverStyles && hoverStyles}
 `;
 
 interface Props {
@@ -41,6 +49,7 @@ interface Props {
   height?: any;
   secondary?: boolean;
   style?: object;
+  hoverStyles: boolean;
 }
 
 export default function Card({
@@ -52,6 +61,7 @@ export default function Card({
   justifyContent,
   secondary,
   style,
+  hoverStyles,
 }: Props) {
   return (
     <Container
@@ -62,6 +72,7 @@ export default function Card({
       justifyContent={justifyContent}
       secondary={secondary}
       style={style}
+      hoverStyles={hoverStyles}
     >
       {children}
     </Container>

@@ -1,6 +1,6 @@
 export const COLORS = {
   primary: "#fff533",
-  primarySoft: "#fffced",
+  primarySoft: "#fff8d6",
 
   secondary: "#305F6A",
   secondarySoft: "#567279",
@@ -30,7 +30,7 @@ export const COLORS = {
 };
 
 export const SHADOW = {
-  normal: `0px 4px 16px 0 rgba(0, 0, 0, 0.1);`,
+  normal: `2px 8px 32px 0 rgba(0, 0, 0, 0.08);`,
 };
 
 export const SIZES = {
