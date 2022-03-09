@@ -36,7 +36,7 @@ interface ButtonProps {
 
 const ButtonText = styled.p<ButtonProps>`
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   padding: 0;
   margin: 0;

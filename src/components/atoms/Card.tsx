@@ -22,12 +22,13 @@ const Container = styled.div<styleProps>`
   /* overflow: hidden; */
   border-radius: 16px;
   width: ${(p) => p.width || "20rem"};
+  min-width: 20rem
   height: ${(p) => p.height || "30rem"};
   background-color: ${(p) => (p.secondary ? COLORS.gray : "#fff")};
   box-shadow: ${SHADOW.normal};
   ${(p) => p.flexDir && flexStyles}
   padding: 3rem 2rem;
-  margin: 3rem 0;
+  margin: 2rem 1rem;
   transition: all 200ms ease;
 `;
 

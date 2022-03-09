@@ -12,11 +12,12 @@ import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import { breakpoint } from "../theme";
 import Footer from "../components/organisms/Footer";
 import { Main } from "../components/atoms/Main";
+import CallToAction from "../components/organisms/CallToAction";
 
 const IndexPage = () => {
   const { width } = useWindowDimensions();
   return (
-    <React.Fragment>
+    <div style={{ maxWidth: width }}>
       {width > breakpoint ? <NavbarDesktop /> : <NavbarMobile />}
       <Main>
         <Hero />
@@ -25,9 +26,10 @@ const IndexPage = () => {
         <Services />
         <Experience />
         <Testimonials />
+        <CallToAction />
       </Main>
       <Footer />
-    </React.Fragment>
+    </div>
   );
 };
 

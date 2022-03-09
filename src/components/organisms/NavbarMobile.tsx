@@ -117,17 +117,29 @@ export default function NavbarMobile() {
         transition={{ type: "tween", ease: "easeInOut" }}
       >
         <StyledNavLinks>
-          <MobileNavLink to="/">Home</MobileNavLink>
-          <MobileNavLink to="/team/">Team</MobileNavLink>
-          <MobileNavLink to="/services">Services</MobileNavLink>
-          <MobileNavButton to="/contact">Contact</MobileNavButton>
+          <MobileNavLink onClick={handleOpen} to="/">
+            Home
+          </MobileNavLink>
+          <MobileNavLink onClick={handleOpen} to="/team/">
+            Team
+          </MobileNavLink>
+          <MobileNavLink onClick={handleOpen} to="/services">
+            Services
+          </MobileNavLink>
+          <MobileNavButton
+            onClick={handleOpen}
+            style={{ width: width / 3 }}
+            to="/contact"
+          >
+            Contact
+          </MobileNavButton>
         </StyledNavLinks>
       </Drawer>
       {isOpen ? (
         <Backdrop
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.4 }}
-          onClick={() => setOpen(false)}
+          onClick={handleOpen}
         />
       ) : null}
     </React.Fragment>
