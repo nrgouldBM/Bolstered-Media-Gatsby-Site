@@ -4,6 +4,8 @@ import HeroImage from "../../images/hero_image.png";
 import Statistic from "../molecules/Statistic";
 import { TextSpan } from "../atoms/TextSpan";
 import ButtonLink from "../atoms/ButtonLink";
+import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import { breakpoint } from "../../theme";
 
 const StyledContainer = styled.section`
   width: 80%;
@@ -27,11 +29,12 @@ const StyledHeroTitle = styled.h1`
 `;
 
 const StyledHeroSubTitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0;
   font-weight: 500;
   margin-bottom: 2rem;
   max-width: 30rem;
+  line-height: 2rem;
 `;
 
 const StyledTextContainer = styled.div`
@@ -40,7 +43,7 @@ const StyledTextContainer = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex: 1;
-
+  margin-bottom: 4rem;
   @media (max-width: 750px) {
     align-items: center;
   }
@@ -68,6 +71,7 @@ const StyledHeroImage = styled.img`
 `;
 
 export default function Hero() {
+  const { width } = useWindowDimensions();
   return (
     <StyledContainer>
       <MainContentContainer>
@@ -76,19 +80,28 @@ export default function Hero() {
             <TextSpan>Full Service</TextSpan> Digital <br /> Marketing Partner
           </StyledHeroTitle>
           <StyledHeroSubTitle>
-            We scale e-commerce stores and influencer brands to profitability
-            and beyond.
+            To help you grow your online store, you need an experienced team.
+            While driving over $100 million in online sales, our team has scaled
+            dozens of direct to consumer programs for some of the most
+            recognizable brands in the world. Utilizing proven advertising
+            strategies along with tested and proven tactics, we know what it
+            takes to generate profitable sales.
           </StyledHeroSubTitle>
-          <ButtonLink primary link="/contact" text="REQUEST A PROPOSAL" />
+          <ButtonLink
+            style={{ width: width > breakpoint ? "60%" : "100%" }}
+            primary
+            link="/contact"
+            text="Speak with us!"
+          />
         </StyledTextContainer>
         <StyledImageContainer>
           <StyledHeroImage src={HeroImage} />
         </StyledImageContainer>
       </MainContentContainer>
       <StatsContainer>
-        <Statistic stat="$542,736" desc="Monthly Spend" />
-        <Statistic stat="113,913,721" desc="Users Reached" />
-        <Statistic stat="4.79%" desc="Avg. Conv. Rate" />
+        <Statistic stat="$750,000" desc="Avg. Monthly Spend" />
+        <Statistic stat="12,000,000" desc="Avg. Monthly Reach" />
+        <Statistic stat="5.34%" desc="Avg. Conv. Rate" />
       </StatsContainer>
     </StyledContainer>
   );

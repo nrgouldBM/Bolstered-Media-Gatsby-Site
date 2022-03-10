@@ -65,6 +65,7 @@ interface Props {
   primary?: boolean;
   secondary?: boolean;
   link: string;
+  style?: object;
 }
 
 export default function ButtonLink({
@@ -73,10 +74,12 @@ export default function ButtonLink({
   primary,
   secondary,
   link,
+  style,
 }: Props) {
   const hasIcon = !!icon;
   return (
     <StyledButton
+      style={style}
       hasIcon={hasIcon}
       to={link}
       primary={primary}

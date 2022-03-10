@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { StyledNavLink } from "../atoms/nav/StyledNavLink";
 import { StyledNavButton } from "../atoms/nav/StyledNavButton";
+import Logo from "../../images/BM_Logo.png";
 
 interface Props {
   isOpen?: boolean;
@@ -61,6 +62,9 @@ const StyledContainer = styled.div<Props>`
 
 const StyledLogo = styled.div`
   flex: 1;
+  display: flex;
+  justify-content: center
+  align-items: center
 `;
 
 const Drawer = styled(motion.div)`
@@ -85,6 +89,10 @@ const Backdrop = styled(motion.div)`
   cursor: pointer;
 `;
 
+const MobileLogo = styled.img`
+  width: 10rem;
+`;
+
 export default function NavbarMobile() {
   const { width } = useWindowDimensions();
 
@@ -101,7 +109,7 @@ export default function NavbarMobile() {
     <React.Fragment>
       <StyledContainer style={{ width: width }} isOpen={isOpen}>
         <StyledLogo>
-          <h2>Bolstered Media</h2>
+          <MobileLogo src={Logo} />
         </StyledLogo>
         <Burger
           isOpen={isOpen}

@@ -3,6 +3,11 @@ import styled from "styled-components";
 import { StyledNavLink } from "../atoms/nav/StyledNavLink";
 import { StyledNavButton } from "../atoms/nav/StyledNavButton";
 import { Link } from "gatsby";
+import Logo from "../../images/BM_Logo.png";
+
+const DesktopLogo = styled.img`
+  width: 15rem;
+`;
 
 const StyledNavLinks = styled.ul`
   display: flex;
@@ -32,7 +37,7 @@ export default function NavbarDesktop() {
   return (
     <StyledContainer>
       <StyledLogo to="/">
-        <h2>Bolstered Media</h2>
+        <DesktopLogo src={Logo} />
       </StyledLogo>
       <StyledNavLinks>
         <StyledNavLink to="/">Home</StyledNavLink>
