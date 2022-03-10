@@ -32,12 +32,13 @@ interface ButtonProps {
   hasIcon?: boolean;
   primary?: boolean;
   secondary?: boolean;
+  fontSize?: string;
 }
 
 const ButtonText = styled.p<ButtonProps>`
   text-decoration: none;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: ${(p) => p.fontSize || "1rem"};
   padding: 0;
   margin: 0;
   ${(p) => p.hasIcon && iconStyles};
@@ -66,6 +67,7 @@ interface Props {
   secondary?: boolean;
   link: string;
   style?: object;
+  fontSize?: string;
 }
 
 export default function ButtonLink({
@@ -75,6 +77,7 @@ export default function ButtonLink({
   secondary,
   link,
   style,
+  fontSize,
 }: Props) {
   const hasIcon = !!icon;
   return (
@@ -85,7 +88,9 @@ export default function ButtonLink({
       primary={primary}
       secondary={secondary}
     >
-      <ButtonText hasIcon={hasIcon}>{text}</ButtonText>
+      <ButtonText fontSize={fontSize} hasIcon={hasIcon}>
+        {text}
+      </ButtonText>
       {icon}
     </StyledButton>
   );

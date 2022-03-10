@@ -7,6 +7,7 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { StyledNavLink } from "../atoms/nav/StyledNavLink";
 import { StyledNavButton } from "../atoms/nav/StyledNavButton";
 import Logo from "../../images/BM_Logo.png";
+import { Link } from "gatsby";
 
 interface Props {
   isOpen?: boolean;
@@ -27,7 +28,6 @@ const StyledNavLinks = styled.ul`
 const MobileNavLink = styled(StyledNavLink)`
   font-size: 1.25rem;
   font-weight: 600;
-  width: 15rem;
   padding: 0.75rem 1rem;
   margin-bottom: 8px;
   border-radius: 6px;
@@ -60,11 +60,11 @@ const StyledContainer = styled.div<Props>`
   padding: 0 1rem;
 `;
 
-const StyledLogo = styled.div`
+const StyledLogo = styled(Link)`
   flex: 1;
-  display: flex;
-  justify-content: center
-  align-items: center
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 `;
 
 const Drawer = styled(motion.div)`
@@ -108,7 +108,7 @@ export default function NavbarMobile() {
   return (
     <React.Fragment>
       <StyledContainer style={{ width: width }} isOpen={isOpen}>
-        <StyledLogo>
+        <StyledLogo to="/">
           <MobileLogo src={Logo} />
         </StyledLogo>
         <Burger
@@ -125,13 +125,25 @@ export default function NavbarMobile() {
         transition={{ type: "tween", ease: "easeInOut" }}
       >
         <StyledNavLinks>
-          <MobileNavLink onClick={handleOpen} to="/">
+          <MobileNavLink
+            onClick={handleOpen}
+            to="/"
+            style={{ width: width / 3 }}
+          >
             Home
           </MobileNavLink>
-          <MobileNavLink onClick={handleOpen} to="/team/">
+          <MobileNavLink
+            onClick={handleOpen}
+            to="/team/"
+            style={{ width: width / 3 }}
+          >
             Team
           </MobileNavLink>
-          <MobileNavLink onClick={handleOpen} to="/services">
+          <MobileNavLink
+            onClick={handleOpen}
+            to="/services"
+            style={{ width: width / 3 }}
+          >
             Services
           </MobileNavLink>
           <MobileNavButton

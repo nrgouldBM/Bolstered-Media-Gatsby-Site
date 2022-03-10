@@ -75,7 +75,11 @@ export default function Hero() {
   return (
     <StyledContainer>
       <MainContentContainer>
-        <StyledTextContainer>
+        <StyledTextContainer
+          style={{
+            marginRight: width > breakpoint ? "5rem" : null,
+          }}
+        >
           <StyledHeroTitle>
             <TextSpan>Full Service</TextSpan> Digital <br /> Marketing Partner
           </StyledHeroTitle>
@@ -88,8 +92,11 @@ export default function Hero() {
             takes to generate profitable sales.
           </StyledHeroSubTitle>
           <ButtonLink
-            style={{ width: width > breakpoint ? "60%" : "100%" }}
+            style={{
+              width: width > breakpoint ? "70%" : "100%",
+            }}
             primary
+            fontSize="1.3rem"
             link="/contact"
             text="Speak with us!"
           />

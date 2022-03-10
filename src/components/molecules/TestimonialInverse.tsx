@@ -7,7 +7,13 @@ import Avatar from "../atoms/Avatar";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 
-export default function Testimonial({ img, name, title, company, text }) {
+export default function TestimonialInverse({
+  img,
+  name,
+  title,
+  company,
+  text,
+}) {
   const { width } = useWindowDimensions();
   return (
     <FlexRow
@@ -16,6 +22,20 @@ export default function Testimonial({ img, name, title, company, text }) {
       justifyContent="space-evenly"
       wrap="wrap"
     >
+      <FlexColumn
+        style={{ transform: "rotate(-5deg)" }}
+        wrap="wrap"
+        alignItems="flex-start"
+        justifyContent="center"
+      >
+        <Body
+          style={{
+            textAlign: width > breakpoint ? "left" : "center",
+          }}
+        >
+          {text}
+        </Body>
+      </FlexColumn>
       <FlexColumn
         wrap="wrap"
         alignItems="center"
@@ -38,20 +58,6 @@ export default function Testimonial({ img, name, title, company, text }) {
         >
           {`${title}, ${company}`}
         </SubTitle>
-      </FlexColumn>
-      <FlexColumn
-        style={{ transform: "rotate(-5deg)" }}
-        wrap="wrap"
-        alignItems="flex-start"
-        justifyContent="center"
-      >
-        <Body
-          style={{
-            textAlign: width > breakpoint ? "left" : "center",
-          }}
-        >
-          {text}
-        </Body>
       </FlexColumn>
     </FlexRow>
   );

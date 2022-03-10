@@ -49,7 +49,7 @@ interface Props {
   height?: any;
   secondary?: boolean;
   style?: object;
-  hoverStyles: boolean;
+  hoverStyles?: boolean;
 }
 
 export default function Card({

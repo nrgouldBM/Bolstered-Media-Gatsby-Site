@@ -22,7 +22,7 @@ export default function TeamMembers() {
           ? {
               display: "flex",
               flexDirection: "column",
-              alignItems: "space-around",
+              alignItems: "center",
               justifyContent: "center",
             }
           : null

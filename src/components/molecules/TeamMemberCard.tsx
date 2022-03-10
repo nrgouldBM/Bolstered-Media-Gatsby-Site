@@ -6,6 +6,7 @@ import { Body } from "../atoms/Body";
 import FlexColumn from "../atoms/FlexColumn";
 import { SubTitle } from "../atoms/SubTitle";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import { breakpoint } from "../../theme";
 
 interface Props {
   description: string;
@@ -14,9 +15,15 @@ interface Props {
 }
 
 export default function TeamMemberCard({ description, name, title }: Props) {
-  //   const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   return (
-    <Card secondary width="25rem" height="35rem" style={{ boxShadow: "none" }}>
+    <Card
+      hoverStyles
+      secondary
+      width={width < breakpoint ? "25rem" : width * 0.9}
+      height="35rem"
+      style={{ boxShadow: "none" }}
+    >
       <FlexColumn
         wrap="wrap"
         alignItems="center"

@@ -5,7 +5,7 @@ export const Body = styled.p`
   font-weight: 500;
   line-height: 2rem;
   white-space: normal;
-  max-width: 30rem;
+  max-width: 35rem;
   margin: 0;
   padding: 0;
 `;

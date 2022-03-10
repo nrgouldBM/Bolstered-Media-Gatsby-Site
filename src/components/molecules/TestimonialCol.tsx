@@ -3,6 +3,7 @@ import { SubTitle } from "../atoms/SubTitle";
 import FlexColumn from "../atoms/FlexColumn";
 import { Body } from "../atoms/Body";
 import Avatar from "../atoms/Avatar";
+import { COLORS } from "../../theme";
 
 export default function TestimonialCol({ img, name, title, company, text }) {
   return (
@@ -17,7 +18,7 @@ export default function TestimonialCol({ img, name, title, company, text }) {
         justifyContent="center"
         style={{ marginBottom: "2rem" }}
       >
-        <Avatar background img={img} />
+        <Avatar background={COLORS.primary} img={img} />
         <SubTitle
           style={{
             textAlign: "center",

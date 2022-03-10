@@ -26,7 +26,7 @@ const LogosContainer = styled.div`
 `;
 
 const Logo = styled.img`
-  max-width: 10rem;
+  max-width: 12rem;
 
   @media (max-width: 750px) {
     margin-bottom: 2rem;
@@ -41,18 +41,24 @@ const LogosText = styled.h3`
   padding-top: 2rem;
 `;
 
+const LOGOS = [
+  OldSouthLogo,
+  UbumpLogo,
+  PineapplesLogo,
+  AshleyNicholeLogo,
+  FTSLogo,
+  CoastLandLogo,
+];
+
 export default function BrandLogos() {
   const { width } = useWindowDimensions();
   return (
     <Container style={{ width: width }}>
       <LogosText>Trusted By These Brands</LogosText>
       <LogosContainer>
-        <Logo src={UbumpLogo} />
-        <Logo src={PineapplesLogo} />
-        <Logo src={AshleyNicholeLogo} />
-        <Logo src={FTSLogo} />
-        <Logo src={OldSouthLogo} />
-        <Logo src={CoastLandLogo} />
+        {LOGOS.map((logo) => (
+          <Logo src={logo} />
+        ))}
       </LogosContainer>
     </Container>
   );
