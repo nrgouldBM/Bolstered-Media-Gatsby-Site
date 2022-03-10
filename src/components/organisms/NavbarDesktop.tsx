@@ -4,10 +4,7 @@ import { StyledNavLink } from "../atoms/nav/StyledNavLink";
 import { StyledNavButton } from "../atoms/nav/StyledNavButton";
 import { Link } from "gatsby";
 import Logo from "../../images/BM_Logo.png";
-
-const DesktopLogo = styled.img`
-  width: 15rem;
-`;
+import { StaticImage } from "gatsby-plugin-image";
 
 const StyledNavLinks = styled.ul`
   display: flex;
@@ -28,6 +25,8 @@ const StyledContainer = styled.div`
 
 const StyledLogo = styled(Link)`
   flex: 1;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -37,7 +36,12 @@ export default function NavbarDesktop() {
   return (
     <StyledContainer>
       <StyledLogo to="/">
-        <DesktopLogo src={Logo} />
+        <StaticImage
+          src="../../images/BM_logo.png"
+          alt="Bolstered Media Logo"
+          width={200}
+          placeholder="blurred"
+        />
       </StyledLogo>
       <StyledNavLinks>
         <StyledNavLink to="/">Home</StyledNavLink>

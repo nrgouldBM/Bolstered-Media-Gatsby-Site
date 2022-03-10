@@ -8,6 +8,7 @@ import { StyledNavLink } from "../atoms/nav/StyledNavLink";
 import { StyledNavButton } from "../atoms/nav/StyledNavButton";
 import Logo from "../../images/BM_Logo.png";
 import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 interface Props {
   isOpen?: boolean;
@@ -89,10 +90,6 @@ const Backdrop = styled(motion.div)`
   cursor: pointer;
 `;
 
-const MobileLogo = styled.img`
-  width: 10rem;
-`;
-
 export default function NavbarMobile() {
   const { width } = useWindowDimensions();
 
@@ -109,7 +106,12 @@ export default function NavbarMobile() {
     <React.Fragment>
       <StyledContainer style={{ width: width }} isOpen={isOpen}>
         <StyledLogo to="/">
-          <MobileLogo src={Logo} />
+          <StaticImage
+            src="../../images/BM_logo.png"
+            alt="Bolstered Media Logo"
+            width={200}
+            placeholder="blurred"
+          />
         </StyledLogo>
         <Burger
           isOpen={isOpen}
