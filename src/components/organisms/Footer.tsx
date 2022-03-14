@@ -8,6 +8,7 @@ import {
   IoLogoLinkedin,
 } from "react-icons/io5";
 import FlexRow from "../atoms/FlexRow";
+import { SERVICES } from "../../constants";
 
 const FooterContainer = styled.div`
   display: flex;
@@ -45,11 +46,9 @@ export default function Footer() {
     <FooterContainer>
       <Column>
         <ColumnTitle>Our Services</ColumnTitle>
-        <FooterLink to="/services">Paid Media</FooterLink>
-        <FooterLink to="/services">Email & SMS</FooterLink>
-        <FooterLink to="/services">Web Development</FooterLink>
-        <FooterLink to="/services">Conversion Rate Optimization</FooterLink>
-        <FooterLink to="/services">Creative Content & Strategy</FooterLink>
+        {SERVICES.map(({ title, id }) => (
+          <FooterLink to={`/services${id}`}>{title}</FooterLink>
+        ))}
       </Column>
       <Column>
         <ColumnTitle>Helpful Links</ColumnTitle>
@@ -65,27 +64,27 @@ export default function Footer() {
       <Column>
         <ColumnTitle>Follow Us</ColumnTitle>
         <FlexRow justifyContent="space-around" alignItems="center">
-          <FooterLink
+          <a
             style={{ marginRight: "1rem" }}
-            to="https://www.instagram.com/bolsteredmedia/"
-            target="blank"
+            href="https://www.instagram.com/bolsteredmedia/"
+            target="_blank"
           >
-            <IoLogoInstagram size={42} />
-          </FooterLink>
-          <FooterLink
+            <IoLogoInstagram size={42} color={COLORS.white} />
+          </a>
+          <a
             style={{ marginRight: "1rem" }}
-            to="https://www.facebook.com/BolsteredMedia"
-            target="blank"
+            href="https://www.facebook.com/BolsteredMedia"
+            target="_blank"
           >
-            <IoLogoFacebook size={42} />
-          </FooterLink>
-          <FooterLink
+            <IoLogoFacebook size={42} color={COLORS.white} />
+          </a>
+          <a
             style={{ marginRight: "1rem" }}
-            to="https://www.linkedin.com/company/bolstered-media"
-            target="blank"
+            href="https://www.linkedin.com/company/bolstered-media"
+            target="_blank"
           >
-            <IoLogoLinkedin size={42} />
-          </FooterLink>
+            <IoLogoLinkedin size={42} color={COLORS.white} />
+          </a>
         </FlexRow>
       </Column>
     </FooterContainer>

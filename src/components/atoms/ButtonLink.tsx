@@ -6,10 +6,12 @@ import { Link } from "gatsby";
 const primaryStyles = css`
   color: ${COLORS.primaryText};
   background: ${COLORS.primary};
-  text-decoration: none
+  text-decoration: none;
+  transition: all 200ms ease;
 
   &:hover {
     transform: scale(1.01);
+    background-color: ${COLORS.primary2};
   }
 `;
 

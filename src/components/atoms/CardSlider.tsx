@@ -31,7 +31,7 @@ const Container = styled.div<styleProps>`
   transition: all 200ms ease;
 
   &:not(:first-child) {
-    margin-left: -4rem;
+    margin-left: -2rem;
   }
 
   &:not(:last-child):hover,
@@ -51,6 +51,7 @@ interface Props {
   width?: any;
   height?: any;
   secondary?: boolean;
+  style?: object;
 }
 
 export default function CardSlider({
@@ -61,6 +62,7 @@ export default function CardSlider({
   alignItems,
   justifyContent,
   secondary,
+  style,
 }: Props) {
   return (
     <Container
@@ -70,6 +72,7 @@ export default function CardSlider({
       alignItems={alignItems}
       justifyContent={justifyContent}
       secondary={secondary}
+      style={style}
     >
       {children}
     </Container>

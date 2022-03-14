@@ -1,6 +1,5 @@
 import React from "react";
 import Avatar from "../atoms/Avatar";
-import Profile from "../../images/profile.jpg";
 import Card from "../atoms/Card";
 import { Body } from "../atoms/Body";
 import FlexColumn from "../atoms/FlexColumn";
@@ -24,6 +23,7 @@ interface Props {
   title: string;
   email: string;
   image: string;
+  style?: object;
 }
 
 export default function TeamMemberCard({
@@ -32,6 +32,7 @@ export default function TeamMemberCard({
   title,
   email,
   image,
+  style,
 }: Props) {
   const { width } = useWindowDimensions();
   return (
@@ -40,7 +41,11 @@ export default function TeamMemberCard({
       secondary
       width={width < breakpoint ? "25rem" : "30rem"}
       height="fit-content"
-      style={{ boxShadow: "none", margin: "2rem 1rem" }}
+      style={{
+        boxShadow: "none",
+        margin: width < breakpoint ? "1rem 0" : "2rem",
+        ...style,
+      }}
     >
       <FlexColumn
         wrap="wrap"
@@ -48,7 +53,7 @@ export default function TeamMemberCard({
         justifyContent="center"
         style={{ marginBottom: "2rem" }}
       >
-        <Avatar img={image} />
+        <Avatar img={image} alt={`${name}'s profile picture`} />
         <SubTitle
           style={{
             textAlign: "center",
@@ -76,7 +81,7 @@ export default function TeamMemberCard({
             overflow: "hidden",
             textOverflow: "ellipsis",
             wordWrap: "break-word",
-            maxHeight: "14rem",
+            // maxHeight: "14rem",
             lineHeight: "2rem",
             marginBottom: "2rem",
           }}

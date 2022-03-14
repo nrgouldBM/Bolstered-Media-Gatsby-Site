@@ -10,7 +10,6 @@ import { SERVICES } from "../../constants";
 
 const Container = styled.section`
   /* width: 80%; */
-  margin: auto;
   margin-top: 10rem;
   position: relative;
 `;
@@ -35,9 +34,10 @@ export default function Services() {
         Services
       </Title>
       <CardContainer>
-        {SERVICES.map(({ title, content, id }) => {
+        {SERVICES.map(({ title, content, id }, index) => {
           return (
             <ServiceCard
+              index={index}
               icon={<DollarIcon />}
               title={title}
               text={content}

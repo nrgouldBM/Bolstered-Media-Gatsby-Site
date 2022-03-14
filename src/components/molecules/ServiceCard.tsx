@@ -6,7 +6,7 @@ import InverseButton from "../atoms/InverseButton";
 import ArrowRight from "../Icons/ArrowRight";
 
 const Container = styled.div`
-  padding: 3rem;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -43,18 +43,20 @@ interface Props {
   text: string;
   icon?: any;
   link: string;
+  index?: number;
 }
 
-export default function ServiceCard({ title, text, icon, link }: Props) {
+export default function ServiceCard({ title, text, icon, link, index }: Props) {
   return (
     <Card
-      width="30rem"
+      width="25rem"
       height="32rem"
       flexDir="row"
       alignItems="center"
       justifyContent="center"
+      style={{ minWidth: "25rem" }}
     >
-      <Container>
+      <Container style={{ zIndex: index * 10 }}>
         <IconContainer>{icon}</IconContainer>
         <CardTitle>{title}</CardTitle>
         <CardText>{text}</CardText>

@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import styled from "styled-components";
 import { breakpoint } from "../../theme";
 import Button from "../atoms/Button";
-import TextInput from "../molecules/TextInput";
+import TextInput, { ErrorMessage } from "../molecules/TextInput";
 import DropDownInput from "../molecules/DropDownInput";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import TextArea from "../molecules/TextArea";
@@ -46,14 +46,14 @@ export default function ContactForm({ style }: Props) {
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string().required("Please enter name").min(4).max(20),
-    email: Yup.string().email().required("Please enter email"),
+    name: Yup.string().required("Please enter your name").min(4).max(20),
+    email: Yup.string().email().required("Please enter your email"),
     website: Yup.string()
       .matches(
         /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
         "Enter valid url!"
       )
-      .required("Please enter website"),
+      .required("Please enter your website"),
     adSpend: Yup.string(),
     description: Yup.string(),
   });

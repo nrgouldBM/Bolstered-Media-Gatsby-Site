@@ -14,7 +14,7 @@ export const StyledNavButton = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    background: ${COLORS.primarySoft};
+    background: ${COLORS.primary2};
     transform: scale(1.01);
   }
 

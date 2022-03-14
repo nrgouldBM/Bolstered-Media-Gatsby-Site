@@ -32,7 +32,7 @@ export const SERVICES = [
   {
     title: "Creative Content & Strategy",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?",
+      "Content is king.  Plain and simple.  With the amount of competition that is on social media and other platforms, you have to stand out.  The one thing that does this is your content and creative strategy.  You need content that tells your story and stops the scroll.  Let us help.",
     id: "#creative-content",
   },
 ];
@@ -42,32 +42,32 @@ export const TEAM = [
     name: "Alex Hadding",
     title: "CEO",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?",
+      "Having worked in the Ecommerce & Direct-To-Consumer space for the past 7 years, Alex decided it was time to start a “Client-First” digital marketing agency.  One that put the brand first, and one that didn’t make it feel like the client was just another number.  Alex has been personally responsible for up to $30 Million in ad spend and has helped generate over $100 Million in revenue for brands and other partners.",
     email: "alex@bolsteredmedia.com",
-    image: "images/profile.jpg",
+    image: "../../images/profile.jpg",
   },
   {
     name: "Patrick Gall",
     title: "COO",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?",
+      "Jordan has been a member of the Bolstered Media team since day one. Coming from a background in sports and marketing, he has helped create and develop strong organic strategies for many high-profile brands in the e-commerce space. With his expertise he has helped increase reach, engagement and likes across multiple social media platforms for a wide variety of DTC Brands, Influencers and other organizations.",
     email: "patrick@bolsteredmedia.com",
-    image: "images/profile.jpg",
+    image: "../../images/profile.jpg",
   },
   {
     name: "Jordan Hadding",
-    title: "Director of Digital Marketing",
+    title: "Director of Marketing",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?",
+      "Jordan has been a member of the Bolstered Media team since day one. Coming from a background in sports and marketing, he has helped create and develop strong organic strategies for many high-profile brands in the e-commerce space. With his expertise he has helped increase reach, engagement and likes across multiple social media platforms for a wide variety of DTC Brands, Influencers and other organizations.",
     email: "jordan@bolsteredmedia.com",
-    image: "images/profile.jpg",
+    image: "../../images/profile.jpg",
   },
   {
     name: "Nicholas Gould",
     title: "Director of Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?",
+      "Jordan has been a member of the Bolstered Media team since day one. Coming from a background in sports and marketing, he has helped create and develop strong organic strategies for many high-profile brands in the e-commerce space. With his expertise he has helped increase reach, engagement and likes across multiple social media platforms for a wide variety of DTC Brands, Influencers and other organizations.",
     email: "nicholas@bolsteredmedia.com",
-    image: "images/profile.jpg",
+    image: "../../images/profile.jpg",
   },
 ];

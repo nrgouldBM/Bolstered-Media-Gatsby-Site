@@ -1,8 +1,18 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const Title = styled.h1`
-	font-size: ${p => p.size || "2rem"};
-	font-weight: 700;
-	position: relative;
-	
+interface Props {
+  size?: string | number;
+}
+
+export const Title = styled.h1<Props>`
+  font-size: ${(p) => p.size || "2rem"};
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  line-height: 3.2rem;
 `;

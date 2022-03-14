@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { breakpoint, COLORS, SIZES } from "../../theme";
+import { breakpoint } from "../../theme";
 import { Body } from "../atoms/Body";
 import FlexRow from "../atoms/FlexRow";
 import TextBox from "../atoms/TextBox";
@@ -18,13 +18,7 @@ const Container = styled.section`
 `;
 
 const ImageContainer = styled.div`
-  padding: 1rem;
-  background-color: ${COLORS.gray};
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: ${SIZES.lengthSm3};
+  flex: 1 0 20rem;
 `;
 
 const MainContainer = styled.div`
@@ -32,8 +26,8 @@ const MainContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: space-around;
-  flex: 1;
   margin-bottom: 2rem;
+  flex: 1 1 20rem;
 `;
 
 export default function CaseStudy() {
@@ -43,10 +37,12 @@ export default function CaseStudy() {
       <MainContainer
         style={{
           maxWidth: width < breakpoint ? "90%" : null,
-          marginRight: width < breakpoint ? 0 : "2rem",
+          marginRight: width < breakpoint ? 0 : "4rem",
         }}
       >
-        <Title>Case Study: 6-Month-Old Apparel Brand</Title>
+        <Title style={{ maxWidth: "30rem" }}>
+          Case Study: 6-Month-Old Apparel Brand
+        </Title>
         <Body>
           Using a refined organic and paid strategy, Bolstered Media grew a new
           apparel brand to $1,000,000 in sales in less than 6 Months! By
@@ -73,13 +69,12 @@ export default function CaseStudy() {
           <TextBox title="18%" label="Ad Spend Percentage" />
         </FlexRow>
       </MainContainer>
-      <ImageContainer
-        style={{ minWidth: width < breakpoint ? width * 0.8 : width / 3 }}
-      >
+      <ImageContainer>
         <StaticImage
           src={"../../images/Bolstered Media - Case Study.png"}
           width={500}
           alt="Case Study - $800,000 in sales."
+          layout="fullWidth"
         />
       </ImageContainer>
     </Container>

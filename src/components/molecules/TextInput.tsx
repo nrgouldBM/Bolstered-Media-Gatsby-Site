@@ -34,7 +34,7 @@ const Container = styled.div`
   position: relative;
 `;
 
-const ErrorMessage = styled.p`
+export const ErrorMessage = styled.p`
   color: ${COLORS.error};
   font-size: 0.8rem;
   position: absolute;

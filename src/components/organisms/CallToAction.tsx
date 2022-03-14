@@ -17,7 +17,9 @@ export default function CallToAction({
   return (
     <Main style={{ width: "90%", margin: "4rem auto 8rem auto" }}>
       <FlexColumn alignItems="center" justifyContent="center">
-        <Title style={{ fontSize: "3.5rem" }}>{text}</Title>
+        <Title style={{ fontSize: "3.5rem", lineHeight: "4.5rem" }}>
+          {text}
+        </Title>
         <ButtonLink
           style={{ width: width < breakpoint ? "90%" : "20rem" }}
           primary

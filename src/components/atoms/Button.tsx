@@ -18,6 +18,17 @@ const primaryStyles = css`
   }
 `;
 
+const disabledStyles = css`
+  color: ${COLORS.secondaryText};
+  background: ${COLORS.gray};
+  cursor: not-allowed;
+
+  &:hover {
+    color: ${COLORS.secondaryText};
+    background: ${COLORS.gray};
+  }
+`;
+
 const secondaryStyles = css`
   color: ${COLORS.white};
   background: ${COLORS.secondary};
@@ -56,6 +67,7 @@ export const StyledButton = styled.button<styleProps>`
   align-items: center;
   justify-content: space-around ${(p) => p.primary && primaryStyles};
   ${(p) => p.secondary && secondaryStyles};
+  ${(p) => p.disabled && disabledStyles};
 `;
 
 interface Props extends React.HTMLProps<HTMLButtonElement> {
@@ -78,6 +90,7 @@ export default function Button({
   disabled,
 }: Props) {
   const hasIcon = !!icon;
+  console.log(disabled);
   return (
     <StyledButton
       style={style}
