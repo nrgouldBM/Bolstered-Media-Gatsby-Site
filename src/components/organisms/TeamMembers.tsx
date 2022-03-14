@@ -31,7 +31,8 @@ export default function TeamMembers() {
       <TeamMemberCard
         name="Alex Hadding"
         title="CEO"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aut quas, voluptatem nihil ex eaque ipsa iure esse praesentium nemo vero est aliquam pariatur. Distinctio, quis assumenda! Esse, repellat corporis?"
+        description="Don’t let his lack of hair fool you.
+"
       />
       <TeamMemberCard
         name="Patrick Gall"
@@ -42,6 +43,11 @@ export default function TeamMembers() {
       />
       <TeamMemberCard
         name="Jordan Hadding"
+        title="Head of Marketing"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aut quas, voluptatem nihil ex eaque ipsa iure esse praesentium nemo vero est aliquam pariatur. Distinctio, quis assumenda! Esse, repellat corporis?"
+      />
+      <TeamMemberCard
+        name="Nicholas Gould"
         title="CEO"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aut quas, voluptatem nihil ex eaque ipsa iure esse praesentium nemo vero est aliquam pariatur. Distinctio, quis assumenda! Esse, repellat corporis?"
       />
