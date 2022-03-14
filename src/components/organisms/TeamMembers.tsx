@@ -3,14 +3,16 @@ import styled from "styled-components";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint } from "../../theme";
 import TeamMemberCard from "../molecules/TeamMemberCard";
+import { TEAM } from "../../constants";
 
 const Container = styled.div`
-  display: grid;
-  grid-gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
   width: 90%;
   margin: auto;
-  grid-wrap: wrap;
 `;
 
 export default function TeamMembers() {
@@ -28,29 +30,15 @@ export default function TeamMembers() {
           : null
       }
     >
-      <TeamMemberCard
-        name="Alex Hadding"
-        title="CEO"
-        description="Don’t let his lack of hair fool you.
-"
-      />
-      <TeamMemberCard
-        name="Patrick Gall"
-        title="COO"
-        description="The old man of the crew. Doesn’t understand TikTok. Recently purchased a Life Alert due to multiple falls. 
-
-"
-      />
-      <TeamMemberCard
-        name="Jordan Hadding"
-        title="Director of Digital Marketing"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aut quas, voluptatem nihil ex eaque ipsa iure esse praesentium nemo vero est aliquam pariatur. Distinctio, quis assumenda! Esse, repellat corporis?"
-      />
-      <TeamMemberCard
-        name="Nicholas Gould"
-        title="CEO"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aut quas, voluptatem nihil ex eaque ipsa iure esse praesentium nemo vero est aliquam pariatur. Distinctio, quis assumenda! Esse, repellat corporis?"
-      />
+      {TEAM.map(({ name, title, description, email, image }) => (
+        <TeamMemberCard
+          name={name}
+          title={title}
+          description={description}
+          email={email}
+          image={image}
+        />
+      ))}
     </Container>
   );
 }

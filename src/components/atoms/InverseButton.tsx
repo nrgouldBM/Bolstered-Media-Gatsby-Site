@@ -59,6 +59,7 @@ interface Props {
   primary?: boolean;
   secondary?: boolean;
   link: string;
+  style?: object;
 }
 
 export default function InverseButton({
@@ -67,10 +68,12 @@ export default function InverseButton({
   primary,
   secondary,
   link,
+  style,
 }: Props) {
   const hasIcon = !!icon;
   return (
     <StyledButton
+      style={style}
       to={link}
       hasIcon={hasIcon}
       primary={primary}

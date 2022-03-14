@@ -5,9 +5,10 @@ import { COLORS } from "../../theme";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   margin-top: 0.5rem;
+  min-height: 8rem;
 `;
 
 const Text = styled.h3`
@@ -19,15 +20,23 @@ const Text = styled.h3`
 
 const Box = styled.div`
   background-color: ${COLORS.primaryText};
+  min-width: 7rem;
   color: #fff;
   border-radius: 12px;
   padding: 0.5rem 0.75rem;
+  text-align: center;
+  transition: all 200ms ease;
+  &:hover {
+    background-color: ${COLORS.primary3};
+    color: ${COLORS.primaryText};
+  }
 `;
 
 const BottomLabel = styled.h4`
   color: ${COLORS.primaryText};
   margin: 0;
   margin-top: 0.5rem;
+  max-width: 7rem;
 `;
 
 interface Props {

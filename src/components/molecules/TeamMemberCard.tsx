@@ -6,23 +6,41 @@ import { Body } from "../atoms/Body";
 import FlexColumn from "../atoms/FlexColumn";
 import { SubTitle } from "../atoms/SubTitle";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import { breakpoint } from "../../theme";
+import { breakpoint, COLORS } from "../../theme";
+import styled from "styled-components";
+import { Link } from "gatsby";
+
+const Email = styled(Link)`
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  color: ${COLORS.secondary};
+  text-align: center;
+`;
 
 interface Props {
   description: string;
   name: string;
   title: string;
+  email: string;
+  image: string;
 }
 
-export default function TeamMemberCard({ description, name, title }: Props) {
+export default function TeamMemberCard({
+  description,
+  name,
+  title,
+  email,
+  image,
+}: Props) {
   const { width } = useWindowDimensions();
   return (
     <Card
       hoverStyles
       secondary
-      width={width < breakpoint ? "25rem" : width * 0.9}
-      height="35rem"
-      style={{ boxShadow: "none" }}
+      width={width < breakpoint ? "25rem" : "30rem"}
+      height="fit-content"
+      style={{ boxShadow: "none", margin: "2rem 1rem" }}
     >
       <FlexColumn
         wrap="wrap"
@@ -30,7 +48,7 @@ export default function TeamMemberCard({ description, name, title }: Props) {
         justifyContent="center"
         style={{ marginBottom: "2rem" }}
       >
-        <Avatar img={Profile} />
+        <Avatar img={image} />
         <SubTitle
           style={{
             textAlign: "center",
@@ -52,7 +70,7 @@ export default function TeamMemberCard({ description, name, title }: Props) {
           {title}
         </SubTitle>
       </FlexColumn>
-      <FlexColumn wrap="wrap" alignItems="flex-start" justifyContent="center">
+      <FlexColumn wrap="wrap" alignItems="center" justifyContent="center">
         <Body
           style={{
             overflow: "hidden",
@@ -60,10 +78,12 @@ export default function TeamMemberCard({ description, name, title }: Props) {
             wordWrap: "break-word",
             maxHeight: "14rem",
             lineHeight: "2rem",
+            marginBottom: "2rem",
           }}
         >
           {description}
         </Body>
+        <Email to={`mailto:${email}`}>{email}</Email>
       </FlexColumn>
     </Card>
   );

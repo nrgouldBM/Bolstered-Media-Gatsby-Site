@@ -6,6 +6,7 @@ import ServiceCard from "../molecules/ServiceCard";
 import DollarIcon from "../Icons/DollarIcon";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint } from "../../theme";
+import { SERVICES } from "../../constants";
 
 const Container = styled.section`
   /* width: 80%; */
@@ -25,14 +26,6 @@ const CardContainer = styled.div`
   white-space: nowrap;
 `;
 
-// const BGSvg = styled(BackgroundSvg)`
-//   height: 40rem;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   overflow: hidden;
-// `;
-
 export default function Services() {
   const { width } = useWindowDimensions();
 
@@ -42,44 +35,17 @@ export default function Services() {
         Services
       </Title>
       <CardContainer>
-        <ServiceCard
-          icon={<DollarIcon />}
-          title="Paid Media Advertising"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
-          link="/services"
-        />
-        <ServiceCard
-          title="Paid Media Advertising"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
-          link="/services"
-        />
-        <ServiceCard
-          title="Paid Media Advertising"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
-          link="/services"
-        />
-        <ServiceCard
-          title="Paid Media Advertising"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
-          link="/services"
-        />
-        <ServiceCard
-          title="Paid Media Advertising"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
-          link="/services"
-        />
-        <ServiceCard
-          title="Paid Media Advertising"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
-          link="/services"
-        />
-        <ServiceCard
-          title="Paid Media Advertising"
-          text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sapiente reprehenderit placeat. Nisi iure consequuntur quaerat doloremque laboriosam velit placeat?"
-          link="/services"
-        />
+        {SERVICES.map(({ title, content, id }) => {
+          return (
+            <ServiceCard
+              icon={<DollarIcon />}
+              title={title}
+              text={content}
+              link={`/services/${id}`}
+            />
+          );
+        })}
       </CardContainer>
-      {/* <BGSvg /> */}
     </Container>
   );
 }

@@ -48,27 +48,29 @@ export default function CaseStudy() {
       >
         <Title>Case Study: 6-Month-Old Apparel Brand</Title>
         <Body>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem enim,
-          culpa ipsam iure recusandae repellat molestias totam quos, ratione
-          quia laborum et inventore dignissimos praesentium. Provident quidem
-          voluptas quasi eum, tenetur doloribus quia explicabo natus, eveniet
-          doloremque ab quos? Aliquam dignissimos repellat assumenda quae
-          laborum animi numquam, perspiciatis odit repudiandae voluptatem
-          dolorum explicabo, ullam nesciunt adipisci vitae recusandae ipsa!
-          Dolor!
+          Using a refined organic and paid strategy, Bolstered Media grew a new
+          apparel brand to $1,000,000 in sales in less than 6 Months! By
+          focusing on Marketing/Media Efficiency Ratio (MER) and customer
+          acquisition, this evergreen brand hit a milestone of $1M in sales
+          while holding a 5.75% Conversion Rate and a Profit Margin of 35%.
         </Body>
         <FlexRow
-          alignItems="center"
+          alignItems="flex-start"
           justifyContent="flex-start"
           wrap="wrap"
           style={{ marginTop: "2rem" }}
         >
           <TextBox
             style={{ marginRight: "2rem" }}
-            title="4.05%"
+            title="5.75%"
             label="Conv. Rate"
           />
-          <TextBox title="4.05%" label="Conv. Rate" />
+          <TextBox
+            style={{ marginRight: "2rem" }}
+            title="34.7%"
+            label="Profit Margin"
+          />
+          <TextBox title="18%" label="Ad Spend Percentage" />
         </FlexRow>
       </MainContainer>
       <ImageContainer
@@ -76,7 +78,7 @@ export default function CaseStudy() {
       >
         <StaticImage
           src={"../../images/Bolstered Media - Case Study.png"}
-          width={400}
+          width={500}
           alt="Case Study - $800,000 in sales."
         />
       </ImageContainer>

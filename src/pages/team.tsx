@@ -15,11 +15,12 @@ export default function Team({ data }) {
         <SubTitle style={{ color: COLORS.secondary }}>Team</SubTitle>
         <Title>Meet our team of experts on everything digital marketing.</Title>
         <Body>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam
-          voluptas sed illum optio ex reiciendis provident quas, tempore quia
-          quibusdam ducimus natus distinctio atque inventore, ab magni quos
-          repellendus hic quidem! Expedita sunt recusandae fuga quasi culpa odit
-          sint nulla?
+          The Bolstered Media team features a diverse collection of members that
+          combined have over 15 years of experience in the digital marketing
+          space. Together the team has helped many Direct-to-Consumer Brands
+          grow their following, engagement and sales to new heights. Bolstered
+          Media believes that a true team and collaborative approach generates
+          the best results.
         </Body>
       </div>
       <TeamMembers />

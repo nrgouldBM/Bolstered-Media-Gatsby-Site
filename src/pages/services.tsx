@@ -5,14 +5,23 @@ import React from "react";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import FlexColumn from "../components/atoms/FlexColumn";
 import { Title } from "../components/atoms/Title";
-import FlexRow from "../components/atoms/FlexRow";
 import Layout from "../components/organisms/Layout";
 import CallToAction from "../components/organisms/CallToAction";
+import { SERVICES } from "../constants";
+import styled from "styled-components";
+import { COLORS } from "../theme";
+
+const ServiceSection = styled.section`
+  background-color: ${COLORS.primary2};
+  margin-bottom: 5rem;
+  padding: 3rem;
+  border: 2px solid #dbdbdb;
+  border-radius: 4px;
+`;
 
 export default function Services() {
   const { width } = useWindowDimensions();
 
-  const services = new Array(6).fill(0);
   return (
     <Layout>
       <FlexColumn
@@ -21,22 +30,18 @@ export default function Services() {
         style={{ width: "90%", margin: "auto" }}
       >
         <Title>Services</Title>
-        <FlexRow justifyContent="space-around" alignItems="center" wrap="wrap">
-          {services.map(() => (
+        {SERVICES.map(({ title, content, id }) => (
+          <ServiceSection id={id}>
             <Card
               hoverStyles={true}
               width={width / 3 + "px"}
               style={{ minWidth: "18rem", minHeight: "25rem" }}
             >
-              <SubTitle>Paid Media Advertising</SubTitle>
-              <Body>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-                cupiditate tempora nulla dolorem libero deleniti quae
-                perspiciatis sint quaerat hic.
-              </Body>
+              <SubTitle>{title}</SubTitle>
+              <Body>{content}</Body>
             </Card>
-          ))}
-        </FlexRow>
+          </ServiceSection>
+        ))}
       </FlexColumn>
       <CallToAction />
     </Layout>
