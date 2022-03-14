@@ -29,17 +29,19 @@ export default function TeamMembers() {
       }
     >
       <TeamMemberCard
-        name="Alex"
+        name="Alex Hadding"
         title="CEO"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aut quas, voluptatem nihil ex eaque ipsa iure esse praesentium nemo vero est aliquam pariatur. Distinctio, quis assumenda! Esse, repellat corporis?"
       />
       <TeamMemberCard
-        name="Alex"
-        title="CEO"
-        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aut quas, voluptatem nihil ex eaque ipsa iure esse praesentium nemo vero est aliquam pariatur. Distinctio, quis assumenda! Esse, repellat corporis?"
+        name="Patrick Gall"
+        title="COO"
+        description="The old man of the crew. Doesn’t understand TikTok. Recently purchased a Life Alert due to multiple falls. 
+
+"
       />
       <TeamMemberCard
-        name="Alex"
+        name="Jordan Hadding"
         title="CEO"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aut quas, voluptatem nihil ex eaque ipsa iure esse praesentium nemo vero est aliquam pariatur. Distinctio, quis assumenda! Esse, repellat corporis?"
       />

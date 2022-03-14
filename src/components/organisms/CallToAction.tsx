@@ -6,14 +6,18 @@ import FlexColumn from "../atoms/FlexColumn";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint } from "../../theme";
 
-export default function CallToAction() {
+interface Props {
+  text?: string;
+}
+
+export default function CallToAction({
+  text = " Ready to bolster your brand?",
+}: Props) {
   const { width } = useWindowDimensions();
   return (
-    <Main style={{ width: "90%", margin: "8rem auto" }}>
+    <Main style={{ width: "90%", margin: "4rem auto 8rem auto" }}>
       <FlexColumn alignItems="center" justifyContent="center">
-        <Title style={{ fontSize: "3.5rem" }}>
-          Ready to bolster your brand?
-        </Title>
+        <Title style={{ fontSize: "3.5rem" }}>{text}</Title>
         <ButtonLink
           style={{ width: width < breakpoint ? "90%" : "20rem" }}
           primary

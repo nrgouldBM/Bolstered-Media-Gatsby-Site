@@ -46,7 +46,7 @@ export default function CaseStudy() {
           marginRight: width < breakpoint ? 0 : "2rem",
         }}
       >
-        <Title>Case Study: [Company]</Title>
+        <Title>Case Study: 6-Month-Old Apparel Brand</Title>
         <Body>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem enim,
           culpa ipsam iure recusandae repellat molestias totam quos, ratione
@@ -64,7 +64,7 @@ export default function CaseStudy() {
           style={{ marginTop: "2rem" }}
         >
           <TextBox
-            style={{ marginRight: "5rem" }}
+            style={{ marginRight: "2rem" }}
             title="4.05%"
             label="Conv. Rate"
           />

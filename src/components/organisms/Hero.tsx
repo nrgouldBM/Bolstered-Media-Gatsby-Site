@@ -81,7 +81,7 @@ export default function Hero() {
           }}
         >
           <StyledHeroTitle>
-            <TextSpan>Full Service</TextSpan> Digital <br /> Marketing Partner
+            <TextSpan>Full-Service</TextSpan> Digital <br /> Marketing Partner
           </StyledHeroTitle>
           <StyledHeroSubTitle>
             To help you grow your online store, you need an experienced team.

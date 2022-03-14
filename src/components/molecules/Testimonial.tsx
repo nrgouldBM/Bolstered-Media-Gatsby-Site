@@ -13,7 +13,7 @@ export default function Testimonial({ img, name, title, company, text }) {
     <FlexRow
       style={{ width: width > breakpoint ? "60%" : "70%", margin: "auto" }}
       alignItems="center"
-      justifyContent="space-evenly"
+      justifyContent={width < breakpoint ? "center" : "space-evenly"}
       wrap="wrap"
     >
       <FlexColumn

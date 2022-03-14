@@ -20,7 +20,7 @@ export default function TestimonialInverse({
       style={{ width: width > breakpoint ? "60%" : "70%", margin: "auto" }}
       alignItems="center"
       justifyContent="space-evenly"
-      wrap="wrap"
+      wrap="wrap-reverse"
     >
       <FlexColumn
         style={{ transform: "rotate(-5deg)" }}

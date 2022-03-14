@@ -38,6 +38,14 @@ export default function Footer() {
   return (
     <FooterContainer>
       <Column>
+        <ColumnTitle>Our Services</ColumnTitle>
+        <FooterLink to="/services">Paid Media</FooterLink>
+        <FooterLink to="/services">Email & SMS</FooterLink>
+        <FooterLink to="/services">Web Development</FooterLink>
+        <FooterLink to="/services">Conversion Rate Optimization</FooterLink>
+        <FooterLink to="/services">Creative Content & Strategy</FooterLink>
+      </Column>
+      <Column>
         <ColumnTitle>Helpful Links</ColumnTitle>
         <FooterLink to="/">Home</FooterLink>
         <FooterLink to="/team/">Team</FooterLink>
@@ -45,6 +53,11 @@ export default function Footer() {
       </Column>
       <Column>
         <ColumnTitle>Action</ColumnTitle>
+        <FooterLink to="/">Contact Us</FooterLink>
+        <FooterLink to="/team/">Jobs</FooterLink>
+      </Column>
+      <Column>
+        <ColumnTitle>Follow Us</ColumnTitle>
         <FooterLink to="/">Contact Us</FooterLink>
         <FooterLink to="/team/">Jobs</FooterLink>
       </Column>
