@@ -34,6 +34,7 @@ const MobileNavLink = styled(StyledNavLink)`
   border-radius: 6px;
   &:hover {
     background-color: ${COLORS.primarySoft};
+    color: ${COLORS.primaryText};
   }
   &:last-of-type {
     margin-bottom: 2rem;
@@ -93,6 +94,8 @@ const Backdrop = styled(motion.div)`
 export default function NavbarMobile() {
   const { width } = useWindowDimensions();
 
+  const NAV_LINK_WIDTH = width / 3.5;
+
   const [isOpen, setOpen] = useState(false);
 
   function handleOpen() {
@@ -130,27 +133,27 @@ export default function NavbarMobile() {
           <MobileNavLink
             onClick={handleOpen}
             to="/"
-            style={{ width: width / 3 }}
+            style={{ width: NAV_LINK_WIDTH }}
           >
             Home
           </MobileNavLink>
           <MobileNavLink
             onClick={handleOpen}
             to="/team/"
-            style={{ width: width / 3 }}
+            style={{ width: NAV_LINK_WIDTH }}
           >
             Team
           </MobileNavLink>
           <MobileNavLink
             onClick={handleOpen}
             to="/services"
-            style={{ width: width / 3 }}
+            style={{ width: NAV_LINK_WIDTH }}
           >
             Services
           </MobileNavLink>
           <MobileNavButton
             onClick={handleOpen}
-            style={{ width: width / 3 }}
+            style={{ width: NAV_LINK_WIDTH }}
             to="/contact"
           >
             Contact

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { StyledNavLink } from "../atoms/nav/StyledNavLink";
 import { StyledNavButton } from "../atoms/nav/StyledNavButton";
 import { Link } from "gatsby";
-import Logo from "../../images/BM_Logo.png";
 import { StaticImage } from "gatsby-plugin-image";
 
 const StyledNavLinks = styled.ul`

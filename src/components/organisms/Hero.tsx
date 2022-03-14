@@ -93,7 +93,7 @@ export default function Hero() {
           </StyledHeroSubTitle>
           <ButtonLink
             style={{
-              width: width < breakpoint ? "60%" : "70%",
+              width: width < breakpoint ? "100%" : "70%",
             }}
             primary
             fontSize="1.3rem"

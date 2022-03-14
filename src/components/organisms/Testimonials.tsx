@@ -59,7 +59,7 @@ export default function Testimonials() {
           />
         </TestimonialContainer>
         <TestimonialContainer
-          style={{ backgroundColor: COLORS.primary3, marginBottom: "5rem" }}
+          style={{ backgroundColor: COLORS.primary3, marginBottom: "7rem" }}
         >
           <Testimonial
             img={Profile2}

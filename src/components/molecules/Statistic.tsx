@@ -21,6 +21,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-basis: 10rem;
+  margin: 0.5rem 1rem;
 `;
 
 export default function Statistic({ stat, desc }) {

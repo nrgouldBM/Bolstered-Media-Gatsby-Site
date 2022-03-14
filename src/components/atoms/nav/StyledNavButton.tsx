@@ -5,9 +5,10 @@ import { COLORS, SHADOW } from "../../../theme";
 export const StyledNavButton = styled(Link)`
   color: ${COLORS.primaryText};
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  text-align: center;
   background: ${COLORS.primary};
-  padding: 0.5rem 1.5rem;
+  padding: 0.75rem 1.75rem;
   border-radius: 6px;
   box-shadow: ${SHADOW.normal};
   cursor: pointer;

@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { COLORS } from "../../theme";
+import { breakpoint, COLORS, SIZES } from "../../theme";
 import { Body } from "../atoms/Body";
 import FlexRow from "../atoms/FlexRow";
 import TextBox from "../atoms/TextBox";
 import { Title } from "../atoms/Title";
-import Building from "../../images/building.png";
+import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Container = styled.section`
   width: 80%;
@@ -16,15 +17,14 @@ const Container = styled.section`
   flex-wrap: wrap;
 `;
 
-const AsideBox = styled.div`
-  width: 30rem;
-  height: 125%;
-  position: absolute;
-  right: 0;
-  top: -2rem;
+const ImageContainer = styled.div`
+  padding: 1rem;
   background-color: ${COLORS.gray};
   flex: 1;
-  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: ${SIZES.lengthSm3};
 `;
 
 const MainContainer = styled.div`
@@ -33,18 +33,19 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: space-around;
   flex: 1;
-  /* margin: 0 10rem; */
-`;
-
-const Image = styled.img`
-  max-width: 20rem;
-  margin-right: 2rem;
+  margin-bottom: 2rem;
 `;
 
 export default function CaseStudy() {
+  const { width } = useWindowDimensions();
   return (
     <Container>
-      <MainContainer>
+      <MainContainer
+        style={{
+          maxWidth: width < breakpoint ? "90%" : null,
+          marginRight: width < breakpoint ? 0 : "2rem",
+        }}
+      >
         <Title>Case Study: [Company]</Title>
         <Body>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem enim,
@@ -70,8 +71,15 @@ export default function CaseStudy() {
           <TextBox title="4.05%" label="Conv. Rate" />
         </FlexRow>
       </MainContainer>
-      {/* <Image src={Building} />
-            <AsideBox /> */}
+      <ImageContainer
+        style={{ minWidth: width < breakpoint ? width * 0.8 : width / 3 }}
+      >
+        <StaticImage
+          src={"../../images/Bolstered Media - Case Study.png"}
+          width={400}
+          alt="Case Study - $800,000 in sales."
+        />
+      </ImageContainer>
     </Container>
   );
 }
