@@ -11,7 +11,7 @@ export default function Testimonial({ img, name, title, company, text }) {
   const { width } = useWindowDimensions();
   return (
     <FlexRow
-      style={{ width: width > breakpoint ? "60%" : "70%", margin: "auto" }}
+      style={{ width: width > breakpoint ? "70%" : "80%", margin: "auto" }}
       alignItems="center"
       justifyContent={width < breakpoint ? "center" : "space-evenly"}
       wrap="wrap"
@@ -22,7 +22,7 @@ export default function Testimonial({ img, name, title, company, text }) {
         justifyContent="center"
         style={{ marginBottom: "2rem", transform: "rotate(-5deg)" }}
       >
-        <Avatar background={COLORS.brown} img={img} />
+        <Avatar background={COLORS.brown} img={img} alt="testimonial" />
         <SubTitle
           style={{
             textAlign: "center",
@@ -48,6 +48,8 @@ export default function Testimonial({ img, name, title, company, text }) {
         <Body
           style={{
             textAlign: width > breakpoint ? "left" : "center",
+            fontSize: "1.8rem",
+            lineHeight: "3rem",
           }}
         >
           {text}

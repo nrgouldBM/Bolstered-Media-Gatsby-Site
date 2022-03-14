@@ -35,6 +35,7 @@ export default function Services() {
           <ServiceSection id={id}>
             <Card
               width={width / 3 + "px"}
+              height="fit-content"
               style={{ minWidth: "18rem", minHeight: "25rem" }}
             >
               <Title style={{ fontSize: "3rem" }}>{title}</Title>

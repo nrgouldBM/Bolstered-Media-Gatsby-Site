@@ -46,7 +46,7 @@ export default function Testimonials() {
             name="Bob Jones"
             title="CEO"
             company="company"
-            text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero deleniti quam cupiditate culpa similique autem obcaecati neque sunt. Consequuntur neque cumque voluptatum odio aliquid nostrum, esse porro nihil rerum fugit eaque minus qui itaque aspernatur temporibus, architecto error tempora dolorem?"
+            text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero deleniti quam cupiditate culpa similique autem obcaecati neque sunt. "
           />
         </TestimonialContainer>
         <TestimonialContainer style={{ backgroundColor: COLORS.primary2 }}>
@@ -55,7 +55,7 @@ export default function Testimonials() {
             name="Bob Jones"
             title="CEO"
             company="company"
-            text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero deleniti quam cupiditate culpa similique autem obcaecati neque sunt. Consequuntur neque cumque voluptatum odio aliquid nostrum, esse porro nihil rerum fugit eaque minus qui itaque aspernatur temporibus, architecto error tempora dolorem?"
+            text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero deleniti quam cupiditate culpa similique autem obcaecati neque sunt. "
           />
         </TestimonialContainer>
         <TestimonialContainer
@@ -66,7 +66,7 @@ export default function Testimonials() {
             name="Bob Jones"
             title="CEO"
             company="company"
-            text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero deleniti quam cupiditate culpa similique autem obcaecati neque sunt. Consequuntur neque cumque voluptatum odio aliquid nostrum, esse porro nihil rerum fugit eaque minus qui itaque aspernatur temporibus, architecto error tempora dolorem?"
+            text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero deleniti quam cupiditate culpa similique autem obcaecati neque sunt. "
           />
         </TestimonialContainer>
       </Container>

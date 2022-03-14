@@ -6,6 +6,13 @@ import { Body } from "../atoms/Body";
 import Avatar from "../atoms/Avatar";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import styled from "styled-components";
+
+export const Quote = styled.p`
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0;
+`;
 
 export default function TestimonialInverse({
   img,
@@ -17,7 +24,7 @@ export default function TestimonialInverse({
   const { width } = useWindowDimensions();
   return (
     <FlexRow
-      style={{ width: width > breakpoint ? "60%" : "70%", margin: "auto" }}
+      style={{ width: width > breakpoint ? "70%" : "80%", margin: "auto" }}
       alignItems="center"
       justifyContent="space-evenly"
       wrap="wrap-reverse"
@@ -31,9 +38,12 @@ export default function TestimonialInverse({
         <Body
           style={{
             textAlign: width > breakpoint ? "left" : "center",
+            fontSize: "1.8rem",
+            lineHeight: "3rem",
           }}
         >
-          {text}
+          <Quote>"</Quote>
+          {text} <Quote>"</Quote>
         </Body>
       </FlexColumn>
       <FlexColumn
@@ -42,7 +52,7 @@ export default function TestimonialInverse({
         justifyContent="center"
         style={{ marginBottom: "2rem", transform: "rotate(-5deg)" }}
       >
-        <Avatar background={COLORS.brown} img={img} />
+        <Avatar alt="Testimonial" background={COLORS.brown} img={img} />
         <SubTitle
           style={{
             textAlign: "center",
