@@ -43,7 +43,7 @@ export default function TeamMembers() {
       />
       <TeamMemberCard
         name="Jordan Hadding"
-        title="Head of Marketing"
+        title="Director of Digital Marketing"
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia aut quas, voluptatem nihil ex eaque ipsa iure esse praesentium nemo vero est aliquam pariatur. Distinctio, quis assumenda! Esse, repellat corporis?"
       />
       <TeamMemberCard

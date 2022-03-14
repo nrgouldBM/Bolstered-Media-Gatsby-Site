@@ -2,6 +2,12 @@ import { StyledNavLink } from "../atoms/nav/StyledNavLink";
 import React from "react";
 import styled from "styled-components";
 import { COLORS } from "../../theme";
+import {
+  IoLogoInstagram,
+  IoLogoFacebook,
+  IoLogoLinkedin,
+} from "react-icons/io5";
+import FlexRow from "../atoms/FlexRow";
 
 const FooterContainer = styled.div`
   display: flex;
@@ -58,8 +64,29 @@ export default function Footer() {
       </Column>
       <Column>
         <ColumnTitle>Follow Us</ColumnTitle>
-        <FooterLink to="/">Contact Us</FooterLink>
-        <FooterLink to="/team/">Jobs</FooterLink>
+        <FlexRow justifyContent="space-around" alignItems="center">
+          <FooterLink
+            style={{ marginRight: "1rem" }}
+            to="https://www.instagram.com/bolsteredmedia/"
+            target="blank"
+          >
+            <IoLogoInstagram size={42} />
+          </FooterLink>
+          <FooterLink
+            style={{ marginRight: "1rem" }}
+            to="https://www.facebook.com/BolsteredMedia"
+            target="blank"
+          >
+            <IoLogoFacebook size={42} />
+          </FooterLink>
+          <FooterLink
+            style={{ marginRight: "1rem" }}
+            to="https://www.linkedin.com/company/bolstered-media"
+            target="blank"
+          >
+            <IoLogoLinkedin size={42} />
+          </FooterLink>
+        </FlexRow>
       </Column>
     </FooterContainer>
   );
