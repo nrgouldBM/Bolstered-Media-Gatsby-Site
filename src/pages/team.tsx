@@ -5,29 +5,30 @@ import { Body } from "../components/atoms/Body";
 import CallToAction from "../components/organisms/CallToAction";
 import Layout from "../components/organisms/Layout";
 import { SubTitle } from "../components/atoms/SubTitle";
-import { COLORS } from "../theme";
+import { breakpoint, COLORS } from "../theme";
 import TeamSVG from "../images/TeamSVG";
 import FlexRow from "../components/atoms/FlexRow";
 import WorkForUs from "../components/organisms/WorkForUs";
 import styled from "styled-components";
 import ButtonLink from "../components/atoms/ButtonLink";
+import { useWindowDimensions } from "../hooks/useWindowDimensions";
 
 const TextContainer = styled.div`
-  flex: 1 1 20rem;
+  flex: 1;
   margin-bottom: 4rem;
-  max-width: 30rem;
+  /* max-width: 30rem; */
 `;
 
 const SvgContainer = styled.div`
-  flex: 1 1 20rem;
+  flex: 1;
   max-width: 30rem;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-export default function Team({ data }) {
-  console.log({ data });
+export default function Team() {
+  const { width } = useWindowDimensions();
   return (
     <Layout>
       <FlexRow
@@ -42,9 +43,9 @@ export default function Team({ data }) {
           <Title
             style={{
               marginBottom: "1rem",
-              fontSize: "3rem",
+              fontSize: width < breakpoint ? "2.2rem" : "3rem",
               maxWidth: "35rem",
-              lineHeight: "3.5rem",
+              lineHeight: width < breakpoint ? "2.8rem" : "3.5rem",
             }}
           >
             Meet our team of experts on everything digital marketing.
@@ -58,7 +59,10 @@ export default function Team({ data }) {
             collaborative approach generates the best results.
           </Body>
           <ButtonLink
-            style={{ width: "20rem", marginTop: "1rem" }}
+            style={{
+              width: width < breakpoint ? "100%" : "25rem",
+              marginTop: "1rem",
+            }}
             primary
             text="Speak with us"
             link="/contact"

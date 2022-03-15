@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { COLORS } from "../../theme";
+import { breakpoint, COLORS } from "../../theme";
 import Icon from "./Icon";
 
 const Container = styled.div`
   position: relative;
   flex: 1 1 20rem;
-  margin: 10rem 5rem;
+  margin-bottom: 8rem;
+  margin-right: 10rem;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    display: none;
+  }
 `;
 
 export default function ServicesSplash() {

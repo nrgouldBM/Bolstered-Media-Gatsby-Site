@@ -43,8 +43,7 @@ const MobileNavLink = styled(StyledNavLink)`
 
 const MobileNavButton = styled(StyledNavButton)`
   font-weight: 600;
-  width: 15rem;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   margin-top: 1rem;
   text-align: center;
   background-color: ${COLORS.secondary};
@@ -94,7 +93,7 @@ const Backdrop = styled(motion.div)`
 export default function NavbarMobile() {
   const { width } = useWindowDimensions();
 
-  const NAV_LINK_WIDTH = width / 3.5;
+  const NAV_LINK_WIDTH = width / 3;
 
   const [isOpen, setOpen] = useState(false);
 

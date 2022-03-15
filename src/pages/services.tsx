@@ -1,5 +1,4 @@
 import { Body } from "../components/atoms/Body";
-import Card from "../components/atoms/Card";
 import React from "react";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import FlexColumn from "../components/atoms/FlexColumn";
@@ -8,7 +7,7 @@ import Layout from "../components/organisms/Layout";
 import CallToAction from "../components/organisms/CallToAction";
 import { SERVICES } from "../constants";
 import styled from "styled-components";
-import { COLORS } from "../theme";
+import { breakpoint, COLORS } from "../theme";
 import { SubTitle } from "../components/atoms/SubTitle";
 import ButtonLink from "../components/atoms/ButtonLink";
 import ServicesSection from "../components/molecules/ServicesSection";
@@ -21,9 +20,17 @@ const HeaderContainer = styled.div`
   margin-bottom: 5rem;
   padding: 0 5rem;
   flex-wrap: wrap-reverse;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    padding: 0;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 4rem;
+  }
 `;
 
 export default function Services() {
+  const { width } = useWindowDimensions();
   return (
     <Layout disableMargin>
       <HeaderContainer>
@@ -49,7 +56,10 @@ export default function Services() {
             quod blanditiis.
           </Body>
           <ButtonLink
-            style={{ width: "20rem", marginTop: "1rem" }}
+            style={{
+              width: width < breakpoint ? "100%" : "20rem",
+              marginTop: "1rem",
+            }}
             primary
             text="Speak with us"
             link="/contact"

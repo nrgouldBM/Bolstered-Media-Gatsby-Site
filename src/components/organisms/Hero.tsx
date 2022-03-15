@@ -17,8 +17,11 @@ const MainContentContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   max-width: 100vw;
-  margin-top: 5rem;
   flex-wrap: wrap;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    margin-top: 0;
+  }
 `;
 const StyledHeroTitle = styled.h1`
   font-size: 2.5rem;
@@ -51,7 +54,7 @@ const StyledTextContainer = styled.div`
 
 const StyledImageContainer = styled.div`
   flex: 1;
-  @media (max-width: 750px) {
+  @media (max-width: ${breakpoint + "px"}) {
     display: none;
   }
 `;

@@ -18,10 +18,7 @@ export default function Layout({ children, disableMargin }: Props) {
       {width > breakpoint ? <NavbarDesktop /> : <NavbarMobile />}
       <Main
         style={{
-          paddingTop: "5rem",
           width: disableMargin ? "100%" : "90%",
-          margin: "auto",
-          marginBottom: "5rem",
         }}
       >
         {children}

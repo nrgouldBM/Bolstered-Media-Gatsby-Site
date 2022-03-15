@@ -9,10 +9,16 @@ import { Body } from "../atoms/Body";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { AnimatedCard } from "../atoms/AnimatedCard";
+import { breakpoint } from "../../theme";
 
 const ServiceContainer = styled.section`
-  padding: 3rem 5rem;
   border-radius: 4px;
+  padding: 3rem 5rem;
+  overflow: hidden;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    padding: 0;
+  }
 `;
 
 interface Props {
@@ -45,19 +51,22 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
   return (
     <ServiceContainer
       ref={ref}
-      style={{ backgroundColor: icon.bgColor }}
+      style={{
+        backgroundColor: icon.bgColor,
+        padding: width < breakpoint ? 0 : "3rem 5rem",
+      }}
       id={id}
     >
       <AnimatedCard
         as={motion.div}
         initial={{ x: 100, opacity: 0, rotateZ: 2 }}
-        width={width / 2.3 + "px"}
+        width={width < breakpoint ? "90%" : width / 2.3 + "px"}
         height="fit-content"
         animate={animationControl}
         style={{
           minWidth: "18rem",
           minHeight: "25rem",
-          padding: "3rem",
+          padding: width < breakpoint ? "2rem" : "3rem",
         }}
       >
         <Icon
@@ -66,7 +75,9 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
           name={icon.name}
           bgColor={icon.bgColor}
         />
-        <Title style={{ fontSize: "3rem" }}>{title}</Title>
+        <Title style={{ fontSize: width < breakpoint ? "2.2rem" : "3rem" }}>
+          {title}
+        </Title>
         <Body>{content}</Body>
         <ButtonLink
           text="Start Here"

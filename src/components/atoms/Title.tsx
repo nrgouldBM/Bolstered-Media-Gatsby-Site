@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoint } from "../../theme";
 
 interface Props {
   size?: string | number;
@@ -15,4 +16,8 @@ export const Title = styled.h1<Props>`
   -webkit-box-orient: vertical;
   line-clamp: 5;
   line-height: 3.2rem;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    font-size: ${(p) => p.size || "2rem"};
+  }
 `;

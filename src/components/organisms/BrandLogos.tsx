@@ -6,11 +6,11 @@ import AshleyNicholeLogo from "../../images/logos/ashleynichole.png";
 import CoastLandLogo from "../../images/logos/coastland.png";
 import FTSLogo from "../../images/logos/fts.png";
 import OldSouthLogo from "../../images/logos/old-south.png";
-import { COLORS } from "../../theme";
+import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 
 const Container = styled.section`
-  margin: auto
+  margin: auto;
   margin-top: 5rem;
   background-color: ${COLORS.gray};
   box-sizing: border-box;
@@ -28,8 +28,8 @@ const LogosContainer = styled.div`
 const Logo = styled.img`
   max-width: 12rem;
 
-  @media (max-width: 750px) {
-    margin-bottom: 2rem;
+  @media (max-width: ${breakpoint + "px"}) {
+    margin: 0 2rem 3rem 2rem;
   }
 `;
 

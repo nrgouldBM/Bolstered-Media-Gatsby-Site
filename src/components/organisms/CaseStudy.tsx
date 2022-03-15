@@ -10,12 +10,12 @@ import { StaticImage } from "gatsby-plugin-image";
 import ButtonLink from "../atoms/ButtonLink";
 
 const Container = styled.section`
-  width: 80%;
+  width: 90%;
   margin: auto;
   margin-top: 5rem;
   display: flex;
   position: relative;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 `;
 
 const ImageContainer = styled.div`
@@ -29,18 +29,19 @@ const MainContainer = styled.div`
   align-items: space-around;
   margin-bottom: 2rem;
   flex: 1 1 20rem;
+  margin-right: 4rem;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    margin-right: 0;
+    max-width: 90%;
+  }
 `;
 
 export default function CaseStudy() {
   const { width } = useWindowDimensions();
   return (
     <Container>
-      <MainContainer
-        style={{
-          maxWidth: width < breakpoint ? "90%" : null,
-          marginRight: width < breakpoint ? 0 : "4rem",
-        }}
-      >
+      <MainContainer>
         <Title style={{ maxWidth: "30rem" }}>
           Case Study: 6-Month-Old Apparel Brand
         </Title>
@@ -73,7 +74,10 @@ export default function CaseStudy() {
           primary
           text="Book A Free Call With Us"
           link="/contact"
-          style={{ marginTop: "1rem", width: "90%" }}
+          style={{
+            marginTop: "1rem",
+            width: width < breakpoint ? "100%" : "25rem",
+          }}
         />
       </MainContainer>
       <ImageContainer>

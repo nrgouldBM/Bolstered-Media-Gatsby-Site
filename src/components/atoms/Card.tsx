@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { SHADOW, COLORS } from "../../theme";
+import { SHADOW, COLORS, breakpoint } from "../../theme";
 
 interface styleProps {
   flexDir?: any;
@@ -39,6 +39,10 @@ const Container = styled.div<styleProps>`
   margin: 2rem 1rem;
   transition: all 200ms ease;
   ${(p) => p.hoverStyles && hoverStyles}
+
+  @media (max-width: ${breakpoint + "px"}) {
+    padding: 2rem 1.2rem;
+  }
 `;
 
 interface Props {
