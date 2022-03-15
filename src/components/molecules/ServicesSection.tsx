@@ -10,11 +10,18 @@ import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { AnimatedCard } from "../atoms/AnimatedCard";
 import { breakpoint } from "../../theme";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import PaidMedia from "../../images/BM_Paid_Media.png";
+import { graphql } from "gatsby";
 
 const ServiceContainer = styled.section`
   border-radius: 4px;
   padding: 3rem 5rem;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
 
   @media (max-width: ${breakpoint + "px"}) {
     padding: 0;
@@ -30,12 +37,24 @@ interface Props {
     bgColor: string;
     name: string;
   };
+  image: string;
+  data: any;
 }
 
-export default function ServicesSection({ title, content, id, icon }: Props) {
+export default function ServicesSection({
+  title,
+  content,
+  id,
+  icon,
+  data,
+}: Props) {
   const { width } = useWindowDimensions();
   const animationControl = useAnimation();
   const { inView, entry, ref } = useInView();
+
+  console.log(data);
+
+  //   const image = getImage(data.image);
 
   if (inView) {
     animationControl.start({
@@ -87,6 +106,17 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
           icon={<FaArrowRight color={"#fff"} size={20} />}
         />
       </AnimatedCard>
+      {/* <GatsbyImage image={image} alt={title} /> */}
     </ServiceContainer>
   );
 }
+
+export const pageQuery = graphql`
+  query {
+    image: file(relativePath: { eq: "BM_Paid_Media.png" }) {
+      childImageSharp {
+        gatsbyImageData
+      }
+    }
+  }
+`;

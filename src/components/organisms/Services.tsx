@@ -32,7 +32,7 @@ export default function Services() {
   return (
     <Container>
       <Title style={{ marginLeft: width > breakpoint ? "10rem" : 0 }}>
-        Services
+        How we get it done
       </Title>
       <CardContainer>
         {SERVICES.map(({ title, content, id, icon }, index) => {

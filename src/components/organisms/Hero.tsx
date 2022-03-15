@@ -47,9 +47,6 @@ const StyledTextContainer = styled.div`
   justify-content: center;
   flex: 1;
   margin-bottom: 4rem;
-  @media (max-width: 750px) {
-    align-items: center;
-  }
 `;
 
 const StyledImageContainer = styled.div`
@@ -96,7 +93,7 @@ export default function Hero() {
           </StyledHeroSubTitle>
           <ButtonLink
             style={{
-              width: width < breakpoint ? "100%" : "70%",
+              width: width < breakpoint ? "100%" : "60%",
             }}
             primary
             fontSize="1.3rem"

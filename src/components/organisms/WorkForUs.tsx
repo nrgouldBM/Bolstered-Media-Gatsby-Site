@@ -33,6 +33,7 @@ export default function WorkForUs() {
     <Container
       width={width}
       style={{ width: width < breakpoint ? "90%" : "80%" }}
+      id="jobs"
     >
       <FlexColumn
         justifyContent="center"

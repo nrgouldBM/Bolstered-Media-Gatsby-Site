@@ -68,12 +68,14 @@ export default function Services() {
         <ServicesSplash />
       </HeaderContainer>
       <FlexColumn justifyContent="center" alignItems="space-around">
-        {SERVICES.map(({ title, content, id, icon }) => (
+        {SERVICES.map(({ title, content, id, icon, image }, index) => (
           <ServicesSection
+            key={index}
             title={title}
             content={content}
             id={id}
             icon={icon}
+            image={image}
           />
         ))}
       </FlexColumn>

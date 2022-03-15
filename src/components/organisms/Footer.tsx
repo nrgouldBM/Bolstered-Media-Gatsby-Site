@@ -77,20 +77,22 @@ export default function Footer() {
       <FooterRow>
         <Column>
           <ColumnTitle>Our Services</ColumnTitle>
-          {SERVICES.map(({ title, id }) => (
-            <FooterLink to={`/services${id}`}>{title}</FooterLink>
+          {SERVICES.map(({ title, id }, index) => (
+            <FooterLink key={index} to={`/services#${id}`}>
+              {title}
+            </FooterLink>
           ))}
         </Column>
         <Column>
           <ColumnTitle>Helpful Links</ColumnTitle>
           <FooterLink to="/">Home</FooterLink>
           <FooterLink to="/team/">Team</FooterLink>
-          <FooterLink to="/services">Services</FooterLink>
+          <FooterLink to="/services/">Services</FooterLink>
         </Column>
         <Column>
           <ColumnTitle>Action</ColumnTitle>
-          <FooterLink to="/">Contact Us</FooterLink>
-          <FooterLink to="/team/">Jobs</FooterLink>
+          <FooterLink to="/contact">Contact Us</FooterLink>
+          <FooterLink to="/team#jobs">Jobs</FooterLink>
         </Column>
         <Column>
           <ColumnTitle>Follow Us</ColumnTitle>

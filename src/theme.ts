@@ -38,7 +38,7 @@ export const COLORS = {
 };
 
 export const SHADOW = {
-  normal: `2px 8px 32px 0 rgba(0, 0, 0, 0.08);`,
+  normal: `2px 4px 16px 0 rgba(0, 0, 0, 0.08);`,
 };
 
 export const SIZES = {

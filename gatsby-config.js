@@ -27,6 +27,13 @@ module.exports = {
         path: `${__dirname}/blog`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `componentImages`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-typescript`,

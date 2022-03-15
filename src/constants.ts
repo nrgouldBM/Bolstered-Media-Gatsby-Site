@@ -10,6 +10,7 @@ export const SERVICES = [
       color: COLORS.success,
       bgColor: COLORS.successSoft,
     },
+    image: "../../images/Bolstered Media - Paid Media.png",
   },
   {
     title: "SMS Marketing",

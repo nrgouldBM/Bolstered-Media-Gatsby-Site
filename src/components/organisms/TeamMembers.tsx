@@ -24,6 +24,7 @@ export default function TeamMembers() {
 
         return (
           <TeamMemberCard
+            key={index}
             name={name}
             title={title}
             description={description}
