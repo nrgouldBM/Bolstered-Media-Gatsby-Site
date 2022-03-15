@@ -10,6 +10,7 @@ import TeamSVG from "../images/TeamSVG";
 import FlexRow from "../components/atoms/FlexRow";
 import WorkForUs from "../components/organisms/WorkForUs";
 import styled from "styled-components";
+import ButtonLink from "../components/atoms/ButtonLink";
 
 const TextContainer = styled.div`
   flex: 1 1 20rem;
@@ -56,6 +57,12 @@ export default function Team({ data }) {
             to new heights. Bolstered Media believes that a true team and
             collaborative approach generates the best results.
           </Body>
+          <ButtonLink
+            style={{ width: "20rem", marginTop: "1rem" }}
+            primary
+            text="Speak with us"
+            link="/contact"
+          />
         </TextContainer>
         <SvgContainer>
           <TeamSVG />

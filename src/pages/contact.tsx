@@ -15,7 +15,9 @@ export default function contact() {
         wrap="wrap-reverse"
       >
         <div style={{ marginBottom: "4rem", maxWidth: "40rem" }}>
-          <SubTitle style={{ color: COLORS.secondary }}>Contact</SubTitle>
+          <SubTitle style={{ color: COLORS.secondary, marginBottom: "-1rem" }}>
+            Contact
+          </SubTitle>
           <Title>
             Fill out this quick form and we'll get back to you within 48 hours.
           </Title>

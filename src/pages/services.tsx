@@ -11,26 +11,26 @@ import styled from "styled-components";
 import { COLORS } from "../theme";
 import { SubTitle } from "../components/atoms/SubTitle";
 import ButtonLink from "../components/atoms/ButtonLink";
+import Icon from "../components/molecules/Icon";
+import { FaArrowRight } from "react-icons/fa";
 
 const ServiceSection = styled.section`
-  /* background-color: ${COLORS.primary2}; */
-  margin-bottom: 5rem;
-  padding: 1rem;
-  border: 3px solid #dbdbdb;
+  padding: 3rem 5rem;
   border-radius: 4px;
 `;
 
 const HeaderContainer = styled.div`
   margin-bottom: 5rem;
+  padding: 0 5rem;
 `;
 
 export default function Services() {
   const { width } = useWindowDimensions();
 
   return (
-    <Layout>
+    <Layout disableMargin>
       <HeaderContainer>
-        <SubTitle style={{ color: COLORS.secondary, marginBottom: "-2rem" }}>
+        <SubTitle style={{ color: COLORS.secondary, marginBottom: "-1rem" }}>
           Services
         </SubTitle>
         <Title
@@ -57,20 +57,29 @@ export default function Services() {
           link="/contact"
         />
       </HeaderContainer>
-      <FlexColumn
-        justifyContent="center"
-        alignItems="space-around"
-        style={{ width: "90%", margin: "auto" }}
-      >
-        {SERVICES.map(({ title, content, id }) => (
-          <ServiceSection id={id}>
+      <FlexColumn justifyContent="center" alignItems="space-around">
+        {SERVICES.map(({ title, content, id, icon }) => (
+          <ServiceSection style={{ backgroundColor: icon.bgColor }} id={id}>
             <Card
               width={width / 2.5 + "px"}
               height="fit-content"
               style={{ minWidth: "18rem", minHeight: "25rem" }}
             >
+              <Icon
+                size={42}
+                color={icon.color}
+                name={icon.name}
+                bgColor={icon.bgColor}
+              />
               <Title style={{ fontSize: "3rem" }}>{title}</Title>
               <Body>{content}</Body>
+              <ButtonLink
+                secondary
+                text="Start Here"
+                link="/contact"
+                style={{ width: "15rem", marginTop: "2rem" }}
+                icon={<FaArrowRight color={"#fff"} size={20} />}
+              />
             </Card>
           </ServiceSection>
         ))}

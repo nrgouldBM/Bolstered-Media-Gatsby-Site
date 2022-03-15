@@ -19,8 +19,14 @@ export const COLORS = {
   success: "#37bc64",
   successSoft: "#e2f8e9",
 
-  blue: "#3f6af9",
-  blueSoft: "#ccd8ff",
+  blue: "#5887FF",
+  blueSoft: "#D6E2FF",
+
+  purple: "#8447FF",
+  purpleSoft: "#F1EBFF",
+
+  turqoise: "#3DCCC7",
+  turqoiseSoft: "#DFF6F5",
 
   gray: "#F2F5F5",
 

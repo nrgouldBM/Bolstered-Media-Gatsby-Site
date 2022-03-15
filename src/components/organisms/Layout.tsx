@@ -8,9 +8,10 @@ import Footer from "./Footer";
 
 interface Props {
   children: JSX.Element | JSX.Element[];
+  disableMargin?: boolean;
 }
 
-export default function Layout({ children }: Props) {
+export default function Layout({ children, disableMargin }: Props) {
   const { width } = useWindowDimensions();
   return (
     <>
@@ -18,7 +19,7 @@ export default function Layout({ children }: Props) {
       <Main
         style={{
           paddingTop: "5rem",
-          width: "90%",
+          width: disableMargin ? "100%" : "90%",
           margin: "auto",
           marginBottom: "5rem",
         }}

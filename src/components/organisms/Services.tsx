@@ -7,6 +7,7 @@ import DollarIcon from "../Icons/DollarIcon";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint } from "../../theme";
 import { SERVICES } from "../../constants";
+import Icon from "../molecules/Icon";
 
 const Container = styled.section`
   /* width: 80%; */
@@ -34,11 +35,18 @@ export default function Services() {
         Services
       </Title>
       <CardContainer>
-        {SERVICES.map(({ title, content, id }, index) => {
+        {SERVICES.map(({ title, content, id, icon }, index) => {
           return (
             <ServiceCard
               index={index}
-              icon={<DollarIcon />}
+              icon={
+                <Icon
+                  name={icon.name}
+                  color={icon.color}
+                  bgColor={icon.bgColor}
+                  size={36}
+                />
+              }
               title={title}
               text={content}
               link={`/services#${id}`}

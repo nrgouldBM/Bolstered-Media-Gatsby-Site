@@ -1,2 +1,236 @@
 {
+    "files.exclude": {
+		".idea": true,
+		"*.rdb": true,
+		"**/.DS_Store": true,
+		"**/.git": true,
+		"**/*.js.map": true,
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
+	"editor.columnSelection": false,
+	"editor.multiCursorModifier": "ctrlCmd",
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": "active",
+	"editor.wordWrap": "on",
+	"editor.wordWrapColumn": 100,
+	"atomKeymap.promptV3Features": true,
+	"editor.formatOnPaste": true,
+	"oneDarkPro.bold": true,
+	"oneDarkPro.vivid": true,
+	"prettier.useTabs": true,
+	"[javascriptreact]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"workbench.iconTheme": "material-icon-theme",
+	"editor.linkedEditing": true,
+	"workbench.statusBar.visible": true,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"git.enableSmartCommit": true,
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"liveServer.settings.donotVerifyTags": true,
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	},
+	"sonarlint.rules": {
+		"javascript:S1788": {
+			"level": "off"
+		},
+		"javascript:S3516": {
+			"level": "off"
+		},
+		"javascript:S1117": {
+			"level": "off"
+		},
+		"javascript:S1301": {
+			"level": "off"
+		},
+		"javascript:S2737": {
+			"level": "off"
+		},
+		"Web:S4084": {
+			"level": "off"
+		},
+		"javascript:S3358": {
+			"level": "off"
+		},
+		"javascript:S125": {
+			"level": "off"
+		},
+		"typescript:S107": {
+			"level": "off"
+		},
+		"typescript:S1788": {
+			"level": "off"
+		},
+		"typescript:S3776": {
+			"level": "off"
+		}
+	},
+	"prettier.tabWidth": 4,
+	"autoimport.filesToScan": "**/*.{ts,tsx,js,jsx}",
+	"files.autoSave": "afterDelay",
+	"explorer.compactFolders": false,
+	"prettier.jsxSingleQuote": true,
+	"prettier.jsxBracketSameLine": true,
+	"prettier.singleQuote": true,
+	"prettier.eslintIntegration": true,
+	"prettier.stylelintIntegration": true,
+	"files.associations": {
+		"*.scss.liquid": "scss",
+		"*.js.liquid": "javascript"
+	},
+	"window.zoomLevel": 2,
+	"git-autoconfig.configList": [
+		{
+			"user.name": "constants"
+		},
+		{
+			"user.email": "nrgould197@gmail.com",
+			"user.name": "nrgould"
+		}
+	],
+	"gitlens.advanced.messages": {
+		"suppressGitMissingWarning": true
+	},
+	"git.confirmSync": false,
+	"editor.formatOnSave": true,
+    "typescript.preferences.importModuleSpecifier": "relative",
+	"bracket-pair-colorizer-2.depreciation-notice": false,
+	"security.workspace.trust.untrustedFiles": "open",
+	"html.format.templating": true,
+	"workbench.colorTheme": "Serendipity Midnight V1",
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"scope": [
+					"comment",
+					"comment.block",
+					"comment.block.documentation",
+					"comment.line",
+					"constant",
+					"constant.character",
+					"constant.character.escape",
+					"constant.numeric",
+					"constant.numeric.integer",
+					"constant.numeric.float",
+					"constant.numeric.hex",
+					"constant.numeric.octal",
+					"constant.other",
+					"constant.regexp",
+					"constant.rgb-value",
+					"emphasis",
+					"entity",
+					"entity.name",
+					"entity.name.class",
+					"entity.name.function",
+					"entity.name.method",
+					"entity.name.section",
+					"entity.name.selector",
+					"entity.name.tag",
+					"entity.name.type",
+					"entity.other",
+					"entity.other.attribute-name",
+					"entity.other.inherited-class",
+					"invalid",
+					"invalid.deprecated",
+					"invalid.illegal",
+					"keyword",
+					"keyword.control",
+					"keyword.operator",
+					"keyword.operator.new",
+					"keyword.operator.assignment",
+					"keyword.operator.arithmetic",
+					"keyword.operator.logical",
+					"keyword.other",
+					"markup",
+					"markup.bold",
+					"markup.changed",
+					"markup.deleted",
+					"markup.heading",
+					"markup.inline.raw",
+					"markup.inserted",
+					"markup.italic",
+					"markup.list",
+					"markup.list.numbered",
+					"markup.list.unnumbered",
+					"markup.other",
+					"markup.quote",
+					"markup.raw",
+					"markup.underline",
+					"markup.underline.link",
+					"meta",
+					"meta.block",
+					"meta.cast",
+					"meta.class",
+					"meta.function",
+					"meta.function-call",
+					"meta.preprocessor",
+					"meta.return-type",
+					"meta.selector",
+					"meta.tag",
+					"meta.type.annotation",
+					"meta.type",
+					"punctuation.definition.string.begin",
+					"punctuation.definition.string.end",
+					"punctuation.separator",
+					"punctuation.separator.continuation",
+					"punctuation.terminator",
+					"storage",
+					"storage.modifier",
+					"storage.type",
+					"string",
+					"string.interpolated",
+					"string.other",
+					"string.quoted",
+					"string.quoted.double",
+					"string.quoted.other",
+					"string.quoted.single",
+					"string.quoted.triple",
+					"string.regexp",
+					"string.unquoted",
+					"strong",
+					"support",
+					"support.class",
+					"support.constant",
+					"support.function",
+					"support.other",
+					"support.type",
+					"support.type.property-name",
+					"support.variable",
+					"variable",
+					"variable.language",
+					"variable.name",
+					"variable.other",
+					"variable.other.readwrite",
+					"variable.parameter",
+					"variable.object"
+				],
+				"settings": {
+					"fontStyle": ""
+				}
+			}
+		]
+	},
+	"tabnine.experimentalAutoImports": true
 }
