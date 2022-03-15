@@ -61,9 +61,13 @@ export default function Services() {
         {SERVICES.map(({ title, content, id, icon }) => (
           <ServiceSection style={{ backgroundColor: icon.bgColor }} id={id}>
             <Card
-              width={width / 2.5 + "px"}
+              width={width / 2.2 + "px"}
               height="fit-content"
-              style={{ minWidth: "18rem", minHeight: "25rem" }}
+              style={{
+                minWidth: "18rem",
+                minHeight: "25rem",
+                padding: "3rem",
+              }}
             >
               <Icon
                 size={42}
@@ -74,9 +78,9 @@ export default function Services() {
               <Title style={{ fontSize: "3rem" }}>{title}</Title>
               <Body>{content}</Body>
               <ButtonLink
-                secondary
                 text="Start Here"
                 link="/contact"
+                secondary
                 style={{ width: "15rem", marginTop: "2rem" }}
                 icon={<FaArrowRight color={"#fff"} size={20} />}
               />

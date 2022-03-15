@@ -25,6 +25,18 @@ const secondaryStyles = css`
   }
 `;
 
+const outlineStyles = css`
+  color: ${COLORS.secondary};
+  background: ${COLORS.white};
+  border: 3px solid ${COLORS.secondary};
+  box-shadow: none;
+
+  &:hover {
+    background: ${COLORS.secondary};
+    color: ${COLORS.white};
+  }
+`;
+
 const iconStyles = css`
   margin-right: 5px;
   transition: all 200ms ease;
@@ -35,6 +47,9 @@ interface ButtonProps {
   primary?: boolean;
   secondary?: boolean;
   fontSize?: string;
+  outline?: boolean;
+  color?: string;
+  bgColor?: string;
 }
 
 const ButtonText = styled.p<ButtonProps>`
@@ -44,6 +59,7 @@ const ButtonText = styled.p<ButtonProps>`
   font-size: ${(p) => p.fontSize || "1rem"};
   padding: 0;
   margin: 0;
+  color: ${(p) => p.color};
   ${(p) => p.hasIcon && iconStyles};
 `;
 
@@ -53,13 +69,16 @@ export const StyledButton = styled(Link)<ButtonProps>`
   padding: 1rem 2.5rem;
   border-radius: 8px;
   box-shadow: ${SHADOW.normal};
-  transition: all 200ms ease;
+  transition: all 500ms ease;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  background-color: ${(p) => p.bgColor};
+  color: ${(p) => p.bgColor};
   ${(p) => p.primary && primaryStyles};
   ${(p) => p.secondary && secondaryStyles};
+  ${(p) => p.outline && outlineStyles};
   text-decoration: none;
 `;
 
@@ -71,6 +90,9 @@ interface Props {
   link: string;
   style?: object;
   fontSize?: string;
+  outline?: boolean;
+  color?: string;
+  bgColor?: string;
 }
 
 export default function ButtonLink({
@@ -81,6 +103,9 @@ export default function ButtonLink({
   link,
   style,
   fontSize,
+  outline,
+  color,
+  bgColor,
 }: Props) {
   const hasIcon = !!icon;
   return (
@@ -90,8 +115,10 @@ export default function ButtonLink({
       to={link}
       primary={primary}
       secondary={secondary}
+      outline={outline}
+      bgColor={bgColor}
     >
-      <ButtonText fontSize={fontSize} hasIcon={hasIcon}>
+      <ButtonText color={color} fontSize={fontSize} hasIcon={hasIcon}>
         {text}
       </ButtonText>
       {icon}

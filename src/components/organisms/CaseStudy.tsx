@@ -7,6 +7,7 @@ import TextBox from "../atoms/TextBox";
 import { Title } from "../atoms/Title";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { StaticImage } from "gatsby-plugin-image";
+import ButtonLink from "../atoms/ButtonLink";
 
 const Container = styled.section`
   width: 80%;
@@ -68,6 +69,12 @@ export default function CaseStudy() {
           />
           <TextBox title="18%" label="Ad Spend Percentage" />
         </FlexRow>
+        <ButtonLink
+          primary
+          text="Book A Free Call With Us"
+          link="/contact"
+          style={{ marginTop: "1rem", width: "90%" }}
+        />
       </MainContainer>
       <ImageContainer>
         <StaticImage
