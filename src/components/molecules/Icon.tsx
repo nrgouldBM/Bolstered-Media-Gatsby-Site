@@ -25,9 +25,10 @@ interface Props {
   name: string;
   size: number;
   bgColor: string;
+  style?: object;
 }
 
-export default function Icon({ color, name, size, bgColor }: Props) {
+export default function Icon({ color, name, size, bgColor, style }: Props) {
   let icon = <IoBicycle />;
 
   switch (name) {
@@ -54,7 +55,7 @@ export default function Icon({ color, name, size, bgColor }: Props) {
   }
 
   return (
-    <IconContainer size={size * 2.4} bgColor={bgColor}>
+    <IconContainer style={style} size={size * 2.4} bgColor={bgColor}>
       {icon}
     </IconContainer>
   );

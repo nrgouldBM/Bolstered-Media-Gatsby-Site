@@ -32,7 +32,7 @@ export default function Team({ data }) {
     <Layout>
       <FlexRow
         alignItems="center"
-        justifyContent="space-around"
+        justifyContent="space-between"
         wrap="wrap-reverse"
       >
         <TextContainer>

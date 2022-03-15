@@ -21,7 +21,7 @@
     "@redux-devtools/extension": "^3.2.2",
     "babel-plugin-styled-components": "^1.13.3",
     "formik": "^2.2.9",
-    "framer-motion": "^5.4.5",
+    "framer-motion": "^5.6.0",
     "gatsby": "^4.1.0",
     "gatsby-plugin-breadcrumb": "^12.3.1",
     "gatsby-plugin-google-tagmanager": "^4.9.0",
@@ -41,8 +41,10 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
+    "react-intersection-observer": "^8.33.1",
     "react-media": "^1.10.0",
     "styled-components": "^5.3.3",
+    "tslib": "^2.1.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {

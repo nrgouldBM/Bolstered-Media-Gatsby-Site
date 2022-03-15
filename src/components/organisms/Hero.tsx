@@ -8,7 +8,7 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint } from "../../theme";
 
 const StyledContainer = styled.section`
-  width: 80%;
+  width: 90%;
   margin: auto;
 `;
 

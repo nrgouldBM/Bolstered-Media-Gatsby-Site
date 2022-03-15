@@ -6,7 +6,7 @@ import { SubTitle } from "../atoms/SubTitle";
 import ResumeSVG from "../../images/ResumeSVG";
 import FlexColumn from "../atoms/FlexColumn";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import { breakpoint } from "../../theme";
+import { breakpoint, COLORS } from "../../theme";
 
 const Container = styled.div<{ width: number | string }>`
   margin: 8rem auto;
@@ -17,6 +17,14 @@ const Container = styled.div<{ width: number | string }>`
   width: ${(props) => (props.width < breakpoint ? "90%" : "70%")};
   align-items: center;
   flex-wrap: wrap-reverse;
+`;
+
+const Span = styled.a`
+  color: ${COLORS.secondary};
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export default function WorkForUs() {
@@ -37,7 +45,12 @@ export default function WorkForUs() {
           mollitia perferendis? Rerum iste temporibus nostrum delectus ipsa
           ullam dolorum velit.
         </Body>
-        <SubTitle>Send an email to grow@bolsteredmedia.com</SubTitle>
+        <SubTitle>
+          Send an email to{" "}
+          <Span href="mailto:grow@bolsteredmedia.com">
+            grow@bolsteredmedia.com
+          </Span>
+        </SubTitle>
       </FlexColumn>
       <ResumeSVG />
     </Container>
