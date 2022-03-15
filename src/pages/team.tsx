@@ -8,6 +8,22 @@ import { SubTitle } from "../components/atoms/SubTitle";
 import { COLORS } from "../theme";
 import TeamSVG from "../images/TeamSVG";
 import FlexRow from "../components/atoms/FlexRow";
+import WorkForUs from "../components/organisms/WorkForUs";
+import styled from "styled-components";
+
+const TextContainer = styled.div`
+  flex: 1 1 20rem;
+  margin-bottom: 4rem;
+  max-width: 30rem;
+`;
+
+const SvgContainer = styled.div`
+  flex: 1 1 20rem;
+  max-width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default function Team({ data }) {
   console.log({ data });
@@ -18,9 +34,18 @@ export default function Team({ data }) {
         justifyContent="space-around"
         wrap="wrap-reverse"
       >
-        <div style={{ marginBottom: "4rem", maxWidth: "40rem" }}>
-          <SubTitle style={{ color: COLORS.secondary }}>Team</SubTitle>
-          <Title>
+        <TextContainer>
+          <SubTitle style={{ color: COLORS.secondary, marginBottom: "-1rem" }}>
+            Team
+          </SubTitle>
+          <Title
+            style={{
+              marginBottom: "1rem",
+              fontSize: "3rem",
+              maxWidth: "35rem",
+              lineHeight: "3.5rem",
+            }}
+          >
             Meet our team of experts on everything digital marketing.
           </Title>
           <Body>
@@ -31,10 +56,13 @@ export default function Team({ data }) {
             to new heights. Bolstered Media believes that a true team and
             collaborative approach generates the best results.
           </Body>
-        </div>
-        <TeamSVG />
+        </TextContainer>
+        <SvgContainer>
+          <TeamSVG />
+        </SvgContainer>
       </FlexRow>
       <TeamMembers />
+      <WorkForUs />
       <CallToAction />
     </Layout>
   );

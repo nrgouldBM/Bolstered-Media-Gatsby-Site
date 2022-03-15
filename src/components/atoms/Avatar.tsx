@@ -1,4 +1,4 @@
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
 interface Props {
@@ -50,20 +50,20 @@ export default function Avatar({
 
   return (
     <Container style={style}>
-      {/* <StaticImage
-        src={img}
+      <StaticImage
+        src={"../../images/profile.jpg"}
         alt={alt}
         height={size}
         width={size}
         style={{ borderRadius: "50%" }}
         layout="constrained"
-      /> */}
-      <Image
+      />
+      {/* <Image
         width={size}
         height={size}
-        src={"../../images/profile"}
+        src={"../../images/profile.jpg"}
         alt={alt}
-      />
+      /> */}
       {background && <Background background={background} />}
     </Container>
   );

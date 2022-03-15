@@ -39,7 +39,7 @@ export default function TeamMemberCard({
     <Card
       hoverStyles
       secondary
-      width={width < breakpoint ? "25rem" : "30rem"}
+      width={width < breakpoint ? "90vw" : "30rem"}
       height="fit-content"
       style={{
         boxShadow: "none",

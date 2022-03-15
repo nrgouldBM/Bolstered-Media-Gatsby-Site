@@ -11,8 +11,8 @@ export const Title = styled.h1<Props>`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-line-clamp: 5; /* number of lines to show */
   -webkit-box-orient: vertical;
-  line-clamp: 3;
+  line-clamp: 5;
   line-height: 3.2rem;
 `;

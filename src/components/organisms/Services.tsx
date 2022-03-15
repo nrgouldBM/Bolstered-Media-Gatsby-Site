@@ -41,7 +41,7 @@ export default function Services() {
               icon={<DollarIcon />}
               title={title}
               text={content}
-              link={`/services/${id}`}
+              link={`/services#${id}`}
             />
           );
         })}

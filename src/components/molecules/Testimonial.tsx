@@ -6,6 +6,7 @@ import { Body } from "../atoms/Body";
 import Avatar from "../atoms/Avatar";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import { Quote } from "./TestimonialInverse";
 
 export default function Testimonial({ img, name, title, company, text }) {
   const { width } = useWindowDimensions();
@@ -52,7 +53,9 @@ export default function Testimonial({ img, name, title, company, text }) {
             lineHeight: "3rem",
           }}
         >
+          <Quote>"</Quote>
           {text}
+          <Quote>"</Quote>
         </Body>
       </FlexColumn>
     </FlexRow>

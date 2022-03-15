@@ -16,6 +16,7 @@ const Text = styled.h3`
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
+  user-select: none;
 `;
 
 const Box = styled.div`
