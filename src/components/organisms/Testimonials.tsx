@@ -4,7 +4,7 @@ import Profile2 from "../../images/Profile2.png";
 
 import styled from "styled-components";
 import Testimonial from "../molecules/Testimonial";
-import { COLORS } from "../../theme";
+import { breakpoint, COLORS } from "../../theme";
 import TestimonialInverse from "../molecules/TestimonialInverse";
 
 const Container = styled.div`
@@ -16,14 +16,17 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  /* background-color: ${COLORS.primary}; */
 `;
 
 const TestimonialContainer = styled.div`
   background-color: ${COLORS.primary};
-  padding: 4rem 0;
+  padding: 5rem 0;
   transform: rotate(5deg);
   width: 120vw;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    transform: rotate(0);
+  }
 `;
 
 export default function Testimonials() {

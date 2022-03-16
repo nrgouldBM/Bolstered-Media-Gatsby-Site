@@ -10,18 +10,23 @@ import { Quote } from "./TestimonialInverse";
 
 export default function Testimonial({ img, name, title, company, text }) {
   const { width } = useWindowDimensions();
+
+  const isSmallDevice = width < breakpoint;
   return (
     <FlexRow
-      style={{ width: width > breakpoint ? "70%" : "80%", margin: "auto" }}
+      style={{ width: isSmallDevice ? "80%" : "70%", margin: "auto" }}
       alignItems="center"
-      justifyContent={width < breakpoint ? "center" : "space-evenly"}
+      justifyContent={isSmallDevice ? "center" : "space-evenly"}
       wrap="wrap"
     >
       <FlexColumn
         wrap="wrap"
         alignItems="center"
         justifyContent="center"
-        style={{ marginBottom: "2rem", transform: "rotate(-5deg)" }}
+        style={{
+          marginBottom: "4rem",
+          transform: isSmallDevice ? null : "rotate(-5deg)",
+        }}
       >
         <Avatar background={COLORS.brown} img={img} alt="testimonial" />
         <SubTitle
@@ -41,21 +46,26 @@ export default function Testimonial({ img, name, title, company, text }) {
         </SubTitle>
       </FlexColumn>
       <FlexColumn
-        style={{ transform: "rotate(-5deg)" }}
+        style={{
+          transform: isSmallDevice ? null : "rotate(-5deg)",
+          position: "relative",
+        }}
         wrap="wrap"
         alignItems="flex-start"
         justifyContent="center"
       >
         <Body
           style={{
-            textAlign: width > breakpoint ? "left" : "center",
+            textAlign: "left",
             fontSize: "1.8rem",
             lineHeight: "3rem",
           }}
         >
-          <Quote>"</Quote>
+          <Quote style={{ position: "absolute", top: -40, left: 0 }}>"</Quote>
           {text}
-          <Quote>"</Quote>
+          <Quote style={{ position: "absolute", bottom: -20, right: 20 }}>
+            "
+          </Quote>
         </Body>
       </FlexColumn>
     </FlexRow>
