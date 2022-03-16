@@ -1,12 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../atoms/Button";
 import { Title } from "../atoms/Title";
-import Profile from "../../images/Profile.jpg";
-import Avatar from "../atoms/Avatar";
 import { TextSpan } from "../atoms/TextSpan";
 import ArrowRight from "../Icons/ArrowRight";
-import { COLORS } from "../../theme";
+import { breakpoint, COLORS } from "../../theme";
 import AvatarGroup from "../molecules/AvatarGroup";
 import ButtonLink from "../atoms/ButtonLink";
 
@@ -17,6 +14,11 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    width: 90%;
+    margin: 8rem auto;
+  }
 `;
 
 const Box1 = styled.div`
@@ -28,7 +30,7 @@ const Box1 = styled.div`
   left: 0;
   z-index: -1;
 
-  @media (max-width: 750px) {
+  @media (max-width: ${breakpoint + "px"}) {
     display: none;
   }
 `;
@@ -41,7 +43,7 @@ const Box2 = styled.div`
   right: 0;
   z-index: -1;
 
-  @media (max-width: 750px) {
+  @media (max-width: ${breakpoint + "px"}) {
     display: none;
   }
 `;
@@ -51,7 +53,7 @@ export default function Experience() {
     <Container>
       <AvatarGroup />
       <Title style={{ textAlign: "center" }} size="3rem">
-        Over <TextSpan width="12rem">15 years</TextSpan> <br />
+        Over <TextSpan>15 years</TextSpan> <br />
         of digital marketing <br />
         experience
       </Title>

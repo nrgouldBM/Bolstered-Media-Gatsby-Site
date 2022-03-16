@@ -9,8 +9,8 @@ const Container = styled.div`
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
   position: relative;
   height: "100%";
 `;
@@ -19,6 +19,7 @@ const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   margin: 2rem 0;
 `;
 

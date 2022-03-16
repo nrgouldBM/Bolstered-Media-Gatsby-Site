@@ -1,5 +1,10 @@
-import { StaticImage } from "gatsby-plugin-image";
+// import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
+import AlexImage from "../../images/headshots/alex.jpg";
+import PatrickImage from "../../images/headshots/patrick.jpg";
+import JordanImage from "../../images/headshots/jordan.jpg";
+import NicholasImage from "../../images/headshots/nicholas.jpg";
+import ProfileImage from "../../images/profile.jpg";
 import styled from "styled-components";
 interface Props {
   img: string;
@@ -7,6 +12,7 @@ interface Props {
   size?: number;
   style?: object;
   alt: string;
+  name?: string;
 }
 
 interface StyleProps {
@@ -26,6 +32,7 @@ const Image = styled.img<StyleProps>`
   border-radius: 50%;
   object-fit: cover;
   display: block;
+  user-select: none;
 `;
 
 const Background = styled.div<StyleProps>`
@@ -45,25 +52,38 @@ export default function Avatar({
   background,
   style,
   alt,
+  name,
 }: Props) {
-  console.log(img);
+  let source = ProfileImage;
+
+  switch (name) {
+    case "Alex Hadding":
+      source = AlexImage;
+      break;
+    case "Patrick Gall":
+      source = PatrickImage;
+      break;
+    case "Jordan Hadding":
+      source = JordanImage;
+      break;
+    case "Nicholas Gould":
+      source = NicholasImage;
+      break;
+    default:
+      break;
+  }
 
   return (
     <Container style={style}>
-      <StaticImage
+      {/* <StaticImage
         src={"../../images/profile.jpg"}
         alt={alt}
         height={size}
         width={size}
         style={{ borderRadius: "50%" }}
         layout="constrained"
-      />
-      {/* <Image
-        width={size}
-        height={size}
-        src={"../../images/profile.jpg"}
-        alt={alt}
       /> */}
+      <Image width={size} height={size} src={source} alt={alt} />
       {background && <Background background={background} />}
     </Container>
   );

@@ -44,6 +44,7 @@ export default function TestimonialInverse({
           style={{
             textAlign: "left",
             fontSize: "1.8rem",
+            fontWeight: "700",
             lineHeight: "3rem",
           }}
         >

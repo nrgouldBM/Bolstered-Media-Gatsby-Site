@@ -58,6 +58,7 @@ export default function Testimonial({ img, name, title, company, text }) {
           style={{
             textAlign: "left",
             fontSize: "1.8rem",
+            fontWeight: "700",
             lineHeight: "3rem",
           }}
         >

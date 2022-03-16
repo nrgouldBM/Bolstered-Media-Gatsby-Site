@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { COLORS } from "../../theme";
-import Profile from "../../images/profile.jpg";
+import AlexImage from "../../images/headshots/alex.jpg";
+import PatrickImage from "../../images/headshots/patrick.jpg";
 
 const Container = styled.div`
   display: inline-flex;
@@ -33,10 +34,10 @@ export default function AvatarGroup() {
   return (
     <Container>
       <Avatar>
-        <img src={Profile} />
+        <img src={PatrickImage} />
       </Avatar>
       <Avatar>
-        <img src={Profile} />
+        <img src={AlexImage} />
       </Avatar>
     </Container>
   );

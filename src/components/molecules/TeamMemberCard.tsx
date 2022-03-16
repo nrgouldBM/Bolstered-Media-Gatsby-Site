@@ -53,7 +53,7 @@ export default function TeamMemberCard({
         justifyContent="center"
         style={{ marginBottom: "2rem" }}
       >
-        <Avatar img={image} alt={`${name}'s profile picture`} />
+        <Avatar name={name} img={image} alt={`${name}'s profile picture`} />
         <SubTitle
           style={{
             textAlign: "center",
