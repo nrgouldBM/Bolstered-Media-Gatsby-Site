@@ -9,7 +9,7 @@ const Container = styled.div`
   margin-bottom: 8rem;
   margin-right: 10rem;
 
-  @media (max-width: ${breakpoint + "px"}) {
+  @media (max-width: 1200px) {
     display: none;
   }
 `;

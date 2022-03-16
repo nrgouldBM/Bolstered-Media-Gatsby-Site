@@ -24,25 +24,53 @@ const ServiceContainer = styled.section`
   align-items: center;
   justify-content: space-between;
   position: relative;
-  height: 100vh;
+  flex-wrap: wrap;
+  min-height: 100vh;
 
   @media (max-width: ${breakpoint + "px"}) {
     padding: 0;
   }
 `;
 
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  max-width: 30rem;
+  flex: 1 1 25rem;
+  margin-right: 3rem;
+
+  @media (max-width: 1100px) {
+    margin-right: 0;
+    margin-bottom: 4rem;
+  }
+`;
+
+const CardContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+
 const ImageContainer = styled.div<{ color: string }>`
-  /* background-color: ${(p) => p.color}; */
   background-color: ${COLORS.white};
-  height: 90%;
-  /* padding: 1rem; */
+  flex: 1 1 25rem;
+  flex-shrink: 0;
+  max-width: 30rem;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: ${SHADOW.normal};
+
+  @media (max-width: ${breakpoint + "px"}) {
+    max-width: 100%;
+  }
 `;
 
 const Image = styled.img`
-  height: 100%;
+  width: 100%;
 `;
 
 interface Props {
@@ -69,7 +97,7 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
       rotateZ: 0,
       opacity: 1,
       transition: {
-        delay: 0.8,
+        delay: 0.5,
       },
     });
     imageAnimation.start({
@@ -77,7 +105,7 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
       y: 0,
       opacity: 1,
       transition: {
-        delay: 1.2,
+        delay: 0.8,
         velocity: 0.2,
       },
     });
@@ -124,38 +152,49 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
         height="fit-content"
         animate={cardAnimation}
         style={{
-          minWidth: "18rem",
-          minHeight: "25rem",
           padding: width < breakpoint ? "2rem" : "3rem",
+          flex: 1,
         }}
       >
-        <Icon
-          size={42}
-          color={icon.color}
-          name={icon.name}
-          bgColor={icon.bgColor}
-        />
-        <Title style={{ fontSize: width < breakpoint ? "2.2rem" : "3rem" }}>
-          {title}
-        </Title>
-        <Body>{content}</Body>
-        <ButtonLink
-          text="Start Here"
-          link="/contact"
-          secondary
-          style={{ width: "15rem", marginTop: "2rem" }}
-          icon={<FaArrowRight color={"#fff"} size={20} />}
-        />
+        <CardContainer>
+          <ContentContainer>
+            <Icon
+              size={42}
+              color={icon.color}
+              name={icon.name}
+              bgColor={icon.bgColor}
+            />
+            <Title style={{ fontSize: width < breakpoint ? "2.2rem" : "3rem" }}>
+              {title}
+            </Title>
+            <Body>{content}</Body>
+            <ButtonLink
+              text="Start Here"
+              link="/contact"
+              secondary
+              style={{ width: "15rem", marginTop: "2rem" }}
+              icon={<FaArrowRight color={"#fff"} size={20} />}
+            />
+          </ContentContainer>
+          <ImageContainer
+            color={icon.color}
+            as={motion.div}
+            initial={{ y: 50, opacity: 0 }}
+            animate={imageAnimation}
+          >
+            <Image src={source} />
+          </ImageContainer>
+        </CardContainer>
       </AnimatedCard>
       {/* <GatsbyImage image={image} alt={title} /> */}
-      <ImageContainer
+      {/* <ImageContainer
         color={icon.color}
         as={motion.div}
         initial={{ y: 50, opacity: 0 }}
         animate={imageAnimation}
       >
         <Image src={source} />
-      </ImageContainer>
+      </ImageContainer> */}
     </ServiceContainer>
   );
 }
