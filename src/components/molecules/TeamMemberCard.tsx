@@ -8,6 +8,9 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint, COLORS } from "../../theme";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { AnimatedCard } from "../atoms/AnimatedCard";
 
 const Email = styled(Link)`
   font-weight: 600;
@@ -35,8 +38,23 @@ export default function TeamMemberCard({
   style,
 }: Props) {
   const { width } = useWindowDimensions();
+  const animationControl = useAnimation();
+  const { inView, ref } = useInView();
+
+  if (inView) {
+    animationControl.start({
+      y: 0,
+      x: 0,
+      opacity: 1,
+    });
+  }
+
   return (
-    <Card
+    <AnimatedCard
+      ref={ref}
+      as={motion.div}
+      initial={{ y: 50, opacity: 0 }}
+      animate={animationControl}
       hoverStyles
       secondary
       width={width < breakpoint ? "90vw" : "30rem"}
@@ -90,6 +108,6 @@ export default function TeamMemberCard({
         </Body>
         <Email to={`mailto:${email}`}>{email}</Email>
       </FlexColumn>
-    </Card>
+    </AnimatedCard>
   );
 }

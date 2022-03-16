@@ -43,9 +43,9 @@ const CardText = styled(Body)`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* number of lines to show */
+  -webkit-line-clamp: 4; /* number of lines to show */
   -webkit-box-orient: vertical;
-  line-clamp: 5;
+  line-clamp: 4;
 `;
 
 interface Props {

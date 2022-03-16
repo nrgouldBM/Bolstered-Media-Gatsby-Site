@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { breakpoint, COLORS } from "../../theme";
+import { COLORS } from "../../theme";
 import Icon from "./Icon";
 
 const Container = styled.div`

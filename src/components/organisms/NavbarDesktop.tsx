@@ -10,7 +10,7 @@ const StyledNavLinks = styled.ul`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  max-width: 35vw;
+  max-width: 40vw;
   flex: 1;
 `;
 
@@ -44,8 +44,8 @@ export default function NavbarDesktop() {
       </StyledLogo>
       <StyledNavLinks>
         <StyledNavLink to="/">Home</StyledNavLink>
-        <StyledNavLink to="/team/">Team</StyledNavLink>
         <StyledNavLink to="/services">Services</StyledNavLink>
+        <StyledNavLink to="/team/">Team</StyledNavLink>
         <StyledNavButton to="/contact">Contact</StyledNavButton>
       </StyledNavLinks>
     </StyledContainer>

@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { StyledNavLink } from "../atoms/nav/StyledNavLink";
 import { StyledNavButton } from "../atoms/nav/StyledNavButton";
-import Logo from "../../images/BM_Logo.png";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -138,17 +137,17 @@ export default function NavbarMobile() {
           </MobileNavLink>
           <MobileNavLink
             onClick={handleOpen}
-            to="/team/"
-            style={{ width: NAV_LINK_WIDTH }}
-          >
-            Team
-          </MobileNavLink>
-          <MobileNavLink
-            onClick={handleOpen}
             to="/services"
             style={{ width: NAV_LINK_WIDTH }}
           >
             Services
+          </MobileNavLink>
+          <MobileNavLink
+            onClick={handleOpen}
+            to="/team/"
+            style={{ width: NAV_LINK_WIDTH }}
+          >
+            Team
           </MobileNavLink>
           <MobileNavButton
             onClick={handleOpen}

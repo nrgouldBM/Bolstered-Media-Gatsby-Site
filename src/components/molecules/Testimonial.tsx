@@ -62,7 +62,15 @@ export default function Testimonial({ img, name, title, company, text }) {
             lineHeight: "3rem",
           }}
         >
-          <Quote style={{ position: "absolute", top: -40, left: 0 }}>"</Quote>
+          <Quote
+            style={{
+              position: "absolute",
+              top: -40,
+              left: isSmallDevice ? 0 : -40,
+            }}
+          >
+            "
+          </Quote>
           {text}
           <Quote style={{ position: "absolute", bottom: -20, right: 20 }}>
             "

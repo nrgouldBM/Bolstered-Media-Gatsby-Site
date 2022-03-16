@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { IoBicycle } from "react-icons/io5";
 import {
   FaSms,
+  FaComment,
   FaPercentage,
   FaGlobe,
   FaEnvelope,
@@ -36,7 +37,7 @@ export default function Icon({ color, name, size, bgColor, style }: Props) {
       icon = <FaBullhorn color={color} size={size} />;
       break;
     case "sms":
-      icon = <FaSms color={color} size={size} />;
+      icon = <FaComment color={color} size={size} />;
       break;
     case "email":
       icon = <FaEnvelope color={color} size={size} />;

@@ -65,7 +65,9 @@ export default function Services() {
 
   return (
     <Container>
-      <Title style={{ marginLeft: "10rem" }}>How we get it done</Title>
+      <Title style={{ marginLeft: "10rem", fontSize: "3rem" }}>
+        How we get it done
+      </Title>
       <CardContainer>
         {SERVICES.map(({ title, content, id, icon }, index) => {
           return (

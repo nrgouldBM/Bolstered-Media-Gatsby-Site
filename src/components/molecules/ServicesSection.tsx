@@ -59,7 +59,7 @@ const ImageContainer = styled.div<{ color: string }>`
   background-color: ${COLORS.white};
   flex: 1 1 25rem;
   flex-shrink: 0;
-  max-width: 30rem;
+  max-width: 35rem;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: ${SHADOW.normal};

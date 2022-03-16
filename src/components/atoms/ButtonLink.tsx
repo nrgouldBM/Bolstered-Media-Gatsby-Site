@@ -70,7 +70,7 @@ const ButtonText = styled.p<ButtonProps>`
 export const StyledButton = styled(Link)<ButtonProps>`
   border: none;
   cursor: pointer;
-  padding: 1rem 2.5rem;
+  padding: 1.25rem 2.5rem;
   border-radius: 8px;
   box-shadow: ${SHADOW.normal};
   transition: all 500ms ease;

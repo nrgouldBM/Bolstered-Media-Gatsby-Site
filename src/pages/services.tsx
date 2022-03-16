@@ -50,11 +50,9 @@ export default function Services() {
             A Digital Agency Focused On Growth.
           </Title>
           <Body>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-            reprehenderit ex rerum saepe! Non quasi optio minus totam harum
-            quisquam. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Nam distinctio quos cupiditate velit beatae sequi sit voluptas omnis
-            quod blanditiis.
+            Our team is dedicated to growing every aspect of your brand. We
+            focus on six key aspects of development that help propel a brand to
+            new and sustainable heights.
           </Body>
           <ButtonLink
             style={{
@@ -62,7 +60,7 @@ export default function Services() {
               marginTop: "1rem",
             }}
             primary
-            text="Speak with us"
+            text="Chat with us"
             link="/contact"
           />
         </FlexColumn>
