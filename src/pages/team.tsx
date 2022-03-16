@@ -21,7 +21,6 @@ const TextContainer = styled.div`
 
 const SvgContainer = styled.div`
   flex: 1;
-  max-width: 30rem;
   display: flex;
   justify-content: center;
   align-items: center;

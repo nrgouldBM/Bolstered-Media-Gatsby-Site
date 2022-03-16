@@ -9,9 +9,11 @@ import { Body } from "../atoms/Body";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { AnimatedCard } from "../atoms/AnimatedCard";
-import { breakpoint } from "../../theme";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import PaidMedia from "../../images/BM_Paid_Media.png";
+import { breakpoint, COLORS, SHADOW } from "../../theme";
+import PaidMediaImage from "../../images/BM_Paid_Media.png";
+import SMSImage from "../../images/BM_SMS.png";
+import EmailImage from "../../images/BM_Email.png";
+import CROImage from "../../images/BM_CRO.png";
 import { graphql } from "gatsby";
 
 const ServiceContainer = styled.section`
@@ -21,11 +23,26 @@ const ServiceContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   height: 100vh;
 
   @media (max-width: ${breakpoint + "px"}) {
     padding: 0;
   }
+`;
+
+const ImageContainer = styled.div<{ color: string }>`
+  /* background-color: ${(p) => p.color}; */
+  background-color: ${COLORS.white};
+  height: 90%;
+  /* padding: 1rem; */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: ${SHADOW.normal};
+`;
+
+const Image = styled.img`
+  height: 100%;
 `;
 
 interface Props {
@@ -38,33 +55,57 @@ interface Props {
     name: string;
   };
   image: string;
-  data: any;
 }
 
-export default function ServicesSection({
-  title,
-  content,
-  id,
-  icon,
-  data,
-}: Props) {
+export default function ServicesSection({ title, content, id, icon }: Props) {
   const { width } = useWindowDimensions();
-  const animationControl = useAnimation();
-  const { inView, entry, ref } = useInView();
-
-  console.log(data);
-
-  //   const image = getImage(data.image);
+  const cardAnimation = useAnimation();
+  const imageAnimation = useAnimation();
+  const { inView, ref } = useInView();
 
   if (inView) {
-    animationControl.start({
+    cardAnimation.start({
       x: 0,
       rotateZ: 0,
       opacity: 1,
       transition: {
-        delay: 0.5,
+        delay: 0.8,
       },
     });
+    imageAnimation.start({
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 1.2,
+        velocity: 0.2,
+      },
+    });
+  }
+
+  let source = PaidMediaImage;
+
+  switch (title) {
+    case "Paid Media Advertising":
+      source = PaidMediaImage;
+      break;
+    case "SMS Marketing":
+      source = SMSImage;
+      break;
+    case "Email Marketing":
+      source = EmailImage;
+      break;
+    case "Conversion Rate Optimization":
+      source = CROImage;
+      break;
+    // case "Web Development":
+    //   source = PaidMedia;
+    //   break;
+    // case "Creative Content & Strategy":
+    //   source = PaidMedia;
+    //   break;
+    default:
+      break;
   }
 
   return (
@@ -81,7 +122,7 @@ export default function ServicesSection({
         initial={{ x: 100, opacity: 0, rotateZ: 2 }}
         width={width < breakpoint ? "90%" : width / 2.3 + "px"}
         height="fit-content"
-        animate={animationControl}
+        animate={cardAnimation}
         style={{
           minWidth: "18rem",
           minHeight: "25rem",
@@ -107,6 +148,14 @@ export default function ServicesSection({
         />
       </AnimatedCard>
       {/* <GatsbyImage image={image} alt={title} /> */}
+      <ImageContainer
+        color={icon.color}
+        as={motion.div}
+        initial={{ y: 50, opacity: 0 }}
+        animate={imageAnimation}
+      >
+        <Image src={source} />
+      </ImageContainer>
     </ServiceContainer>
   );
 }

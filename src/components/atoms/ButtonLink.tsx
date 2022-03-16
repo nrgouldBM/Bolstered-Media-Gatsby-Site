@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { COLORS, SHADOW } from "../../theme";
+import { breakpoint, COLORS, SHADOW } from "../../theme";
 import { Link } from "gatsby";
 
 const primaryStyles = css`
@@ -61,6 +61,10 @@ const ButtonText = styled.p<ButtonProps>`
   margin: 0;
   color: ${(p) => p.color};
   ${(p) => p.hasIcon && iconStyles};
+
+  @media (max-width: ${breakpoint + "px"}) {
+    font-size: ${(p) => p.fontSize || "1.2rem"};
+  }
 `;
 
 export const StyledButton = styled(Link)<ButtonProps>`
@@ -80,6 +84,10 @@ export const StyledButton = styled(Link)<ButtonProps>`
   ${(p) => p.secondary && secondaryStyles};
   ${(p) => p.outline && outlineStyles};
   text-decoration: none;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    padding: 1.5rem 2.5rem;
+  }
 `;
 
 interface Props {

@@ -16,15 +16,15 @@ const MainContentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 100vw;
   flex-wrap: wrap;
+  margin-top: 2rem;
 
   @media (max-width: ${breakpoint + "px"}) {
     margin-top: 0;
   }
 `;
 const StyledHeroTitle = styled.h1`
-  font-size: 2.5rem;
+  font-size: 3.2rem;
   margin: 0;
   margin-bottom: 1rem;
   z-index: 10;
@@ -67,7 +67,7 @@ const StatsContainer = styled.div`
 `;
 
 const StyledHeroImage = styled.img`
-  max-width: 35rem;
+  max-width: 45rem;
 `;
 
 export default function Hero() {

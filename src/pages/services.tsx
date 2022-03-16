@@ -17,8 +17,9 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
+  margin: auto;
   margin-bottom: 5rem;
-  padding: 0 5rem;
   flex-wrap: wrap-reverse;
 
   @media (max-width: ${breakpoint + "px"}) {

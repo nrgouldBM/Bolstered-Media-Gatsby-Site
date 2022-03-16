@@ -33,7 +33,7 @@ const MainContainer = styled.div`
 
   @media (max-width: ${breakpoint + "px"}) {
     margin-right: 0;
-    max-width: 90%;
+    align-items: center;
   }
 `;
 
