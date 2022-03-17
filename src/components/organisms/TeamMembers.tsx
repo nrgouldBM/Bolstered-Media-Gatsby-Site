@@ -8,7 +8,7 @@ import { breakpoint } from "../../theme";
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  grid-gap: 2rem;
+  grid-gap: 4rem;
   width: 70%;
   justify-items: center;
   margin: auto;

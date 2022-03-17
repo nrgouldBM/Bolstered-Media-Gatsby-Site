@@ -55,34 +55,34 @@ export default function TestimonialInverse({
         alignItems="flex-start"
         justifyContent="center"
       >
-        <motion.div
+        {/* <motion.div
           ref={ref}
           initial={{ y: 50, opacity: 0 }}
           animate={animationControl}
+        > */}
+        <Body
+          style={{
+            textAlign: "left",
+            fontSize: "1.8rem",
+            fontWeight: "bold",
+            lineHeight: "3rem",
+          }}
         >
-          <Body
+          <Quote
             style={{
-              textAlign: "left",
-              fontSize: "1.8rem",
-              fontWeight: "bold",
-              lineHeight: "3rem",
+              position: "absolute",
+              top: -40,
+              left: isSmallDevice ? 0 : -40,
             }}
           >
-            <Quote
-              style={{
-                position: "absolute",
-                top: -40,
-                left: isSmallDevice ? 0 : -40,
-              }}
-            >
-              "
-            </Quote>
-            {text}
-            <Quote style={{ position: "absolute", bottom: -60, right: 20 }}>
-              "
-            </Quote>
-          </Body>
-        </motion.div>
+            "
+          </Quote>
+          {text}
+          <Quote style={{ position: "absolute", bottom: -60, right: 20 }}>
+            "
+          </Quote>
+        </Body>
+        {/* </motion.div> */}
       </FlexColumn>
       <FlexColumn
         wrap="wrap"
