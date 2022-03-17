@@ -6,10 +6,19 @@ interface ColumnProps {
   wrap?: string;
   alignItems: string;
 }
+
 interface Props extends ColumnProps {
   children: any;
   style?: object;
 }
+
+const StyledColumn = styled.div<ColumnProps>`
+  display: flex;
+  flex-direction: column;
+  justify-content: ${(p) => p.justifyContent};
+  align-items: ${(p) => p.alignItems};
+  flex-wrap: ${(p) => p.wrap || "no-wrap"};
+`;
 
 export default function FlexColumn({
   children,
@@ -18,14 +27,6 @@ export default function FlexColumn({
   wrap,
   style,
 }: Props) {
-  const StyledColumn = styled.div<ColumnProps>`
-    display: flex;
-    flex-direction: column;
-    justify-content: ${justifyContent};
-    align-items: ${alignItems};
-    flex-wrap: ${wrap || "no-wrap"};
-  `;
-
   return (
     <StyledColumn
       style={style}

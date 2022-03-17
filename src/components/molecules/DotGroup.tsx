@@ -17,7 +17,7 @@ const DotContainer = styled.div`
   } */
 `;
 
-const Dot = styled.div`
+const Dot = styled.div<{ active: number }>`
   width: 10px;
   height: 10px;
   border-radius: 50%;

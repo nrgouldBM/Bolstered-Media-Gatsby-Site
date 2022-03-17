@@ -49,7 +49,7 @@ export default function Services() {
                     name={icon.name}
                     color={icon.color}
                     bgColor={icon.bgColor}
-                    size={36}
+                    size={42}
                   />
                 }
                 title={title}
@@ -72,6 +72,7 @@ export default function Services() {
         {SERVICES.map(({ title, content, id, icon }, index) => {
           return (
             <ServiceCard
+              key={index}
               index={index}
               icon={
                 <Icon

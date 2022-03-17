@@ -67,13 +67,18 @@ const ButtonText = styled.p<ButtonProps>`
   }
 `;
 
-export const StyledButton = styled(Link)<ButtonProps>`
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
+
+export const StyledButton = styled.div<ButtonProps>`
   border: none;
   cursor: pointer;
   padding: 1.25rem 2.5rem;
   border-radius: 8px;
   box-shadow: ${SHADOW.normal};
   transition: all 500ms ease;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -115,21 +120,21 @@ export default function ButtonLink({
   color,
   bgColor,
 }: Props) {
-  const hasIcon = !!icon;
   return (
-    <StyledButton
-      style={style}
-      hasIcon={hasIcon}
-      to={link}
-      primary={primary}
-      secondary={secondary}
-      outline={outline}
-      bgColor={bgColor}
-    >
-      <ButtonText color={color} fontSize={fontSize} hasIcon={hasIcon}>
-        {text}
-      </ButtonText>
-      {icon}
-    </StyledButton>
+    <StyledLink style={style} to={link}>
+      <StyledButton
+        style={style}
+        hasIcon={!!icon}
+        primary={primary}
+        secondary={secondary}
+        outline={outline}
+        bgColor={bgColor}
+      >
+        <ButtonText color={color} fontSize={fontSize} hasIcon={!!icon}>
+          {text}
+        </ButtonText>
+        {icon}
+      </StyledButton>
+    </StyledLink>
   );
 }

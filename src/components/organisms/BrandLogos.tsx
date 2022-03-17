@@ -56,8 +56,8 @@ export default function BrandLogos() {
     <Container style={{ width: width }}>
       <LogosText>Trusted By These Brands</LogosText>
       <LogosContainer>
-        {LOGOS.map((logo) => (
-          <Logo src={logo} />
+        {LOGOS.map((logo, index) => (
+          <Logo key={index} src={logo} />
         ))}
       </LogosContainer>
     </Container>
