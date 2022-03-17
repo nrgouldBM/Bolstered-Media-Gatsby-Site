@@ -9,15 +9,24 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-gap: 2rem;
+  width: 100%;
   justify-items: center;
   margin: auto;
   margin-top: 5rem;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export default function TeamMembers() {
   const { width } = useWindowDimensions();
   return (
-    <Container style={{ width: width < breakpoint ? "100%" : "90%" }}>
+    <Container>
       {TEAM.map(({ name, title, description, email }, index) => {
         const hasMargin = index % 2 === 1;
 

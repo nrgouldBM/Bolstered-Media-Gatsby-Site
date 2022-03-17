@@ -91,10 +91,12 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
   const imageAnimation = useAnimation();
   const { inView, ref } = useInView({ triggerOnce: true, threshold: 0.3 });
 
+  const isSmallDevice = width < breakpoint;
+
   if (inView) {
     cardAnimation.start({
       x: 0,
-      rotateZ: 0,
+      // rotateZ: 0,
       opacity: 1,
       transition: {
         delay: 0.5,
@@ -147,14 +149,14 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
     >
       <AnimatedCard
         as={motion.div}
-        initial={{ x: 100, opacity: 0, rotateZ: 2 }}
-        width={width < breakpoint ? "90%" : width / 2.3 + "px"}
-        height="fit-content"
+        initial={isSmallDevice ? null : { x: 100, opacity: 0 }}
         animate={cardAnimation}
+        width={isSmallDevice ? "90%" : width / 2.3 + "px"}
+        height="fit-content"
         style={{
-          padding: width < breakpoint ? "2rem" : "3rem",
+          padding: isSmallDevice ? "2rem" : "3rem",
           flex: 1,
-          maxWidth: width < breakpoint ? "90%" : "80%",
+          maxWidth: isSmallDevice ? "90%" : "80%",
         }}
       >
         <CardContainer>
@@ -165,7 +167,7 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
               name={icon.name}
               bgColor={icon.bgColor}
             />
-            <Title style={{ fontSize: width < breakpoint ? "2.2rem" : "3rem" }}>
+            <Title style={{ fontSize: isSmallDevice ? "2.2rem" : "3rem" }}>
               {title}
             </Title>
             <Body>{content}</Body>
@@ -180,8 +182,8 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
           <ImageContainer
             color={icon.color}
             as={motion.div}
-            // initial={{ y: 50, opacity: 0 }}
-            // animate={imageAnimation}
+            initial={isSmallDevice ? null : { y: 50, opacity: 0 }}
+            animate={imageAnimation}
           >
             <Image src={source} />
           </ImageContainer>
