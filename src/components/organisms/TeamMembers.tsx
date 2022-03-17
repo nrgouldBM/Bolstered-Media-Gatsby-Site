@@ -6,13 +6,12 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint } from "../../theme";
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  /* width: 90%; */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  grid-gap: 2rem;
   margin: auto;
+  /* align-items: end; */
+  margin-top: 5rem;
 `;
 
 export default function TeamMembers() {
@@ -30,8 +29,8 @@ export default function TeamMembers() {
             description={description}
             email={email}
             style={{
-              marginTop: hasMargin && width > breakpoint ? "8rem" : 0,
-              marginBottom: width < breakpoint ? "2rem" : "3rem",
+              marginTop: hasMargin && width > breakpoint ? "10rem" : 0,
+              marginBottom: width < breakpoint ? "2rem" : 0,
             }}
           />
         );

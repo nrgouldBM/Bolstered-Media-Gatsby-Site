@@ -54,7 +54,7 @@ export default function TeamMemberCard({
       hoverStyles
       secondary
       width={width < breakpoint ? "90vw" : "30rem"}
-      height="fit-content"
+      height={width < breakpoint ? "fit-content" : "45rem"}
       style={{
         boxShadow: "none",
         margin: width < breakpoint ? "1rem 0" : "2rem",
