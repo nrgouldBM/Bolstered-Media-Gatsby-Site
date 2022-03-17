@@ -6,14 +6,6 @@ import JordanImage from "../../images/headshots/jordan.jpg";
 import NicholasImage from "../../images/headshots/nicholas.jpg";
 import ProfileImage from "../../images/profile.jpg";
 import styled from "styled-components";
-interface Props {
-  img: string;
-  background?: string;
-  size?: number;
-  style?: object;
-  alt: string;
-  name?: string;
-}
 
 interface StyleProps {
   size?: string | number;
@@ -46,6 +38,15 @@ const Background = styled.div<StyleProps>`
   left: 5px;
 `;
 
+interface Props {
+  img?: string;
+  background?: string;
+  size?: number;
+  style?: object;
+  alt: string;
+  name?: string;
+}
+
 export default function Avatar({
   img,
   size = 200,
@@ -75,14 +76,6 @@ export default function Avatar({
 
   return (
     <Container style={style}>
-      {/* <StaticImage
-        src={"../../images/profile.jpg"}
-        alt={alt}
-        height={size}
-        width={size}
-        style={{ borderRadius: "50%" }}
-        layout="constrained"
-      /> */}
       <Image width={size} height={size} src={source} alt={alt} />
       {background && <Background background={background} />}
     </Container>

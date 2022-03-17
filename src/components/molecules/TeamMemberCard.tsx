@@ -23,7 +23,6 @@ interface Props {
   name: string;
   title: string;
   email: string;
-  image: string;
   style?: object;
 }
 
@@ -32,14 +31,11 @@ export default function TeamMemberCard({
   name,
   title,
   email,
-  image,
   style,
 }: Props) {
   const { width } = useWindowDimensions();
   const animationControl = useAnimation();
-  const { inView, entry, ref } = useInView({
-    triggerOnce: true,
-  });
+  const { inView, ref } = useInView();
 
   if (inView) {
     animationControl.start({
@@ -71,7 +67,7 @@ export default function TeamMemberCard({
         justifyContent="center"
         style={{ marginBottom: "2rem" }}
       >
-        <Avatar name={name} img={image} alt={`${name}'s profile picture`} />
+        <Avatar name={name} alt={`${name}'s profile picture`} />
         <SubTitle
           style={{
             textAlign: "center",

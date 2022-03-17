@@ -19,7 +19,7 @@ export default function TeamMembers() {
   const { width } = useWindowDimensions();
   return (
     <Container style={{ width: width < breakpoint ? "100%" : "90%" }}>
-      {TEAM.map(({ name, title, description, email, image }, index) => {
+      {TEAM.map(({ name, title, description, email }, index) => {
         const hasMargin = index % 2 === 1;
 
         return (
@@ -29,10 +29,9 @@ export default function TeamMembers() {
             title={title}
             description={description}
             email={email}
-            image={image}
             style={{
               marginTop: hasMargin && width > breakpoint ? "8rem" : 0,
-              marginBottom: width < breakpoint ? "2rem" : 0,
+              marginBottom: width < breakpoint ? "2rem" : "3rem",
             }}
           />
         );
