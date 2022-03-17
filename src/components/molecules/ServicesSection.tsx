@@ -90,7 +90,6 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
   const cardAnimation = useAnimation();
   const imageAnimation = useAnimation();
   const { inView, ref } = useInView({
-    threshold: 0.3,
     triggerOnce: true,
   });
 

@@ -38,11 +38,8 @@ export default function TeamMemberCard({
   const { width } = useWindowDimensions();
   const animationControl = useAnimation();
   const { inView, entry, ref } = useInView({
-    threshold: 0.3,
     triggerOnce: true,
   });
-
-  console.log(entry);
 
   if (inView) {
     animationControl.start({
