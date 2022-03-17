@@ -180,22 +180,13 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
           <ImageContainer
             color={icon.color}
             as={motion.div}
-            initial={{ y: 50, opacity: 0 }}
-            animate={imageAnimation}
+            // initial={{ y: 50, opacity: 0 }}
+            // animate={imageAnimation}
           >
             <Image src={source} />
           </ImageContainer>
         </CardContainer>
       </AnimatedCard>
-      {/* <GatsbyImage image={image} alt={title} /> */}
-      {/* <ImageContainer
-        color={icon.color}
-        as={motion.div}
-        initial={{ y: 50, opacity: 0 }}
-        animate={imageAnimation}
-      >
-        <Image src={source} />
-      </ImageContainer> */}
     </ServiceContainer>
   );
 }

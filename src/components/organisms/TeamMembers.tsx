@@ -7,10 +7,10 @@ import { breakpoint } from "../../theme";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-gap: 2rem;
+  justify-items: center;
   margin: auto;
-  /* align-items: end; */
   margin-top: 5rem;
 `;
 
