@@ -58,7 +58,7 @@ export default function Testimonial({ img, name, title, company, text }) {
           style={{
             textAlign: "left",
             fontSize: "1.8rem",
-            fontWeight: "700",
+            fontWeight: "bold",
             lineHeight: "3rem",
           }}
         >
@@ -72,7 +72,7 @@ export default function Testimonial({ img, name, title, company, text }) {
             "
           </Quote>
           {text}
-          <Quote style={{ position: "absolute", bottom: -20, right: 20 }}>
+          <Quote style={{ position: "absolute", bottom: -60, right: 20 }}>
             "
           </Quote>
         </Body>

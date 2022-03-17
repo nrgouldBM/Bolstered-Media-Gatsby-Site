@@ -11,6 +11,7 @@ const StyledField = styled(Field)`
   box-shadow: ${SHADOW.normal};
   font-family: "sora";
   font-weight: 500;
+  -webkit-appearance: none;
   &::placeholder {
     font-family: "sora";
     font-weight: 500;

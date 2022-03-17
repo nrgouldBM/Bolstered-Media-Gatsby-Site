@@ -44,7 +44,7 @@ export default function TestimonialInverse({
           style={{
             textAlign: "left",
             fontSize: "1.8rem",
-            fontWeight: "700",
+            fontWeight: "bold",
             lineHeight: "3rem",
           }}
         >
@@ -58,7 +58,7 @@ export default function TestimonialInverse({
             "
           </Quote>
           {text}
-          <Quote style={{ position: "absolute", bottom: -20, right: 20 }}>
+          <Quote style={{ position: "absolute", bottom: -60, right: 20 }}>
             "
           </Quote>
         </Body>

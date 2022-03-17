@@ -1,6 +1,5 @@
 import React from "react";
 import Avatar from "../atoms/Avatar";
-import Card from "../atoms/Card";
 import { Body } from "../atoms/Body";
 import FlexColumn from "../atoms/FlexColumn";
 import { SubTitle } from "../atoms/SubTitle";
@@ -99,7 +98,6 @@ export default function TeamMemberCard({
             overflow: "hidden",
             textOverflow: "ellipsis",
             wordWrap: "break-word",
-            // maxHeight: "14rem",
             lineHeight: "2rem",
             marginBottom: "2rem",
           }}
