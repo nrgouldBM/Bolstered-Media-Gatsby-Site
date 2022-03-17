@@ -1,5 +1,6 @@
 import { Field } from "formik";
 import React from "react";
+import { IoCaretDownOutline, IoCaretDownSharp } from "react-icons/io5";
 import styled from "styled-components";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint, COLORS, SHADOW } from "../../theme";
@@ -11,6 +12,10 @@ const StyledField = styled(Field)`
   box-shadow: ${SHADOW.normal};
   font-family: "sora";
   font-weight: 500;
+  background-color: ${COLORS.white};
+  color: ${COLORS.primaryText};
+  position: relative;
+  z-index: 5;
   -webkit-appearance: none;
   &::placeholder {
     font-family: "sora";
@@ -31,6 +36,20 @@ const Container = styled.div`
   align-items: flex-start;
   margin-bottom: 2rem;
   justify-content: space-between;
+  position: relative;
+`;
+
+const FieldContainer = styled.div`
+  position: relative;
+`;
+
+const Icon = styled(IoCaretDownOutline)`
+  margin: auto;
+  position: absolute;
+  right: 12px;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
 `;
 
 interface Props {
@@ -52,15 +71,18 @@ export default function DropDownInput({
   return (
     <Container style={width < breakpoint ? null : { marginRight: 16 }}>
       <StyledLabel>{label}</StyledLabel>
-      <StyledField
-        style={{ width: width < breakpoint ? width / 1.3 : "15rem" }}
-        name={name}
-        as="select"
-        placeholder={placeholder}
-        onChange={handleChange}
-      >
-        {children}
-      </StyledField>
+      <FieldContainer>
+        <StyledField
+          style={{ width: width < breakpoint ? width / 1.3 : "15rem" }}
+          name={name}
+          as="select"
+          placeholder={placeholder}
+          onChange={handleChange}
+        >
+          {children}
+        </StyledField>
+        <Icon size={22} color={COLORS.primaryText} />
+      </FieldContainer>
     </Container>
   );
 }

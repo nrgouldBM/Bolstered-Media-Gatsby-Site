@@ -12,6 +12,9 @@ const StyledField = styled(Field)`
   box-sizing: border-box;
   font-family: "sora";
   font-weight: 500;
+  background-color: ${COLORS.white};
+  color: ${COLORS.primaryText};
+  -webkit-appearance: none;
   &::placeholder {
     font-family: "sora";
     font-weight: 500;
