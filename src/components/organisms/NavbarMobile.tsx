@@ -67,7 +67,7 @@ const StyledLogo = styled(Link)`
   cursor: pointer;
 `;
 
-const Drawer = styled(motion.div)`
+const Drawer = styled(motion.div)<{ isOpen: boolean }>`
   background-color: ${COLORS.white};
   width: 66.6vw;
   height: 100vh;
@@ -75,6 +75,7 @@ const Drawer = styled(motion.div)`
   top: 0;
   z-index: 20;
   box-shadow: ${SHADOW.normal};
+  display: ${(p) => (p.isOpen ? "block" : "none")};
 `;
 
 const Backdrop = styled(motion.div)`
@@ -92,7 +93,7 @@ const Backdrop = styled(motion.div)`
 export default function NavbarMobile() {
   const { width } = useWindowDimensions();
 
-  const NAV_LINK_WIDTH = width / 3;
+  const NAV_LINK_WIDTH = "10rem";
 
   const [isOpen, setOpen] = useState(false);
 
@@ -123,6 +124,7 @@ export default function NavbarMobile() {
         />
       </StyledContainer>
       <Drawer
+        isOpen={isOpen}
         initial={{ x: width }}
         animate={isOpen ? { x: width / 3 } : { x: width }}
         transition={{ type: "tween", ease: "easeInOut" }}

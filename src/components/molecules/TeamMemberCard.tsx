@@ -6,12 +6,11 @@ import { SubTitle } from "../atoms/SubTitle";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint, COLORS } from "../../theme";
 import styled from "styled-components";
-import { Link } from "gatsby";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { AnimatedCard } from "../atoms/AnimatedCard";
 
-const Email = styled(Link)`
+const Email = styled.a`
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
@@ -38,7 +37,12 @@ export default function TeamMemberCard({
 }: Props) {
   const { width } = useWindowDimensions();
   const animationControl = useAnimation();
-  const { inView, ref } = useInView();
+  const { inView, entry, ref } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
+  console.log(entry);
 
   if (inView) {
     animationControl.start({
@@ -104,7 +108,7 @@ export default function TeamMemberCard({
         >
           {description}
         </Body>
-        <Email to={`mailto:${email}`}>{email}</Email>
+        <Email href={`mailto:${email}`}>{email}</Email>
       </FlexColumn>
     </AnimatedCard>
   );

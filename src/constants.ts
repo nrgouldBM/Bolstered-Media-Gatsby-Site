@@ -81,7 +81,7 @@ export const TEAM = [
     name: "Patrick Gall",
     title: "COO",
     description:
-      "Jordan has been a member of the Bolstered Media team since day one. Coming from a background in sports and marketing, he has helped create and develop strong organic strategies for many high-profile brands in the e-commerce space. With his expertise he has helped increase reach, engagement and likes across multiple social media platforms for a wide variety of DTC Brands, Influencers and other organizations.",
+      "Patrick has partnered with dozens of brands, athletes, and celebrities to execute various e-commerce and retail initiatives. Leading merchandise programs for current and past clients, including Live Nation, Activision, Mike Tyson, Muhammad Ali, and Bruce Lee, Patrick has delivered over $100 million in online sales over the past decade.",
     email: "patrick@bolsteredmedia.com",
   },
   {
@@ -95,7 +95,7 @@ export const TEAM = [
     name: "Nicholas Gould",
     title: "Director of Development",
     description:
-      "Nicholas is a jack of all trades–he’s spent the past 6 years honing skills in Photography, Filmmaking, Digital Marketing, Graphic Design, 3D Animation, Web Development and more. He specializes in Front-End Development, which involves building and improving sites for a wide array of E-Commerce brands so that they are fast, beautiful, user-friendly and keep customers coming back time and again.",
+      "Nicholas is a jack of all trades–he’s spent the past 6 years honing skills in Photography, Filmmaking, Digital Marketing, Graphic Design, Web Development and more. He specializes in Front-End Development, which involves building and improving sites for a wide array of E-Commerce brands so that they are fast, beautiful, user-friendly and keep customers coming back time and again.",
     email: "nicholas@bolsteredmedia.com",
   },
 ];

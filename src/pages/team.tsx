@@ -24,6 +24,7 @@ const SvgContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 90vw;
 `;
 
 export default function Team() {
@@ -51,7 +52,7 @@ export default function Team() {
           </Title>
           <Body>
             The Bolstered Media team features a diverse collection of members
-            that combined have over 15 years of experience in the digital
+            that combined have over 20 years of experience in the digital
             marketing space. Together the team has helped many
             Direct-to-Consumer Brands grow their following, engagement and sales
             to new heights. Bolstered Media believes that a true team and

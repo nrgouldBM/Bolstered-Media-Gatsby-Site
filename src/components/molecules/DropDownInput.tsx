@@ -1,6 +1,6 @@
 import { Field } from "formik";
 import React from "react";
-import { IoCaretDownOutline, IoCaretDownSharp } from "react-icons/io5";
+import { IoCaretDownOutline } from "react-icons/io5";
 import styled from "styled-components";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint, COLORS, SHADOW } from "../../theme";
