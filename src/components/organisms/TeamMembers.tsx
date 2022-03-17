@@ -9,10 +9,11 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-gap: 2rem;
-  width: 100%;
+  width: 70%;
   justify-items: center;
   margin: auto;
   margin-top: 5rem;
+  margin-bottom: 5rem;
 
   @media (max-width: ${breakpoint + "px"}) {
     width: 90%;

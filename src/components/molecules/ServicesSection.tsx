@@ -25,7 +25,7 @@ const ServiceContainer = styled.section`
   justify-content: center;
   position: relative;
   flex-wrap: wrap;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 
   @media (max-width: ${breakpoint + "px"}) {
     padding: 0;
