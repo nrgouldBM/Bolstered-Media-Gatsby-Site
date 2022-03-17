@@ -7,8 +7,10 @@ import Avatar from "../atoms/Avatar";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import styled from "styled-components";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-export const Quote = styled.p`
+export const Quote = styled.span`
   font-size: 4rem;
   font-weight: bold;
   margin: 0;
@@ -22,8 +24,21 @@ export default function TestimonialInverse({
   text,
 }) {
   const { width } = useWindowDimensions();
-
   const isSmallDevice = width < breakpoint;
+  const animationControl = useAnimation();
+  const { inView, ref } = useInView({ triggerOnce: true, threshold: 0.3 });
+
+  if (inView) {
+    animationControl.start({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeIn",
+      },
+    });
+  }
+
   return (
     <FlexRow
       style={{ width: isSmallDevice ? "80%" : "70%", margin: "auto" }}
@@ -40,28 +55,34 @@ export default function TestimonialInverse({
         alignItems="flex-start"
         justifyContent="center"
       >
-        <Body
-          style={{
-            textAlign: "left",
-            fontSize: "1.8rem",
-            fontWeight: "bold",
-            lineHeight: "3rem",
-          }}
+        <motion.div
+          ref={ref}
+          initial={{ y: 50, opacity: 0 }}
+          animate={animationControl}
         >
-          <Quote
+          <Body
             style={{
-              position: "absolute",
-              top: -40,
-              left: isSmallDevice ? 0 : -40,
+              textAlign: "left",
+              fontSize: "1.8rem",
+              fontWeight: "bold",
+              lineHeight: "3rem",
             }}
           >
-            "
-          </Quote>
-          {text}
-          <Quote style={{ position: "absolute", bottom: -60, right: 20 }}>
-            "
-          </Quote>
-        </Body>
+            <Quote
+              style={{
+                position: "absolute",
+                top: -40,
+                left: isSmallDevice ? 0 : -40,
+              }}
+            >
+              "
+            </Quote>
+            {text}
+            <Quote style={{ position: "absolute", bottom: -60, right: 20 }}>
+              "
+            </Quote>
+          </Body>
+        </motion.div>
       </FlexColumn>
       <FlexColumn
         wrap="wrap"

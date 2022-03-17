@@ -37,7 +37,7 @@ const ButtonText = styled.p<styleProps>`
   ${(p) => p.hasIcon && iconStyles};
 `;
 
-export const StyledButton = styled(Link)<styleProps>`
+export const StyledButton = styled.div<styleProps>`
   border: none;
   background: none;
   cursor: pointer;
@@ -62,6 +62,11 @@ interface Props {
   style?: object;
 }
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  width: 100%;
+`;
+
 export default function InverseButton({
   text,
   icon,
@@ -72,15 +77,16 @@ export default function InverseButton({
 }: Props) {
   const hasIcon = !!icon;
   return (
-    <StyledButton
-      style={style}
-      to={link}
-      hasIcon={hasIcon}
-      primary={primary}
-      secondary={secondary}
-    >
-      <ButtonText hasIcon={hasIcon}>{text}</ButtonText>
-      {icon}
-    </StyledButton>
+    <StyledLink to={link}>
+      <StyledButton
+        style={style}
+        hasIcon={hasIcon}
+        primary={primary}
+        secondary={secondary}
+      >
+        <ButtonText hasIcon={hasIcon}>{text}</ButtonText>
+        {icon}
+      </StyledButton>
+    </StyledLink>
   );
 }

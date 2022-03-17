@@ -3,7 +3,6 @@ import React from "react";
 import styled from "styled-components";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import { Title } from "../atoms/Title";
 import Profile from "../../images/profile.jpg";
 import TestimonialCol from "../molecules/TestimonialCol";
 
@@ -18,7 +17,7 @@ const Container = styled.div`
 `;
 
 const ContactContainer = styled.div`
-  display: flex:
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
