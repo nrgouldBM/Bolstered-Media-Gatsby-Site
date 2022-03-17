@@ -76,7 +76,6 @@ export const TEAM = [
     description:
       "Having worked in the Ecommerce & Direct-To-Consumer space for the past 7 years, Alex decided it was time to start a “Client-First” digital marketing agency.  One that put the brand first, and one that didn’t make it feel like the client was just another number.  Alex has been personally responsible for up to $30 Million in ad spend and has helped generate over $100 Million in revenue for brands and other partners.",
     email: "alex@bolsteredmedia.com",
-    image: "../../images/profile.jpg",
   },
   {
     name: "Patrick Gall",
@@ -84,7 +83,6 @@ export const TEAM = [
     description:
       "Jordan has been a member of the Bolstered Media team since day one. Coming from a background in sports and marketing, he has helped create and develop strong organic strategies for many high-profile brands in the e-commerce space. With his expertise he has helped increase reach, engagement and likes across multiple social media platforms for a wide variety of DTC Brands, Influencers and other organizations.",
     email: "patrick@bolsteredmedia.com",
-    image: "../../images/profile.jpg",
   },
   {
     name: "Jordan Hadding",
@@ -92,14 +90,12 @@ export const TEAM = [
     description:
       "Jordan has been a member of the Bolstered Media team since day one. Coming from a background in sports and marketing, he has helped create and develop strong organic strategies for many high-profile brands in the e-commerce space. With his expertise he has helped increase reach, engagement and likes across multiple social media platforms for a wide variety of DTC Brands, Influencers and other organizations.",
     email: "jordan@bolsteredmedia.com",
-    image: "../../images/profile.jpg",
   },
   {
     name: "Nicholas Gould",
     title: "Director of Development",
     description:
-      "Jordan has been a member of the Bolstered Media team since day one. Coming from a background in sports and marketing, he has helped create and develop strong organic strategies for many high-profile brands in the e-commerce space. With his expertise he has helped increase reach, engagement and likes across multiple social media platforms for a wide variety of DTC Brands, Influencers and other organizations.",
+      "Nicholas is a jack of all trades–he’s spent the past 6 years honing skills in Photography, Filmmaking, Digital Marketing, Graphic Design, 3D Animation, Web Development and more. He specializes in Front-End Development, which involves building and improving sites for a wide array of E-Commerce brands so that they are fast, beautiful, user-friendly and keep customers coming back time and again.",
     email: "nicholas@bolsteredmedia.com",
-    image: "../../images/profile.jpg",
   },
 ];

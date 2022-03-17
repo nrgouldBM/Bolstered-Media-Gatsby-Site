@@ -22,7 +22,7 @@ const ServiceContainer = styled.section`
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
   flex-wrap: wrap;
   min-height: 100vh;
@@ -154,6 +154,7 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
         style={{
           padding: width < breakpoint ? "2rem" : "3rem",
           flex: 1,
+          maxWidth: width < breakpoint ? "90%" : "80%",
         }}
       >
         <CardContainer>
