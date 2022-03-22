@@ -7,7 +7,7 @@ import Avatar from "../atoms/Avatar";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { Quote } from "./TestimonialInverse";
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export default function Testimonial({ img, name, title, company, text }) {
@@ -69,11 +69,6 @@ export default function Testimonial({ img, name, title, company, text }) {
         alignItems="flex-start"
         justifyContent="center"
       >
-        {/* <motion.div
-          ref={ref}
-          initial={{ y: 50, opacity: 0 }}
-          animate={animationControl}
-        > */}
         <Body
           style={{
             textAlign: "left",
@@ -96,7 +91,6 @@ export default function Testimonial({ img, name, title, company, text }) {
             "
           </Quote>
         </Body>
-        {/* </motion.div> */}
       </FlexColumn>
     </FlexRow>
   );

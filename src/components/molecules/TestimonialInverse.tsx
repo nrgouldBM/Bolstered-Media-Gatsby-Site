@@ -55,11 +55,6 @@ export default function TestimonialInverse({
         alignItems="flex-start"
         justifyContent="center"
       >
-        {/* <motion.div
-          ref={ref}
-          initial={{ y: 50, opacity: 0 }}
-          animate={animationControl}
-        > */}
         <Body
           style={{
             textAlign: "left",
@@ -82,7 +77,6 @@ export default function TestimonialInverse({
             "
           </Quote>
         </Body>
-        {/* </motion.div> */}
       </FlexColumn>
       <FlexColumn
         wrap="wrap"
