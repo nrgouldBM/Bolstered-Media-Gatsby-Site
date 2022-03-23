@@ -18,7 +18,7 @@ export default function TestimonialCol({ img, name, title, company, text }) {
         justifyContent="center"
         style={{ marginBottom: "2rem" }}
       >
-        <Avatar background={COLORS.primary} img={img} />
+        <Avatar alt="Testimonial" background={COLORS.primary} img={img} />
         <SubTitle
           style={{
             textAlign: "center",

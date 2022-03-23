@@ -59,9 +59,7 @@ export default function Team() {
             collaborative approach generates the best results.
           </Body>
           <ButtonLink
-            style={{
-              width: width < breakpoint ? "100%" : "25rem",
-            }}
+            width={width < breakpoint ? "100%" : "25rem"}
             primary
             text="Speak with us"
             link="/contact"

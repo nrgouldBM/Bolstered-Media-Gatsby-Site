@@ -50,6 +50,7 @@ interface ButtonProps {
   outline?: boolean;
   color?: string;
   bgColor?: string;
+  width?: string;
 }
 
 const ButtonText = styled.p<ButtonProps>`
@@ -67,18 +68,20 @@ const ButtonText = styled.p<ButtonProps>`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a<ButtonProps>`
+  /* width: ${(p) => p.width || "20rem"}; */
   text-decoration: none;
 `;
 
 export const StyledButton = styled.div<ButtonProps>`
+  width: ${(p) => p.width || "20rem"};
+  margin-top: 1rem;
   border: none;
   cursor: pointer;
   padding: 1.25rem 2.5rem;
   border-radius: 8px;
   box-shadow: ${SHADOW.normal};
   transition: all 500ms ease;
-  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -106,6 +109,7 @@ interface Props {
   outline?: boolean;
   color?: string;
   bgColor?: string;
+  width?: string;
 }
 
 export default function ButtonLink({
@@ -119,10 +123,12 @@ export default function ButtonLink({
   outline,
   color,
   bgColor,
+  width,
 }: Props) {
   return (
-    <StyledLink style={style} to={link}>
+    <StyledLink width={width} style={style} href={link}>
       <StyledButton
+        width={width}
         style={style}
         hasIcon={!!icon}
         primary={primary}

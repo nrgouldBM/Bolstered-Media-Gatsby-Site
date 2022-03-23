@@ -35,7 +35,7 @@ const StyledHeroSubTitle = styled.h2`
   font-size: 1.2rem;
   margin: 0;
   font-weight: 500;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   max-width: 30rem;
   line-height: 2rem;
 `;
@@ -92,9 +92,7 @@ export default function Hero() {
             takes to generate profitable sales.
           </StyledHeroSubTitle>
           <ButtonLink
-            style={{
-              width: width < breakpoint ? "100%" : "60%",
-            }}
+            width={width < breakpoint ? "100%" : "25rem"}
             primary
             fontSize="1.3rem"
             link="/contact"

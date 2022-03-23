@@ -193,12 +193,12 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
   );
 }
 
-export const pageQuery = graphql`
-  query {
-    image: file(relativePath: { eq: "BM_Paid_Media.png" }) {
-      childImageSharp {
-        gatsbyImageData
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query {
+//     image: file(relativePath: { eq: "BM_Paid_Media.png" }) {
+//       childImageSharp {
+//         gatsbyImageData
+//       }
+//     }
+//   }
+// `;

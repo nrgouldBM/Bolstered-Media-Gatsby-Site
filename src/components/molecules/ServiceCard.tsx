@@ -59,11 +59,11 @@ interface Props {
 export default function ServiceCard({ title, text, icon, link, index }: Props) {
   return (
     <Card
-      height="35rem"
+      height="32rem"
       flexDir="row"
       alignItems="center"
       justifyContent="center"
-      style={{ minWidth: "22rem", padding: "1rem 0.5rem" }}
+      style={{ minWidth: "22rem", padding: "0.75rem 0.5rem" }}
     >
       <Container style={{ zIndex: index * 10 }}>
         <IconContainer>{icon}</IconContainer>

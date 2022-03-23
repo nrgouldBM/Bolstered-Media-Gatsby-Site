@@ -13,7 +13,7 @@ import { useInView } from "react-intersection-observer";
 export default function Testimonial({ img, name, title, company, text }) {
   const { width } = useWindowDimensions();
   const animationControl = useAnimation();
-  const { inView, ref } = useInView({ triggerOnce: true, threshold: 0.3 });
+  const { inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   if (inView) {
     animationControl.start({
