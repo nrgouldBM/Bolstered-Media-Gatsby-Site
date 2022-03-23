@@ -61,7 +61,6 @@ export default function Team() {
           <ButtonLink
             style={{
               width: width < breakpoint ? "100%" : "25rem",
-              marginTop: "1rem",
             }}
             primary
             text="Speak with us"

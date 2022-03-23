@@ -57,7 +57,7 @@ export default function TeamMemberCard({
       height={width < breakpoint ? "fit-content" : "45rem"}
       style={{
         boxShadow: "none",
-        margin: width < breakpoint ? "1rem 0" : "2rem",
+        // margin: width < breakpoint ? "1rem 0" : "2rem",
         ...style,
       }}
     >
