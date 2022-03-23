@@ -68,7 +68,7 @@ const ButtonText = styled.p<ButtonProps>`
   }
 `;
 
-const StyledLink = styled.a<ButtonProps>`
+const StyledLink = styled(Link)<ButtonProps>`
   /* width: ${(p) => p.width || "20rem"}; */
   text-decoration: none;
 `;
@@ -126,7 +126,7 @@ export default function ButtonLink({
   width,
 }: Props) {
   return (
-    <StyledLink width={width} style={style} href={link}>
+    <StyledLink width={width} style={style} to={link}>
       <StyledButton
         width={width}
         style={style}
