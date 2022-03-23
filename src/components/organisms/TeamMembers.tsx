@@ -7,20 +7,29 @@ import { breakpoint } from "../../theme";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  grid-gap: 4rem;
-  width: 70%;
+  /* grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); */
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  width: 80%;
   justify-items: center;
   margin: auto;
   margin-top: 5rem;
   margin-bottom: 5rem;
 
   @media (max-width: ${breakpoint + "px"}) {
+    grid-template-columns: repeat(1, 1fr);
     width: 90%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width: 1300px) {
+    width: 95%;
+    margin: auto;
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 

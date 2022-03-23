@@ -15,7 +15,7 @@ const Container = styled.section`
 `;
 
 const CardContainer = styled.div`
-  padding-left: 10rem;
+  padding: 0 2rem;
   align-items: stretch;
   display: flex;
   flex-direction: row;

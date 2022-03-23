@@ -14,6 +14,7 @@ const Container = styled.section`
   margin-top: 5rem;
   background-color: ${COLORS.gray};
   box-sizing: border-box;
+  padding: 2.5rem 0;
 `;
 
 const LogosContainer = styled.div`
@@ -37,8 +38,9 @@ const LogosText = styled.h3`
   color: ${COLORS.secondaryText};
   font-size: 1.2rem;
   font-weight: 500;
+  margin-bottom: 2rem;
   text-align: center;
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
 `;
 
 const LOGOS = [
@@ -54,7 +56,7 @@ export default function BrandLogos() {
   const { width } = useWindowDimensions();
   return (
     <Container style={{ width: width }}>
-      <LogosText>Trusted By These Brands</LogosText>
+      <LogosText>Trusted By These Brands And More</LogosText>
       <LogosContainer>
         {LOGOS.map((logo, index) => (
           <Logo key={index} src={logo} />
