@@ -58,6 +58,7 @@ const StyledContainer = styled.div<Props>`
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
+  max-width: 100vw;
 `;
 
 const StyledLogo = styled(Link)`
