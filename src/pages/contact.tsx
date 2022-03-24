@@ -1,3 +1,4 @@
+import "../index.css";
 import { Title } from "../components/atoms/Title";
 import React from "react";
 import ContactSection from "../components/organisms/ContactSection";

@@ -1,4 +1,5 @@
 import React from "react";
+import "../index.css";
 import { Title } from "../components/atoms/Title";
 import TeamMembers from "../components/organisms/TeamMembers";
 import { Body } from "../components/atoms/Body";

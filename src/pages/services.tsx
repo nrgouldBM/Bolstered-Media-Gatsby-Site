@@ -1,4 +1,5 @@
 import { Body } from "../components/atoms/Body";
+import "../index.css";
 import React from "react";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import FlexColumn from "../components/atoms/FlexColumn";
