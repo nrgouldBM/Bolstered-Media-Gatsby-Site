@@ -2,11 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Title } from "../atoms/Title";
 import ServiceCard from "../molecules/ServiceCard";
-import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import { breakpoint } from "../../theme";
 import { SERVICES } from "../../constants";
 import Icon from "../molecules/Icon";
-import MobileServiceCard from "../molecules/MobileServiceCard";
 
 const Container = styled.section`
   /* width: 80%; */
@@ -25,17 +22,10 @@ const CardContainer = styled.div`
   white-space: nowrap;
 `;
 
-const MobileCardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
 export default function Services() {
   return (
     <Container>
-      <Title style={{ marginLeft: "10rem", fontSize: "3rem" }}>
+      <Title style={{ marginLeft: "2rem", fontSize: "3rem" }}>
         How we get it done
       </Title>
       <CardContainer>

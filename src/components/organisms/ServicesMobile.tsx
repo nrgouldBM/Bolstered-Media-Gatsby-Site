@@ -11,17 +11,6 @@ const Container = styled.section`
   position: relative;
 `;
 
-const CardContainer = styled.div`
-  padding: 0 2rem;
-  align-items: stretch;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-`;
-
 const MobileCardContainer = styled.div`
   display: flex;
   flex-direction: column;
