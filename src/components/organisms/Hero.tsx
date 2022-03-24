@@ -92,7 +92,7 @@ export default function Hero() {
             takes to generate profitable sales.
           </StyledHeroSubTitle>
           <ButtonLink
-            width={width < breakpoint ? "100%" : "25rem"}
+            // width={width < breakpoint ? "90%" : "25rem"}
             primary
             fontSize="1.3rem"
             link="/contact"

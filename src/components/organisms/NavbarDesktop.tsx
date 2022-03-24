@@ -27,6 +27,7 @@ const StyledLogo = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
+  margin-left: 2rem;
   color: inherit;
   cursor: pointer;
 `;

@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Title } from "../atoms/Title";
-import ServiceCard from "../molecules/ServiceCard";
-import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import { breakpoint } from "../../theme";
 import { SERVICES } from "../../constants";
+import { Title } from "../atoms/Title";
 import Icon from "../molecules/Icon";
 import MobileServiceCard from "../molecules/MobileServiceCard";
 
@@ -32,28 +29,21 @@ const MobileCardContainer = styled.div`
   justify-content: center;
 `;
 
-export default function Services() {
-  const { width } = useWindowDimensions();
-
-  
-
+export default function ServicesMobile() {
   return (
     <Container>
-      <Title style={{ marginLeft: "10rem", fontSize: "3rem" }}>
-        How we get it done
-      </Title>
-      <CardContainer>
+      <Title style={{ textAlign: "center" }}>How we get it done</Title>
+      <MobileCardContainer>
         {SERVICES.map(({ title, content, id, icon }, index) => {
           return (
-            <ServiceCard
+            <MobileServiceCard
               key={index}
-              index={index}
               icon={
                 <Icon
                   name={icon.name}
                   color={icon.color}
                   bgColor={icon.bgColor}
-                  size={36}
+                  size={42}
                 />
               }
               title={title}
@@ -62,7 +52,7 @@ export default function Services() {
             />
           );
         })}
-      </CardContainer>
+      </MobileCardContainer>
     </Container>
   );
 }

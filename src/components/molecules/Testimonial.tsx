@@ -1,6 +1,5 @@
 import React from "react";
 import { SubTitle } from "../atoms/SubTitle";
-import FlexColumn from "../atoms/FlexColumn";
 import FlexRow from "../atoms/FlexRow";
 import { Body } from "../atoms/Body";
 import Avatar from "../atoms/Avatar";
@@ -9,6 +8,21 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { Quote } from "./TestimonialInverse";
 import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import styled from "styled-components";
+
+export const TestimonialCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  transform: rotate(-5deg);
+  position: relative;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    transform: rotate(0);
+  }
+`;
 
 export default function Testimonial({ img, name, title, company, text }) {
   const { width } = useWindowDimensions();
@@ -34,13 +48,9 @@ export default function Testimonial({ img, name, title, company, text }) {
       justifyContent={isSmallDevice ? "center" : "space-evenly"}
       wrap="wrap"
     >
-      <FlexColumn
-        wrap="wrap"
-        alignItems="center"
-        justifyContent="center"
+      <TestimonialCol
         style={{
           marginBottom: "4rem",
-          transform: isSmallDevice ? null : "rotate(-5deg)",
         }}
       >
         <Avatar background={COLORS.brown} img={img} alt="testimonial" />
@@ -59,16 +69,8 @@ export default function Testimonial({ img, name, title, company, text }) {
         >
           {`${title}, ${company}`}
         </SubTitle>
-      </FlexColumn>
-      <FlexColumn
-        style={{
-          transform: isSmallDevice ? null : "rotate(-5deg)",
-          position: "relative",
-        }}
-        wrap="wrap"
-        alignItems="flex-start"
-        justifyContent="center"
-      >
+      </TestimonialCol>
+      <TestimonialCol>
         <Body
           style={{
             textAlign: "left",
@@ -91,7 +93,7 @@ export default function Testimonial({ img, name, title, company, text }) {
             "
           </Quote>
         </Body>
-      </FlexColumn>
+      </TestimonialCol>
     </FlexRow>
   );
 }

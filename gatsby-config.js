@@ -9,7 +9,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-minify`,
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -20,14 +19,14 @@ module.exports = {
         include_favicon: true,
       },
     },
-    "gatsby-plugin-netlify-cms",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/blog`,
-      },
-    },
+    // "gatsby-plugin-netlify-cms",
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: `markdown-pages`,
+    //     path: `${__dirname}/blog`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -6,7 +6,7 @@ import InverseButton from "../atoms/InverseButton";
 import ArrowRight from "../Icons/ArrowRight";
 
 const Container = styled.div`
-  padding: 3rem 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -54,7 +54,7 @@ export default function MobileServiceCard({ title, text, icon, link }: Props) {
       flexDir="column"
       alignItems="center"
       justifyContent="center"
-      style={{ minWidth: "25rem", margin: "1rem 0" }}
+      style={{ marginBottom: "2rem" }}
     >
       <Container>
         <IconContainer>{icon}</IconContainer>

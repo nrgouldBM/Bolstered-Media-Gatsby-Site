@@ -15,6 +15,7 @@ const Container = styled.section`
   background-color: ${COLORS.gray};
   box-sizing: border-box;
   padding: 2.5rem 0;
+  max-width: 100vw;
 `;
 
 const LogosContainer = styled.div`

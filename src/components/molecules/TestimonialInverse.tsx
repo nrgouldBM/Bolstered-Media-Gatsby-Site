@@ -9,6 +9,7 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import styled from "styled-components";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { TestimonialCol } from "./Testimonial";
 
 export const Quote = styled.span`
   font-size: 4rem;
@@ -46,15 +47,7 @@ export default function TestimonialInverse({
       justifyContent="space-evenly"
       wrap="wrap-reverse"
     >
-      <FlexColumn
-        style={{
-          transform: isSmallDevice ? null : "rotate(-5deg)",
-          position: "relative",
-        }}
-        wrap="wrap"
-        alignItems="flex-start"
-        justifyContent="center"
-      >
+      <TestimonialCol>
         <Body
           style={{
             textAlign: "left",
@@ -77,14 +70,10 @@ export default function TestimonialInverse({
             "
           </Quote>
         </Body>
-      </FlexColumn>
-      <FlexColumn
-        wrap="wrap"
-        alignItems="center"
-        justifyContent="center"
+      </TestimonialCol>
+      <TestimonialCol
         style={{
           marginBottom: "4rem",
-          transform: isSmallDevice ? null : "rotate(-5deg)",
         }}
       >
         <Avatar alt="Testimonial" background={COLORS.brown} img={img} />
@@ -103,7 +92,7 @@ export default function TestimonialInverse({
         >
           {`${title}, ${company}`}
         </SubTitle>
-      </FlexColumn>
+      </TestimonialCol>
     </FlexRow>
   );
 }

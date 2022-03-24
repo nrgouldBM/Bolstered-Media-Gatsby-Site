@@ -22,7 +22,6 @@
     "include": [
         "**/*.ts",
         "**/*.tsx",
-        "src/pages/{MarkdownRemark.frontmatter__path}.js",
     ],
     "exclude": [
         "node_modules/*",
