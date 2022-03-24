@@ -16,7 +16,6 @@ import { useWindowDimensions } from "../hooks/useWindowDimensions";
 const TextContainer = styled.div`
   flex: 1;
   margin-bottom: 4rem;
-  /* max-width: 30rem; */
 `;
 
 const SvgContainer = styled.div`

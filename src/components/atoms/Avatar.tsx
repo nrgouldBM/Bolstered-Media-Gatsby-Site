@@ -1,4 +1,3 @@
-// import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import AlexImage from "../../images/headshots/alex.jpg";
 import PatrickImage from "../../images/headshots/patrick.jpg";

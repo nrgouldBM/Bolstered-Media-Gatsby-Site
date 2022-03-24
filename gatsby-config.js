@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Bolstered Media Gatsby Site",
+    siteUrl: "https://www.bolsteredmedia.com",
+    title: "Bolstered Media",
   },
   plugins: [
     "gatsby-plugin-styled-components",
@@ -9,6 +9,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-minify`,
     {
       resolve: "gatsby-plugin-manifest",
       options: {

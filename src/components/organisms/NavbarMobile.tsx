@@ -112,7 +112,6 @@ export default function NavbarMobile() {
             src="../../images/BM_logo.png"
             alt="Bolstered Media Logo"
             width={200}
-            placeholder="blurred"
           />
         </StyledLogo>
         <Burger

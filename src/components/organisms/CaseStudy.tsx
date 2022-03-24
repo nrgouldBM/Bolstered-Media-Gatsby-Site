@@ -83,7 +83,6 @@ export default function CaseStudy() {
       <ImageContainer>
         <StaticImage
           src={"../../images/Bolstered Media - Case Study.png"}
-          // width={500}
           alt="Case Study - $800,000 in sales."
           layout="fullWidth"
         />
