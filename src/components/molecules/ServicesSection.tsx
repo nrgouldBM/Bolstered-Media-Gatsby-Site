@@ -14,7 +14,8 @@ import PaidMediaImage from "../../images/BM_Paid_Media.png";
 import SMSImage from "../../images/BM_SMS.png";
 import EmailImage from "../../images/BM_Email.png";
 import CROImage from "../../images/BM_CRO.png";
-import { graphql } from "gatsby";
+import CreativeImage from "../../images/BM_Creative.png";
+import WebDevImage from "../../images/BM_Web_Dev.png";
 
 const ServiceContainer = styled.section`
   border-radius: 4px;
@@ -128,12 +129,12 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
     case "Conversion Rate Optimization":
       source = CROImage;
       break;
-    // case "Web Development":
-    //   source = PaidMedia;
-    //   break;
-    // case "Creative Content & Strategy":
-    //   source = PaidMedia;
-    //   break;
+    case "Web Development":
+      source = WebDevImage;
+      break;
+    case "Creative Content & Strategy":
+      source = CreativeImage;
+      break;
     default:
       break;
   }
@@ -192,13 +193,3 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
     </ServiceContainer>
   );
 }
-
-// export const pageQuery = graphql`
-//   query {
-//     image: file(relativePath: { eq: "BM_Paid_Media.png" }) {
-//       childImageSharp {
-//         gatsbyImageData
-//       }
-//     }
-//   }
-// `;
