@@ -33,10 +33,6 @@ const MobileCardContainer = styled.div`
 `;
 
 export default function Services() {
-  const { width } = useWindowDimensions();
-
-  
-
   return (
     <Container>
       <Title style={{ marginLeft: "10rem", fontSize: "3rem" }}>

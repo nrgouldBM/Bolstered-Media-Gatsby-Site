@@ -8,14 +8,18 @@ import Experience from "../components/organisms/Experience";
 import Testimonials from "../components/organisms/Testimonials";
 import CallToAction from "../components/organisms/CallToAction";
 import Layout from "../components/organisms/Layout";
+import { useWindowDimensions } from "../hooks/useWindowDimensions";
+import { breakpoint } from "../theme";
+import ServicesMobile from "../components/organisms/ServicesMobile";
 
 const IndexPage = () => {
+  const { width } = useWindowDimensions();
   return (
     <Layout disableMargin>
       <Hero />
       <BrandLogos />
       <CaseStudy />
-      <Services />
+      {width < breakpoint ? <ServicesMobile /> : <Services />}
       <Experience />
       <Testimonials />
       <CallToAction />
