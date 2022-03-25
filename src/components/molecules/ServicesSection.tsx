@@ -83,7 +83,6 @@ interface Props {
     bgColor: string;
     name: string;
   };
-  image: string;
   buttonText: string;
 }
 

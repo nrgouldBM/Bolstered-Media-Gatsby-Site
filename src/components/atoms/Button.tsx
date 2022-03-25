@@ -90,7 +90,6 @@ export default function Button({
   disabled,
 }: Props) {
   const hasIcon = !!icon;
-  console.log(disabled);
   return (
     <StyledButton
       style={style}

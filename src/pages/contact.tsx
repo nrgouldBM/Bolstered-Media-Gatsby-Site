@@ -13,7 +13,7 @@ export default function contact() {
     <Layout>
       <Helmet>
         <title>
-          Contact Us | Bolstered Media | Full-Service Digital Marketing Agency
+          Contact Us | Full-Service Digital Marketing Agency | Bolstered Media
         </title>
       </Helmet>
       <FlexRow

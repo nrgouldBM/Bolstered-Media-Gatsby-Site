@@ -100,9 +100,7 @@ export default function NavbarMobile() {
 
   function handleOpen() {
     setOpen(isOpen ? false : true);
-    console.log(isOpen);
     document.body.style.overflow = isOpen ? "unset" : "hidden";
-    console.log(document.body.style.overflow);
   }
 
   return (

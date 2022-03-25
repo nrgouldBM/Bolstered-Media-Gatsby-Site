@@ -34,10 +34,10 @@ export default function AvatarGroup() {
   return (
     <Container>
       <Avatar>
-        <img src={PatrickImage} />
+        <img alt="Patrick Gall Profile Picture" src={PatrickImage} />
       </Avatar>
       <Avatar>
-        <img src={AlexImage} />
+        <img alt="Alex Hadding Profile Picture" src={AlexImage} />
       </Avatar>
     </Container>
   );

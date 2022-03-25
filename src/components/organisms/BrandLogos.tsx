@@ -45,12 +45,12 @@ const LogosText = styled.h3`
 `;
 
 const LOGOS = [
-  OldSouthLogo,
-  UbumpLogo,
-  PineapplesLogo,
-  AshleyNicholeLogo,
-  FTSLogo,
-  CoastLandLogo,
+  { alt: "Old South Logo", image: OldSouthLogo },
+  { alt: "uBump logo", image: UbumpLogo },
+  { alt: "21Pineapples Apparel Logo ", image: PineapplesLogo },
+  { alt: "Ashley Nichole Logo", image: AshleyNicholeLogo },
+  { alt: "Failure To Stop Logo", image: FTSLogo },
+  { alt: "Coatland Apparel Logo", image: CoastLandLogo },
 ];
 
 export default function BrandLogos() {
@@ -59,8 +59,8 @@ export default function BrandLogos() {
     <Container style={{ width: width }}>
       <LogosText>Trusted By These Brands And More</LogosText>
       <LogosContainer>
-        {LOGOS.map((logo, index) => (
-          <Logo key={index} src={logo} />
+        {LOGOS.map(({ alt, image }, index) => (
+          <Logo key={index} alt={alt} src={image} />
         ))}
       </LogosContainer>
     </Container>

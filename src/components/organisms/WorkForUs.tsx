@@ -42,9 +42,9 @@ export default function WorkForUs() {
       >
         <Title>Want to work for us?</Title>
         <Body>
-          Interested in joining the Bolstered Media team? Email us with why you
-          would be a great addition to the company and a copy of your most
-          up-to-date resume!
+          Interested in joining the Bolstered Media team? Email us saying why
+          you would be a great addition to the company and include a copy of
+          your most up-to-date resume!
         </Body>
         <SubTitle>
           Email{" "}

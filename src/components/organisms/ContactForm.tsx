@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import styled from "styled-components";
 import { breakpoint } from "../../theme";
 import Button from "../atoms/Button";
-import TextInput, { ErrorMessage } from "../molecules/TextInput";
+import TextInput from "../molecules/TextInput";
 import DropDownInput from "../molecules/DropDownInput";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import TextArea from "../molecules/TextArea";
@@ -50,7 +50,7 @@ export default function ContactForm({ style }: Props) {
     email: Yup.string().email().required("Please enter your email"),
     website: Yup.string()
       .matches(
-        /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
+        /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/,
         "Enter valid url!"
       )
       .required("Please enter your website"),
@@ -69,19 +69,15 @@ export default function ContactForm({ style }: Props) {
         validationSchema={validationSchema}
         onSubmit={async (values, { setSubmitting, setErrors, resetForm }) => {
           try {
-            console.log("submitting");
             fetch("/?no-cache=1", {
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
               body: encode({ "form-name": "contact", ...values }),
             });
-            console.log(values);
-            console.log("success");
             setIsSent(true);
             resetForm();
           } catch (error) {
             setErrors(error);
-            console.log("Error");
           } finally {
             setSubmitting(false);
           }
