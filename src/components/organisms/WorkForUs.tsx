@@ -42,12 +42,12 @@ export default function WorkForUs() {
       >
         <Title>Want to work for us?</Title>
         <Body>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
-          mollitia perferendis? Rerum iste temporibus nostrum delectus ipsa
-          ullam dolorum velit.
+          Interested in joining the Bolstered Media team? Email us with why you
+          would be a great addition to the company and a copy of your most
+          up-to-date resume!
         </Body>
         <SubTitle>
-          Send an email to{" "}
+          Email{" "}
           <Span href="mailto:grow@bolsteredmedia.com">
             grow@bolsteredmedia.com
           </Span>
