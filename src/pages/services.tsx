@@ -37,7 +37,9 @@ export default function Services() {
   return (
     <Layout disableMargin>
       <Helmet>
-        <title>Services | Bolstered Media | Full-Service Digital Marketing Agency</title>
+        <title>
+          Services | Bolstered Media | Full-Service Digital Marketing Agency
+        </title>
       </Helmet>
       <HeaderContainer>
         <FlexColumn justifyContent="flex-start" alignItems="space-around">
@@ -72,14 +74,14 @@ export default function Services() {
         <ServicesSplash />
       </HeaderContainer>
       <FlexColumn justifyContent="center" alignItems="space-around">
-        {SERVICES.map(({ title, content, id, icon, image }, index) => (
+        {SERVICES.map(({ title, content, id, icon, buttonText }, index) => (
           <ServicesSection
             key={index}
             title={title}
             content={content}
             id={id}
             icon={icon}
-            image={image}
+            buttonText={buttonText}
           />
         ))}
       </FlexColumn>

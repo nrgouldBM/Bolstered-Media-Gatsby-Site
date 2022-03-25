@@ -54,9 +54,17 @@ interface Props {
   icon?: any;
   link: string;
   index?: number;
+  buttonText: string;
 }
 
-export default function ServiceCard({ title, text, icon, link, index }: Props) {
+export default function ServiceCard({
+  title,
+  buttonText,
+  text,
+  icon,
+  link,
+  index,
+}: Props) {
   return (
     <Card
       height="32rem"
@@ -74,7 +82,7 @@ export default function ServiceCard({ title, text, icon, link, index }: Props) {
         <InverseButton
           link={link}
           secondary
-          text="Learn More"
+          text={buttonText ? `More About ${buttonText}` : "Learn More"}
           style={{ position: "absolute", bottom: 0 }}
           icon={<ArrowRight />}
         />

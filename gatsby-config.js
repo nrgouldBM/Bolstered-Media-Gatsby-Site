@@ -25,6 +25,12 @@ module.exports = {
       },
     },
     "gatsby-plugin-offline",
+    {
+      resolve: "gatsby-plugin-html-attributes",
+      options: {
+        lang: "en",
+      },
+    },
     // "gatsby-plugin-netlify-cms",
     // {
     //   resolve: "gatsby-source-filesystem",

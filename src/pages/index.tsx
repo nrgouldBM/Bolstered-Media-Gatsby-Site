@@ -17,12 +17,13 @@ const IndexPage = () => {
   const { width } = useWindowDimensions();
   return (
     <Layout disableMargin>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: "en" }}>
         <meta charSet="utf-8" />
         <title>Bolstered Media | Full-Service Digital Agency</title>
-        <link rel="canonical" href="http://bolsteredmedia.com" />
+        <link rel="canonical" href="https://bolsteredmedia.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#fff533" />
+        <link rel="manifest" href="/manifest.json" />
         <meta
           name="description"
           content="To help you grow your online store, you need an experienced team.

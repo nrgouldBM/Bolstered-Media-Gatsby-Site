@@ -72,7 +72,7 @@ export default function CaseStudy() {
         </FlexRow>
         <ButtonLink
           primary
-          text="Book A Free Call With Us"
+          text="Get A Free Call With Us"
           link="/contact"
           style={{
             marginTop: "1rem",

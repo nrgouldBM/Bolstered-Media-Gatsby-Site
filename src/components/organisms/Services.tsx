@@ -29,7 +29,7 @@ export default function Services() {
         How we get it done
       </Title>
       <CardContainer>
-        {SERVICES.map(({ title, content, id, icon }, index) => {
+        {SERVICES.map(({ title, buttonText, content, id, icon }, index) => {
           return (
             <ServiceCard
               key={index}
@@ -44,6 +44,7 @@ export default function Services() {
               }
               title={title}
               text={content}
+              buttonText={buttonText}
               link={`/services#${id}`}
             />
           );

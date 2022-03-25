@@ -10,7 +10,7 @@ export const SERVICES = [
       color: COLORS.success,
       bgColor: COLORS.successSoft,
     },
-    image: "../../images/Bolstered Media - Paid Media.png",
+    buttonText: "Paid Media",
   },
   {
     title: "SMS Marketing",
@@ -22,6 +22,7 @@ export const SERVICES = [
       color: COLORS.warning,
       bgColor: COLORS.warningSoft,
     },
+    buttonText: "SMS",
   },
   {
     title: "Email Marketing",
@@ -33,6 +34,7 @@ export const SERVICES = [
       color: COLORS.purple,
       bgColor: COLORS.purpleSoft,
     },
+    buttonText: "Email",
   },
   {
     title: "Conversion Rate Optimization",
@@ -44,6 +46,7 @@ export const SERVICES = [
       color: COLORS.error,
       bgColor: COLORS.errorSoft,
     },
+    buttonText: "CRO",
   },
   {
     title: "Web Development",
@@ -55,6 +58,7 @@ export const SERVICES = [
       color: COLORS.blue,
       bgColor: COLORS.blueSoft,
     },
+    buttonText: "Web Dev",
   },
   {
     title: "Creative Content & Strategy",
@@ -66,6 +70,7 @@ export const SERVICES = [
       color: COLORS.turqoise,
       bgColor: COLORS.turqoiseSoft,
     },
+    buttonText: "Content",
   },
 ];
 

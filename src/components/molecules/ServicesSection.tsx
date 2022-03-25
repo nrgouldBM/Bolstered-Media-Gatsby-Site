@@ -84,9 +84,16 @@ interface Props {
     name: string;
   };
   image: string;
+  buttonText: string;
 }
 
-export default function ServicesSection({ title, content, id, icon }: Props) {
+export default function ServicesSection({
+  title,
+  buttonText,
+  content,
+  id,
+  icon,
+}: Props) {
   const { width } = useWindowDimensions();
   const cardAnimation = useAnimation();
   const imageAnimation = useAnimation();
@@ -173,10 +180,13 @@ export default function ServicesSection({ title, content, id, icon }: Props) {
             </Title>
             <Body>{content}</Body>
             <ButtonLink
-              text="Start Here"
+              text={`Start With ${buttonText}`}
               link="/contact"
               secondary
-              style={{ width: "15rem", marginTop: "2rem" }}
+              style={{
+                width: isSmallDevice ? "100%" : "fit-content",
+                marginTop: "2rem",
+              }}
               icon={<FaArrowRight color={"#fff"} size={20} />}
             />
           </ContentContainer>
