@@ -53,7 +53,7 @@ export default function Avatar({
   alt,
   name,
 }: Props) {
-  let source = ProfileImage;
+  let source;
 
   switch (name) {
     case "Alex Hadding":
@@ -69,6 +69,7 @@ export default function Avatar({
       source = NicholasImage;
       break;
     default:
+      source = ProfileImage;
       break;
   }
 

@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import Profile from "../../images/profile.jpg";
+import Profile from "../../images/optimized/profile.jpg";
 import TestimonialCol from "../molecules/TestimonialCol";
 
 const Container = styled.div`

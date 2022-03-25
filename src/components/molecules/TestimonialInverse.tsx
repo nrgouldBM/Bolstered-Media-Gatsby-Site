@@ -1,13 +1,12 @@
 import React from "react";
 import { SubTitle } from "../atoms/SubTitle";
-import FlexColumn from "../atoms/FlexColumn";
 import FlexRow from "../atoms/FlexRow";
 import { Body } from "../atoms/Body";
 import Avatar from "../atoms/Avatar";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import styled from "styled-components";
-import { useAnimation, motion } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { TestimonialCol } from "./Testimonial";
 

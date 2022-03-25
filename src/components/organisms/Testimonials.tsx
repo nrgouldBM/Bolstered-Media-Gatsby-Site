@@ -1,6 +1,6 @@
 import React from "react";
 import { Title } from "../atoms/Title";
-import Profile2 from "../../images/optimized/profile.jpg";
+import Profile from "../../images/optimized/profile.jpg";
 import styled from "styled-components";
 import Testimonial from "../molecules/Testimonial";
 import { breakpoint, COLORS } from "../../theme";
@@ -44,7 +44,7 @@ export default function Testimonials() {
         </Title>
         <TestimonialContainer>
           <Testimonial
-            img={Profile2}
+            img={Profile}
             name="Bob Jones"
             title="CEO"
             company="company"
@@ -53,7 +53,7 @@ export default function Testimonials() {
         </TestimonialContainer>
         <TestimonialContainer style={{ backgroundColor: COLORS.primary2 }}>
           <TestimonialInverse
-            img={Profile2}
+            img={Profile}
             name="Bob Jones"
             title="CEO"
             company="company"
@@ -64,7 +64,7 @@ export default function Testimonials() {
           style={{ backgroundColor: COLORS.primary3, marginBottom: "7rem" }}
         >
           <Testimonial
-            img={Profile2}
+            img={Profile}
             name="Bob Jones"
             title="CEO"
             company="company"
