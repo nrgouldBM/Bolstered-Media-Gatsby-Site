@@ -1,5 +1,6 @@
 import React from "react";
 import "../index.css";
+import { Helmet } from "react-helmet";
 import { Title } from "../components/atoms/Title";
 import TeamMembers from "../components/organisms/TeamMembers";
 import { Body } from "../components/atoms/Body";
@@ -31,6 +32,11 @@ export default function Team() {
   const { width } = useWindowDimensions();
   return (
     <Layout>
+      <Helmet>
+        <title>
+          Team | Bolstered Media | Full-Service Digital Marketing Agency
+        </title>
+      </Helmet>
       <FlexRow
         alignItems="center"
         justifyContent="space-between"

@@ -1,6 +1,7 @@
 import { Body } from "../components/atoms/Body";
 import "../index.css";
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import FlexColumn from "../components/atoms/FlexColumn";
 import { Title } from "../components/atoms/Title";
@@ -35,6 +36,9 @@ export default function Services() {
   const { width } = useWindowDimensions();
   return (
     <Layout disableMargin>
+      <Helmet>
+        <title>Services | Bolstered Media | Full-Service Digital Marketing Agency</title>
+      </Helmet>
       <HeaderContainer>
         <FlexColumn justifyContent="flex-start" alignItems="space-around">
           <SubTitle style={{ color: COLORS.secondary, marginBottom: "-1rem" }}>

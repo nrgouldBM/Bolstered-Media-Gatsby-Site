@@ -10,6 +10,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    "gatsby-plugin-minify",
     "gatsby-plugin-netlify",
     {
       resolve: "gatsby-plugin-manifest",
@@ -19,8 +20,11 @@ module.exports = {
         description: `To help you grow your online store, you need an experienced team. While driving over $100 million in online sales, our team has scaled dozens of direct to consumer programs for some of the most recognizable brands in the world. Utilizing proven advertising strategies along with tested and proven tactics, we know what it takes to generate profitable sales`,
         icon: "src/images/icon.png",
         include_favicon: true,
+        background_color: "#fff",
+        theme_color: "#fff533",
       },
     },
+    "gatsby-plugin-offline",
     // "gatsby-plugin-netlify-cms",
     // {
     //   resolve: "gatsby-source-filesystem",

@@ -1,5 +1,6 @@
 import "../index.css";
 import { Title } from "../components/atoms/Title";
+import { Helmet } from "react-helmet";
 import React from "react";
 import ContactSection from "../components/organisms/ContactSection";
 import Layout from "../components/organisms/Layout";
@@ -10,6 +11,11 @@ import { SubTitle } from "../components/atoms/SubTitle";
 export default function contact() {
   return (
     <Layout>
+      <Helmet>
+        <title>
+          Contact Us | Bolstered Media | Full-Service Digital Marketing Agency
+        </title>
+      </Helmet>
       <FlexRow
         alignItems="center"
         justifyContent="flex-start"

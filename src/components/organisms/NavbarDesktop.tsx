@@ -37,7 +37,7 @@ export default function NavbarDesktop() {
     <StyledContainer>
       <StyledLogo to="/">
         <StaticImage
-          src="../../images/BM_logo.png"
+          src="../../images/optimized/BM_logo.png"
           alt="Bolstered Media Logo"
           width={200}
         />

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { COLORS } from "../../theme";
-import AlexImage from "../../images/headshots/alex.jpg";
-import PatrickImage from "../../images/headshots/patrick.jpg";
+import AlexImage from "../../images/optimized/alex.jpg";
+import PatrickImage from "../../images/optimized/patrick.jpg";
 
 const Container = styled.div`
   display: inline-flex;

@@ -10,12 +10,12 @@ import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { AnimatedCard } from "../atoms/AnimatedCard";
 import { breakpoint, COLORS, SHADOW } from "../../theme";
-import PaidMediaImage from "../../images/BM_Paid_Media.png";
-import SMSImage from "../../images/BM_SMS.png";
-import EmailImage from "../../images/BM_Email.png";
-import CROImage from "../../images/BM_CRO.png";
-import CreativeImage from "../../images/BM_Creative.png";
-import WebDevImage from "../../images/BM_Web_Dev.png";
+import PaidMediaImage from "../../images/optimized/BM_Paid_Media.png";
+import SMSImage from "../../images/optimized/BM_SMS.png";
+import EmailImage from "../../images/optimized/BM_Email.png";
+import CROImage from "../../images/optimized/BM_CRO.png";
+import CreativeImage from "../../images/optimized/BM_Creative.png";
+import WebDevImage from "../../images/optimized/BM_Web_Dev.png";
 
 const ServiceContainer = styled.section`
   border-radius: 4px;

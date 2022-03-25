@@ -1,7 +1,6 @@
 import React from "react";
 import { Title } from "../atoms/Title";
-import Profile2 from "../../images/Profile2.png";
-
+import Profile2 from "../../images/optimized/profile.jpg";
 import styled from "styled-components";
 import Testimonial from "../molecules/Testimonial";
 import { breakpoint, COLORS } from "../../theme";

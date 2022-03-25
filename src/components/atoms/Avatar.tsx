@@ -1,9 +1,9 @@
 import React from "react";
-import AlexImage from "../../images/headshots/alex.jpg";
-import PatrickImage from "../../images/headshots/patrick.jpg";
-import JordanImage from "../../images/headshots/jordan.jpg";
-import NicholasImage from "../../images/headshots/nicholas.jpg";
-import ProfileImage from "../../images/profile.jpg";
+import AlexImage from "../../images/optimized/alex.jpg";
+import PatrickImage from "../../images/optimized/patrick.jpg";
+import JordanImage from "../../images/optimized/jordan.jpg";
+import NicholasImage from "../../images/optimized/nicholas.jpg";
+import ProfileImage from "../../images/optimized/profile.jpg";
 import styled from "styled-components";
 
 interface StyleProps {
@@ -47,7 +47,6 @@ interface Props {
 }
 
 export default function Avatar({
-  img,
   size = 200,
   background,
   style,

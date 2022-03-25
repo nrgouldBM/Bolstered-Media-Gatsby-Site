@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import HeroImage from "../../images/hero_image.png";
+import HeroImage from "../../images/optimized/hero_image.png";
 import Statistic from "../molecules/Statistic";
 import { TextSpan } from "../atoms/TextSpan";
 import ButtonLink from "../atoms/ButtonLink";
