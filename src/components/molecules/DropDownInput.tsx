@@ -1,9 +1,9 @@
 import { Field } from "formik";
 import React from "react";
-import { IoCaretDownOutline } from "react-icons/io5";
 import styled from "styled-components";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint, COLORS, SHADOW } from "../../theme";
+import { FaChevronDown } from "react-icons/fa";
 
 const StyledField = styled(Field)`
   border-radius: 8px;
@@ -43,10 +43,10 @@ const FieldContainer = styled.div`
   position: relative;
 `;
 
-const Icon = styled(IoCaretDownOutline)`
+const Icon = styled(FaChevronDown)`
   margin: auto;
   position: absolute;
-  right: 12px;
+  right: 16px;
   z-index: 10;
   top: 0;
   bottom: 0;
@@ -81,7 +81,7 @@ export default function DropDownInput({
         >
           {children}
         </StyledField>
-        <Icon size={20} color={COLORS.primary3} />
+        <Icon size={18} color={COLORS.primaryText} />
       </FieldContainer>
     </Container>
   );

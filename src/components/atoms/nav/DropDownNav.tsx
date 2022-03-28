@@ -62,7 +62,7 @@ export default function DropDownNav({ dropDownItems, linkTitle }: Props) {
   return (
     <React.Fragment>
       <Container
-        onMouseEnter={() => setOpen(!open)}
+        onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
       >
         <LinkText
@@ -71,14 +71,7 @@ export default function DropDownNav({ dropDownItems, linkTitle }: Props) {
         >
           {linkTitle}
         </LinkText>
-        {open ? (
-          <FaChevronUp
-            color={COLORS.primary3}
-            style={{ transition: "all 200ms ease" }}
-          />
-        ) : (
-          <FaChevronDown style={{ transition: "all 200ms ease" }} />
-        )}
+        {open ? <FaChevronUp color={COLORS.primary3} /> : <FaChevronDown />}
         {open && (
           <OpenContainer>
             {dropDownItems.map(({ title, id, icon }, index) => (
@@ -91,6 +84,7 @@ export default function DropDownNav({ dropDownItems, linkTitle }: Props) {
                   padding: "0.5rem",
                   minHeight: "2rem",
                   borderRadius: "8px",
+                  transition: "all 200ms ease",
                 }}
                 onMouseOver={() => setHoverItem(id)}
                 to={`/services#${id}`}
