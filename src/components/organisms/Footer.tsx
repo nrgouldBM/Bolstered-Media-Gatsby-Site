@@ -32,7 +32,7 @@ const FooterLink = styled(StyledNavLink)`
   color: ${COLORS.white};
   margin-bottom: 1rem;
   &:hover {
-    color: ${COLORS.primary};
+    color: ${COLORS.primary3};
   }
 `;
 

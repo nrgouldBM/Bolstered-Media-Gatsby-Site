@@ -10,7 +10,7 @@ export const StyledNavLink = styled(Link)`
   margin-right: 1rem;
 
   &:hover {
-    color: ${COLORS.secondary};
+    color: ${COLORS.primary3};
   }
 
   transition: all 200ms ease;

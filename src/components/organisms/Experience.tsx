@@ -53,7 +53,7 @@ export default function Experience() {
     <Container>
       <AvatarGroup />
       <Title style={{ textAlign: "center" }} size="3rem">
-        Over <TextSpan>15 years</TextSpan> <br />
+        Over <TextSpan>20 years</TextSpan> <br />
         of digital marketing <br />
         experience
       </Title>
