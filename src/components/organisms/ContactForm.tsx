@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components";
-import { breakpoint } from "../../theme";
+import { breakpoint, COLORS } from "../../theme";
 import Button from "../atoms/Button";
 import TextInput from "../molecules/TextInput";
 import DropDownInput from "../molecules/DropDownInput";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import TextArea from "../molecules/TextArea";
+import { FaArrowRight } from "react-icons/fa";
+import { SubTitle } from "../atoms/SubTitle";
 
 const encode = (data: any) => {
   return Object.keys(data)
@@ -59,7 +61,7 @@ export default function ContactForm({ style }: Props) {
   });
 
   if (isSent) {
-    return <div>thanks for your submission</div>;
+    return <SubTitle>thanks for your submission!</SubTitle>;
   }
 
   return (
@@ -103,7 +105,7 @@ export default function ContactForm({ style }: Props) {
             <FormRow>
               <TextInput
                 label="Name"
-                placeholder="Full Name"
+                placeholder="John Doe"
                 name="name"
                 error={errors.name && touched.name ? errors.name : null}
                 value={values.name}
@@ -152,6 +154,16 @@ export default function ContactForm({ style }: Props) {
               value={values.description}
             />
             <Button
+              icon={
+                <FaArrowRight
+                  color={
+                    isSubmitting || !isValid || !dirty
+                      ? COLORS.secondaryText
+                      : "#fff"
+                  }
+                  size={22}
+                />
+              }
               secondary
               disabled={isSubmitting || !isValid || !dirty}
               text="Submit"

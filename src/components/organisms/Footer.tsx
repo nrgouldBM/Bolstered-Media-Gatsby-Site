@@ -36,7 +36,7 @@ const FooterLink = styled(StyledNavLink)`
   }
 `;
 
-const ExternalLink = styled.a`
+export const ExternalLink = styled.a`
   margin-right: 1rem;
   text-decoration: none;
   color: ${COLORS.white};

@@ -29,6 +29,7 @@ export const COLORS = {
   turqoiseSoft: "#DFF6F5",
 
   gray: "#F2F5F5",
+  lightGray: "#F9F9FB",
 
   white: "#ffffff",
 

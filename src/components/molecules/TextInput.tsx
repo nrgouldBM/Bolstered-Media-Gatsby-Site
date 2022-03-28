@@ -8,7 +8,7 @@ const StyledField = styled(Field)`
   border-radius: 8px;
   border: 1px solid ${COLORS.border};
   padding: 0.75rem 1rem;
-  box-shadow: ${SHADOW.normal};
+  /* box-shadow: ${SHADOW.normal}; */
   box-sizing: border-box;
   font-family: "sora";
   font-weight: 500;

@@ -9,7 +9,7 @@ const StyledField = styled(Field)`
   border-radius: 8px;
   border: 1px solid ${COLORS.border};
   padding: 0.75rem 1rem;
-  box-shadow: ${SHADOW.normal};
+  /* box-shadow: ${SHADOW.normal}; */
   font-family: "sora";
   font-weight: 500;
   background-color: ${COLORS.white};
@@ -81,7 +81,7 @@ export default function DropDownInput({
         >
           {children}
         </StyledField>
-        <Icon size={22} color={COLORS.primaryText} />
+        <Icon size={20} color={COLORS.primary3} />
       </FieldContainer>
     </Container>
   );

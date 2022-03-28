@@ -4,6 +4,8 @@ import { StyledNavLink } from "../atoms/nav/StyledNavLink";
 import { StyledNavButton } from "../atoms/nav/StyledNavButton";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import DropDownNav from "../atoms/nav/DropDownNav";
+import { SERVICES } from "../../constants";
 
 const StyledNavLinks = styled.ul`
   display: flex;
@@ -44,7 +46,14 @@ export default function NavbarDesktop() {
       </StyledLogo>
       <StyledNavLinks>
         <StyledNavLink to="/">Home</StyledNavLink>
-        <StyledNavLink to="/services">Services</StyledNavLink>
+        <DropDownNav
+          dropDownItems={SERVICES.map((service) => ({
+            title: service.title,
+            id: service.id,
+            icon: service.icon,
+          }))}
+          linkTitle="Services"
+        />
         <StyledNavLink to="/team/">Team</StyledNavLink>
         <StyledNavButton to="/contact">Contact</StyledNavButton>
       </StyledNavLinks>

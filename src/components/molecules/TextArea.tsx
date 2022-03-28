@@ -6,15 +6,18 @@ import { breakpoint, COLORS, SHADOW } from "../../theme";
 
 const StyledTextArea = styled(Field)`
   border-radius: 8px;
-  border: 1px solid ${COLORS.border};
+  /* border: 1px solid ${COLORS.border}; */
+  border: none;
+  background-color: ${COLORS.lightGray};
   padding: 0.75rem 1rem;
   box-sizing: border-box;
-  box-shadow: ${SHADOW.normal};
+  /* box-shadow: ${SHADOW.normal}; */
   margin-bottom: 2rem;
   resize: vertical;
   &::placeholder {
     font-family: "sora";
     font-weight: 500;
+    color: ${COLORS.secondaryText};
   }
   font-family: "sora";
   font-weight: 500;

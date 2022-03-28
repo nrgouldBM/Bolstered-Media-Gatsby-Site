@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { breakpoint } from "../../theme";
+import { breakpoint, COLORS } from "../../theme";
 import { Body } from "../atoms/Body";
 import FlexRow from "../atoms/FlexRow";
 import TextBox from "../atoms/TextBox";
@@ -8,6 +8,7 @@ import { Title } from "../atoms/Title";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { StaticImage } from "gatsby-plugin-image";
 import ButtonLink from "../atoms/ButtonLink";
+import { SubTitle } from "../atoms/SubTitle";
 
 const Container = styled.section`
   width: 90%;
@@ -42,8 +43,11 @@ export default function CaseStudy() {
   return (
     <Container>
       <MainContainer>
-        <Title style={{ maxWidth: "30rem" }}>
-          Case Study: 6-Month-Old Apparel Brand
+        <SubTitle style={{ marginBottom: "-1rem", color: COLORS.secondary }}>
+          Case Study
+        </SubTitle>
+        <Title size="3rem" style={{ maxWidth: "40rem", marginBottom: "1rem" }}>
+          0-$1M in 6 Months!
         </Title>
         <Body>
           Using a refined organic and paid strategy, Bolstered Media grew a new
@@ -72,7 +76,7 @@ export default function CaseStudy() {
         </FlexRow>
         <ButtonLink
           primary
-          text="Get A Free Call With Us"
+          text="Get a free call with us!"
           link="/contact"
           style={{
             marginTop: "1rem",

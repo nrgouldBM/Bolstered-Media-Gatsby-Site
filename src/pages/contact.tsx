@@ -7,6 +7,7 @@ import Layout from "../components/organisms/Layout";
 import FlexRow from "../components/atoms/FlexRow";
 import { COLORS } from "../theme";
 import { SubTitle } from "../components/atoms/SubTitle";
+import SocialLinks from "../components/molecules/SocialLinks";
 
 export default function contact() {
   return (
@@ -23,7 +24,7 @@ export default function contact() {
       >
         <div style={{ marginBottom: "4rem", maxWidth: "40rem" }}>
           <SubTitle style={{ color: COLORS.secondary, marginBottom: "-1rem" }}>
-            Contact
+            Get In Touch
           </SubTitle>
           <Title>
             Fill out this quick form and we'll get back to you within 48 hours.
@@ -31,6 +32,7 @@ export default function contact() {
         </div>
       </FlexRow>
       <ContactSection />
+      <SocialLinks primary />
     </Layout>
   );
 }

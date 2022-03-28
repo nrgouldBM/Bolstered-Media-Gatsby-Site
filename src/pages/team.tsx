@@ -34,7 +34,8 @@ export default function Team() {
     <Layout>
       <Helmet>
         <title>
-          Team | Bolstered Media | Full-Service Digital Marketing Agency
+          Team | Meet our team of experts on everything digital marketing |
+          Bolstered Media
         </title>
       </Helmet>
       <FlexRow

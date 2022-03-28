@@ -5,6 +5,7 @@ import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import Profile from "../../images/optimized/profile.jpg";
 import TestimonialCol from "../molecules/TestimonialCol";
+import Card from "../atoms/Card";
 
 const Container = styled.div`
   display: flex;
@@ -51,9 +52,16 @@ export default function ContactSection() {
       }
     >
       <ContactContainer
-        style={width > breakpoint ? { marginRight: "5rem" } : null}
+      // style={width > breakpoint ? { marginRight: "5rem" } : null}
       >
-        <ContactForm style={{ marginBottom: "5rem" }} />
+        <Card
+          width="100%"
+          height="fit-content"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <ContactForm style={{ marginBottom: "5rem" }} />
+        </Card>
       </ContactContainer>
       {/* <TestimonialContainer>
         <TestimonialCol

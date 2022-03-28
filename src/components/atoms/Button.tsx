@@ -72,7 +72,7 @@ export const StyledButton = styled.button<styleProps>`
 
 interface Props extends React.HTMLProps<HTMLButtonElement> {
   text: string;
-  icon?: React.FC;
+  icon?: JSX.Element;
   primary?: boolean;
   secondary?: boolean;
   style?: object;
