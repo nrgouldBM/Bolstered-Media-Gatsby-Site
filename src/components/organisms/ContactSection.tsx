@@ -55,7 +55,7 @@ export default function ContactSection() {
       >
         <ContactForm style={{ marginBottom: "5rem" }} />
       </ContactContainer>
-      <TestimonialContainer>
+      {/* <TestimonialContainer>
         <TestimonialCol
           img={Profile}
           name="Karen Jones"
@@ -63,7 +63,7 @@ export default function ContactSection() {
           company="company"
           text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cum voluptatum minus aliquam expedita pariatur animi assumenda, ea perferendis saepe?"
         />
-      </TestimonialContainer>
+      </TestimonialContainer> */}
     </Container>
   );
 }

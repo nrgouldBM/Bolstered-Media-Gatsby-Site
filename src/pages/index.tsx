@@ -39,7 +39,7 @@ const IndexPage = () => {
       <CaseStudy />
       {width < breakpoint ? <ServicesMobile /> : <Services />}
       <Experience />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CallToAction />
     </Layout>
   );
