@@ -103,4 +103,18 @@ export const TEAM = [
       "Nicholas is a jack of all trades–he’s spent the past 6 years honing skills in Photography, Filmmaking, Digital Marketing, Graphic Design, Web Development and more. He specializes in Front-End Development, which involves building and improving sites for a wide array of E-Commerce brands so that they are fast, beautiful, user-friendly and keep customers coming back time and again.",
     email: "nicholas@bolsteredmedia.com",
   },
+  {
+    name: "Melissa Martin",
+    title: "Marketing Manager",
+    description:
+      "A digital marketing pioneer, a social media guru, and a cat mom all in one... Melissa is a veteran of creating and managing digital content for dozens of brands, restaurants and influencers. With over 3 years of experience in social media management, content creation and paid advertising, she is thrilled to be a part of the Bolstered Media team. Outside of the office, Melissa is likely enjoying the presence of her two cats, Palmer and Pluto.",
+    email: "melissa@bolsteredmedia.com",
+  },
+  {
+    name: "Ali Mannino",
+    title: "Sr. Graphic Designer",
+    description:
+      "Ali's background in the garment industry and her bachelor's degree in visual communications make her a power house for creating tailored shirt designs to fit your brand. With her skills in graphic design, photography, and illustration, she's got all your creative needs covered from shirt designs to marketing materials and everything in between.",
+    email: "ali@bolsteredmedia.com",
+  },
 ];

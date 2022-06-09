@@ -11,7 +11,7 @@ import SocialLinks from "../components/molecules/SocialLinks";
 
 export default function contact() {
   return (
-    <Layout>
+    <Layout bottomMargin>
       <Helmet>
         <title>
           Contact Us | Full-Service Digital Marketing Agency | Bolstered Media
@@ -22,7 +22,12 @@ export default function contact() {
         justifyContent="flex-start"
         wrap="wrap-reverse"
       >
-        <div style={{ marginBottom: "4rem", maxWidth: "40rem" }}>
+        <div
+          style={{
+            marginBottom: "4rem",
+            maxWidth: "40rem",
+          }}
+        >
           <SubTitle style={{ color: COLORS.secondary, marginBottom: "-1rem" }}>
             Get In Touch
           </SubTitle>

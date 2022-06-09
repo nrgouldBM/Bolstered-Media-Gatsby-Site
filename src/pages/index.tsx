@@ -6,7 +6,6 @@ import BrandLogos from "../components/organisms/BrandLogos";
 import CaseStudy from "../components/organisms/CaseStudy";
 import Services from "../components/organisms/Services";
 import Experience from "../components/organisms/Experience";
-import Testimonials from "../components/organisms/Testimonials";
 import CallToAction from "../components/organisms/CallToAction";
 import Layout from "../components/organisms/Layout";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
@@ -16,7 +15,7 @@ import ServicesMobile from "../components/organisms/ServicesMobile";
 const IndexPage = () => {
   const { width } = useWindowDimensions();
   return (
-    <Layout disableMargin>
+    <Layout fullWidth>
       <Helmet htmlAttributes={{ lang: "en" }}>
         <meta charSet="utf-8" />
         <title>Bolstered Media | Full-Service Digital Agency</title>
@@ -39,8 +38,7 @@ const IndexPage = () => {
       <CaseStudy />
       {width < breakpoint ? <ServicesMobile /> : <Services />}
       <Experience />
-      {/* <Testimonials /> */}
-      <CallToAction />
+      <CallToAction background />
     </Layout>
   );
 };

@@ -11,6 +11,7 @@ const Container = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   width: 80%;
+  max-width: 80rem;
   justify-items: center;
   margin: auto;
   margin-top: 5rem;

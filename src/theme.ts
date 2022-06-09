@@ -34,6 +34,7 @@ export const COLORS = {
   white: "#ffffff",
 
   brown: "#3A3335",
+  darkBrown: "#262525",
 
   border: "#dbdbdb",
 };

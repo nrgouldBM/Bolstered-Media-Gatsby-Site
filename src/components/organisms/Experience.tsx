@@ -58,7 +58,7 @@ export default function Experience() {
         experience
       </Title>
       <ButtonLink
-        secondary
+        primary
         text="Meet The Team"
         link="/team"
         icon={<ArrowRight />}

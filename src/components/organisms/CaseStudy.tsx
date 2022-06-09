@@ -11,7 +11,7 @@ import ButtonLink from "../atoms/ButtonLink";
 import { SubTitle } from "../atoms/SubTitle";
 
 const Container = styled.section`
-  width: 90%;
+  width: 80%;
   margin: auto;
   margin-top: 5rem;
   display: flex;
@@ -76,7 +76,7 @@ export default function CaseStudy() {
         </FlexRow>
         <ButtonLink
           primary
-          text="Get a free call with us!"
+          text="Grab a call with us!"
           link="/contact"
           style={{
             marginTop: "1rem",

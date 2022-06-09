@@ -69,13 +69,13 @@ const ButtonText = styled.p<ButtonProps>`
 `;
 
 const StyledLink = styled(Link)<ButtonProps>`
-  width: ${(p) => p.width || "20rem"};
+  width: ${(p) => p.width || "16rem"};
   max-width: 90vw;
   text-decoration: none;
 `;
 
 export const StyledButton = styled.div<ButtonProps>`
-  width: ${(p) => p.width || "20rem"};
+  width: ${(p) => p.width || "16rem"};
   max-width: 90vw;
   margin-top: 1rem;
   border: none;

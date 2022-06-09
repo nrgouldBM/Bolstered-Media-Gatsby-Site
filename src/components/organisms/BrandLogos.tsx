@@ -12,7 +12,7 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 const Container = styled.section`
   margin: auto;
   margin-top: 5rem;
-  background-color: #101010;
+  background-color: ${COLORS.darkBrown};
   box-sizing: border-box;
   padding: 2.5rem 0;
   max-width: 100vw;

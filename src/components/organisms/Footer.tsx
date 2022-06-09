@@ -15,7 +15,7 @@ const FooterContainer = styled.div`
   flex-direction: column;
   align-items: space-around;
   justify-content: center;
-  background-color: ${COLORS.brown};
+  background-color: ${COLORS.darkBrown};
   padding: 2rem;
   flex-wrap: wrap;
 `;

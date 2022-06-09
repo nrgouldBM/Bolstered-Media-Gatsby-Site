@@ -19,7 +19,7 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 70%;
   margin: auto;
   margin-bottom: 5rem;
   flex-wrap: wrap-reverse;
@@ -35,7 +35,7 @@ const HeaderContainer = styled.div`
 export default function Services() {
   const { width } = useWindowDimensions();
   return (
-    <Layout disableMargin>
+    <Layout fullWidth>
       <Helmet>
         <title>
           Services | Bolstered Media | Full-Service Digital Marketing Agency

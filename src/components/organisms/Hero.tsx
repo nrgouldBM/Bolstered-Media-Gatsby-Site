@@ -8,7 +8,7 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint } from "../../theme";
 
 const StyledContainer = styled.section`
-  width: 90%;
+  width: 80%;
   margin: auto;
 `;
 
@@ -87,7 +87,7 @@ export default function Hero() {
           <StyledHeroSubTitle>
             To help you grow your online store, you need an experienced team.
             While driving over $100 million in online sales, our team has scaled
-            dozens of direct to consumer programs for some of the most
+            dozens of direct-to-consumer programs for some of the most
             recognizable brands in the world. Utilizing proven advertising
             strategies along with tested and proven tactics, we know what it
             takes to generate profitable sales.

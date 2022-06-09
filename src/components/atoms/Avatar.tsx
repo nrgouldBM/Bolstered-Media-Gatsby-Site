@@ -3,8 +3,11 @@ import AlexImage from "../../images/optimized/alex.jpg";
 import PatrickImage from "../../images/optimized/patrick.jpg";
 import JordanImage from "../../images/optimized/jordan.jpg";
 import NicholasImage from "../../images/optimized/nicholas.jpg";
-import ProfileImage from "../../images/optimized/profile.jpg";
+import ProfileImage from "../../images/optimized/profile.jpeg";
+import MelissaImage from "../../images/optimized/melissa.jpg";
+import AliImage from "../../images/optimized/ali.png";
 import styled from "styled-components";
+import { FaBreadSlice } from "react-icons/fa";
 
 interface StyleProps {
   size?: string | number;
@@ -67,6 +70,12 @@ export default function Avatar({
       break;
     case "Nicholas Gould":
       source = NicholasImage;
+      break;
+    case "Melissa Martin":
+      source = MelissaImage;
+      break;
+    case "Ali Mannino":
+      source = AliImage;
       break;
     default:
       source = ProfileImage;

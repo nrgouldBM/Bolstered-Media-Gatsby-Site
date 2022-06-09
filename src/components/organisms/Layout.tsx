@@ -8,17 +8,19 @@ import Footer from "./Footer";
 
 interface Props {
   children: JSX.Element | JSX.Element[];
-  disableMargin?: boolean;
+  fullWidth?: boolean;
+  bottomMargin?: boolean;
 }
 
-export default function Layout({ children, disableMargin }: Props) {
+export default function Layout({ children, bottomMargin, fullWidth }: Props) {
   const { width } = useWindowDimensions();
   return (
     <>
       {width > breakpoint ? <NavbarDesktop /> : <NavbarMobile />}
       <Main
         style={{
-          width: disableMargin ? "100%" : "90%",
+          width: fullWidth ? "100%" : "80%",
+          marginBottom: bottomMargin ? "5rem" : 0,
         }}
       >
         {children}
