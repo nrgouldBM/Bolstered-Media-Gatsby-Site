@@ -40,6 +40,7 @@ const ToolTip = styled.h5`
   left: 0;
   right: 0;
   transition: all 200ms ease;
+  z-index: 15;
 `;
 
 const Logo = styled.img`
