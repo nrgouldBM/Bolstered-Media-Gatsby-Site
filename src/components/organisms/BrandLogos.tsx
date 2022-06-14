@@ -3,7 +3,6 @@ import styled from "styled-components";
 import UbumpLogo from "../../images/logos/ubump.png";
 import PineapplesLogo from "../../images/logos/21pineapples.png";
 import CoastLandLogo from "../../images/logos/coastland.png";
-import FTSLogo from "../../images/logos/fts.png";
 import OldSouthLogo from "../../images/logos/old-south.png";
 import SouthernAttitudeLogo from "../../images/logos/SA.png";
 import { breakpoint, COLORS } from "../../theme";
@@ -27,6 +26,22 @@ const LogosContainer = styled.div`
   flex-wrap: wrap;
 `;
 
+const ToolTip = styled.h5`
+  color: ${COLORS.primaryText};
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: ${COLORS.primary2};
+  padding: 0.35rem;
+  display: none;
+  position: absolute;
+  border-radius: 4px;
+  bottom: -100;
+  left: 0;
+  right: 0;
+  transition: all 200ms ease;
+`;
+
 const Logo = styled.img`
   max-width: 12rem;
   transition: all 200ms ease;
@@ -41,7 +56,7 @@ const Logo = styled.img`
 `;
 
 const LogosText = styled.h3`
-  color: ${COLORS.primary3};
+  color: ${COLORS.primary2};
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -49,13 +64,19 @@ const LogosText = styled.h3`
   /* padding-top: 2rem; */
 `;
 
+const LogoWrapper = styled.div`
+  position: relative;
+  &:hover ${ToolTip} {
+    display: block;
+  }
+`;
+
 const LOGOS = [
-  { alt: "Old South Logo", image: OldSouthLogo },
-  { alt: "uBump logo", image: UbumpLogo },
-  { alt: "21Pineapples Apparel Logo ", image: PineapplesLogo },
-  { alt: "Failure To Stop Logo", image: FTSLogo },
-  { alt: "Coatland Apparel Logo", image: CoastLandLogo },
-  { alt: "Southern Attitude Logo", image: SouthernAttitudeLogo },
+  { alt: "Old South Apparel", image: OldSouthLogo },
+  { alt: "uBump", image: UbumpLogo },
+  { alt: "21Pineapples", image: PineapplesLogo },
+  { alt: "Coastland Apparel", image: CoastLandLogo },
+  { alt: "Southern Attitude", image: SouthernAttitudeLogo },
 ];
 
 export default function BrandLogos() {
@@ -65,7 +86,10 @@ export default function BrandLogos() {
       <LogosText>Trusted By These Brands And More</LogosText>
       <LogosContainer>
         {LOGOS.map(({ alt, image }, index) => (
-          <Logo key={index} alt={alt} src={image} />
+          <LogoWrapper>
+            <Logo key={index} alt={alt} src={image} />
+            <ToolTip>{alt}</ToolTip>
+          </LogoWrapper>
         ))}
       </LogosContainer>
     </Container>
