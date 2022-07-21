@@ -13,11 +13,15 @@ import { SERVICES } from "../../constants";
 const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: space-around;
+  align-items: space-evenly;
   justify-content: center;
   background-color: ${COLORS.darkBrown};
-  padding: 2rem;
+  padding: 2rem 5rem;
   flex-wrap: wrap;
+
+  @media (max-width: 767px) {
+    align-items: center;
+  }
 `;
 
 const FooterRow = styled.div`
@@ -31,6 +35,7 @@ const FooterRow = styled.div`
 const FooterLink = styled(StyledNavLink)`
   color: ${COLORS.white};
   margin-bottom: 1rem;
+  font-weight: 500;
   &:hover {
     color: ${COLORS.primary3};
   }
@@ -57,6 +62,19 @@ const WatermarkText = styled.p`
   font-size: 0.75rem;
 `;
 
+const ColumnWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1 0 10rem;
+  min-width: 20rem;
+
+  @media (max-width: 767px) {
+    align-items: flex-start;
+  }
+`;
+
 const Column = styled.div`
   display: flex;
   flex-direction: column;
@@ -75,48 +93,56 @@ export default function Footer() {
   return (
     <FooterContainer>
       <FooterRow>
-        <Column>
-          <ColumnTitle>Our Services</ColumnTitle>
-          {SERVICES.map(({ title, id }, index) => (
-            <FooterLink key={index} to={`/services#${id}`}>
-              {title}
-            </FooterLink>
-          ))}
-        </Column>
-        <Column>
-          <ColumnTitle>Helpful Links</ColumnTitle>
-          <FooterLink to="/">Home</FooterLink>
-          <FooterLink to="/team/">Team</FooterLink>
-          <FooterLink to="/services/">Services</FooterLink>
-        </Column>
-        <Column>
-          <ColumnTitle>Action</ColumnTitle>
-          <FooterLink to="/contact">Contact Us</FooterLink>
-          <FooterLink to="/team#jobs">Jobs</FooterLink>
-        </Column>
-        <Column>
-          <ColumnTitle>Follow Us</ColumnTitle>
-          <FlexRow justifyContent="space-around" alignItems="center">
-            <ExternalLink
-              href="https://www.instagram.com/bolsteredmedia/"
-              target="_blank"
-            >
-              <IoLogoInstagram size={42} color={COLORS.white} />
-            </ExternalLink>
-            <ExternalLink
-              href="https://www.facebook.com/BolsteredMedia"
-              target="_blank"
-            >
-              <IoLogoFacebook size={42} color={COLORS.white} />
-            </ExternalLink>
-            <ExternalLink
-              href="https://www.linkedin.com/company/bolstered-media"
-              target="_blank"
-            >
-              <IoLogoLinkedin size={42} color={COLORS.white} />
-            </ExternalLink>
-          </FlexRow>
-        </Column>
+        <ColumnWrapper>
+          <Column>
+            <ColumnTitle>Our Services</ColumnTitle>
+            {SERVICES.map(({ title, id }, index) => (
+              <FooterLink key={index} to={`/services#${id}`}>
+                {title}
+              </FooterLink>
+            ))}
+          </Column>
+        </ColumnWrapper>
+        <ColumnWrapper>
+          <Column>
+            <ColumnTitle>Helpful Links</ColumnTitle>
+            <FooterLink to="/">Home</FooterLink>
+            <FooterLink to="/team/">Team</FooterLink>
+            <FooterLink to="/services/">Services</FooterLink>
+          </Column>
+        </ColumnWrapper>
+        <ColumnWrapper>
+          <Column>
+            <ColumnTitle>Action</ColumnTitle>
+            <FooterLink to="/contact">Contact Us</FooterLink>
+            <FooterLink to="/team#jobs">Jobs</FooterLink>
+          </Column>
+        </ColumnWrapper>
+        <ColumnWrapper>
+          <Column>
+            <ColumnTitle>Follow Us</ColumnTitle>
+            <FlexRow justifyContent="space-around" alignItems="center">
+              <ExternalLink
+                href="https://www.instagram.com/bolsteredmedia/"
+                target="_blank"
+              >
+                <IoLogoInstagram size={42} color={COLORS.white} />
+              </ExternalLink>
+              <ExternalLink
+                href="https://www.facebook.com/BolsteredMedia"
+                target="_blank"
+              >
+                <IoLogoFacebook size={42} color={COLORS.white} />
+              </ExternalLink>
+              <ExternalLink
+                href="https://www.linkedin.com/company/bolstered-media"
+                target="_blank"
+              >
+                <IoLogoLinkedin size={42} color={COLORS.white} />
+              </ExternalLink>
+            </FlexRow>
+          </Column>
+        </ColumnWrapper>
       </FooterRow>
       <WatermarkContainer>
         <WatermarkText>

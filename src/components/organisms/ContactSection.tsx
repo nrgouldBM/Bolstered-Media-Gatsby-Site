@@ -6,6 +6,7 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import Profile from "../../images/optimized/profile.jpg";
 import TestimonialCol from "../molecules/TestimonialCol";
 import Card from "../atoms/Card";
+import GoogleMapReact from "google-map-react";
 
 const Container = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ const ContactContainer = styled.div`
   justify-content: center;
 `;
 
-const TestimonialContainer = styled.div`
+const RightContainer = styled.div`
   background-color: ${COLORS.gray};
   display: flex;
   align-items: center;
@@ -63,15 +64,6 @@ export default function ContactSection() {
           <ContactForm style={{ marginBottom: "5rem" }} />
         </Card>
       </ContactContainer>
-      {/* <TestimonialContainer>
-        <TestimonialCol
-          img={Profile}
-          name="Karen Jones"
-          title="CEO"
-          company="company"
-          text="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cum voluptatum minus aliquam expedita pariatur animi assumenda, ea perferendis saepe?"
-        />
-      </TestimonialContainer> */}
     </Container>
   );
 }
