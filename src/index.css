@@ -13,6 +13,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-snap-type: y proximity;
 }
 *, *:before, *:after {
   box-sizing: inherit;

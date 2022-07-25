@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Title } from "../atoms/Title";
 import { TextSpan } from "../atoms/TextSpan";
@@ -6,6 +6,9 @@ import ArrowRight from "../Icons/ArrowRight";
 import { breakpoint, COLORS } from "../../theme";
 import AvatarGroup from "../molecules/AvatarGroup";
 import ButtonLink from "../atoms/ButtonLink";
+import { motion, useInView, useScroll } from "framer-motion";
+
+const HEIGHT = 600;
 
 const Container = styled.div`
   margin: 10rem 0;
@@ -14,6 +17,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  height: ${HEIGHT + "px"};
 
   @media (max-width: ${breakpoint + "px"}) {
     width: 90%;
@@ -21,7 +25,7 @@ const Container = styled.div`
   }
 `;
 
-const Box1 = styled.div`
+const Box1 = styled(motion.div)`
   position: absolute;
   width: 20rem;
   height: 5rem;
@@ -34,7 +38,7 @@ const Box1 = styled.div`
     display: none;
   }
 `;
-const Box2 = styled.div`
+const Box2 = styled(motion.div)`
   position: absolute;
   width: 20rem;
   height: 5rem;
@@ -49,11 +53,49 @@ const Box2 = styled.div`
 `;
 
 export default function Experience() {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  });
+
+  const inView = useInView(ref);
+
+  useEffect(() => {
+    scrollYProgress.onChange((latest) => {
+      console.log(latest);
+    });
+  });
+
+  const variants = {
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001,
+      },
+    },
+    hidden: {
+      opacity: 0,
+    },
+  };
+
   return (
-    <Container>
+    <Container ref={ref}>
       <AvatarGroup />
-      <Title style={{ textAlign: "center" }} size="3rem">
-        Over <TextSpan>20 years</TextSpan> <br />
+      <Title
+        as={motion.h2}
+        style={{ textAlign: "center" }}
+        initial={{ opacity: 0, scale: 0.75 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        size="3rem"
+      >
+        Over <TextSpan>20 years</TextSpan>
+        <br />
         of digital marketing <br />
         experience
       </Title>
@@ -63,8 +105,16 @@ export default function Experience() {
         link="/team"
         icon={<ArrowRight />}
       />
-      <Box1 />
-      <Box2 />
+      <Box1
+        initial={{ x: -200 }}
+        animate={inView ? "visible" : "hidden"}
+        variants={variants}
+      />
+      <Box2
+        initial={{ x: 200 }}
+        animate={inView ? "visible" : "hidden"}
+        variants={variants}
+      />
     </Container>
   );
 }

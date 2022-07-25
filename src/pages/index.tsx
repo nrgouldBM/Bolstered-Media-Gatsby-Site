@@ -11,9 +11,11 @@ import Layout from "../components/organisms/Layout";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import { breakpoint } from "../theme";
 import ServicesMobile from "../components/organisms/ServicesMobile";
+import ServicesAnimated from "../components/organisms/ServicesAnimated";
 
 const IndexPage = () => {
   const { width } = useWindowDimensions();
+
   return (
     <Layout fullWidth>
       <Helmet htmlAttributes={{ lang: "en" }}>
@@ -36,7 +38,7 @@ const IndexPage = () => {
       <Hero />
       <BrandLogos />
       <CaseStudy />
-      {width < breakpoint ? <ServicesMobile /> : <Services />}
+      {width < breakpoint ? <ServicesMobile /> : <ServicesAnimated />}
       <Experience />
       <CallToAction background />
     </Layout>

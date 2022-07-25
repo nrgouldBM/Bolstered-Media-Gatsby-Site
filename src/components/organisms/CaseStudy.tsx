@@ -6,9 +6,10 @@ import FlexRow from "../atoms/FlexRow";
 import TextBox from "../atoms/TextBox";
 import { Title } from "../atoms/Title";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import { StaticImage } from "gatsby-plugin-image";
 import ButtonLink from "../atoms/ButtonLink";
 import { SubTitle } from "../atoms/SubTitle";
+import { StaticImage } from "gatsby-plugin-image";
+import { motion } from "framer-motion";
 
 const Container = styled.section`
   width: 80%;
@@ -84,9 +85,14 @@ export default function CaseStudy() {
           }}
         />
       </MainContainer>
-      <ImageContainer>
+      <ImageContainer
+        as={motion.div}
+        initial={{ y: 100 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <StaticImage
-          src={"../../images/optimized/Bolstered Media - Case Study.png"}
+          src="../../images/Bolstered Media - Case Study.png"
           alt="Case Study - $800,000 in sales."
           layout="fullWidth"
         />

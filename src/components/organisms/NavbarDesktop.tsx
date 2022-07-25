@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { StyledNavLink } from "../atoms/nav/StyledNavLink";
 import { StyledNavButton } from "../atoms/nav/StyledNavButton";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 import DropDownNav from "../atoms/nav/DropDownNav";
 import { SERVICES } from "../../constants";
+import { StaticImage } from "gatsby-plugin-image";
 
 const StyledNavLinks = styled.ul`
   display: flex;
@@ -39,7 +39,7 @@ export default function NavbarDesktop() {
     <StyledContainer>
       <StyledLogo to="/">
         <StaticImage
-          src="../../images/optimized/BM_logo.png"
+          src="../../images/BM_logo.png"
           alt="Bolstered Media Logo"
           width={200}
         />

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import UbumpLogo from "../../images/logos/ubump.png";
-import PineapplesLogo from "../../images/logos/21pineapples.png";
-import CoastLandLogo from "../../images/logos/coastland.png";
+import PineapplesLogo from "../../images/logos/21P Logo.png";
+import SuperXLogo from "../../images/logos/superX logo.png";
 import OldSouthLogo from "../../images/logos/old-south.png";
 import SouthernAttitudeLogo from "../../images/logos/SA.png";
+import ASDLogo from "../../images/logos/ASD logo.png";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 
@@ -31,7 +31,7 @@ const ToolTip = styled.h5`
   font-size: 0.75rem;
   font-weight: 600;
   text-align: center;
-  background-color: ${COLORS.primary2};
+  background-color: ${COLORS.lightGray};
   padding: 0.35rem;
   display: none;
   position: absolute;
@@ -74,10 +74,10 @@ const LogoWrapper = styled.div`
 
 const LOGOS = [
   { alt: "Old South Apparel", image: OldSouthLogo },
-  { alt: "uBump", image: UbumpLogo },
-  { alt: "21Pineapples", image: PineapplesLogo },
-  { alt: "Coastland Apparel", image: CoastLandLogo },
   { alt: "Southern Attitude", image: SouthernAttitudeLogo },
+  { alt: "21Pineapples", image: PineapplesLogo },
+  { alt: "American Steel Designs", image: ASDLogo },
+  { alt: "SuperX Apparel", image: SuperXLogo },
 ];
 
 export default function BrandLogos() {
@@ -87,8 +87,8 @@ export default function BrandLogos() {
       <LogosText>Trusted By These Brands And More</LogosText>
       <LogosContainer>
         {LOGOS.map(({ alt, image }, index) => (
-          <LogoWrapper>
-            <Logo key={index} alt={alt} src={image} />
+          <LogoWrapper key={index}>
+            <Logo alt={alt} src={image} />
             <ToolTip>{alt}</ToolTip>
           </LogoWrapper>
         ))}

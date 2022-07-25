@@ -31,9 +31,7 @@ export default function contact() {
           <SubTitle style={{ color: COLORS.secondary, marginBottom: "-1rem" }}>
             Get In Touch
           </SubTitle>
-          <Title>
-            Fill out this quick form and we'll get back to you within 48 hours.
-          </Title>
+          <Title>Let's get the conversation started.</Title>
         </div>
       </FlexRow>
       <ContactSection />
