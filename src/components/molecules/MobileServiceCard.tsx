@@ -39,6 +39,14 @@ const CardText = styled(Body)`
   line-clamp: 5;
 `;
 
+const ButtonWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+`;
+
 interface Props {
   title: string;
   text: string;
@@ -60,13 +68,15 @@ export default function MobileServiceCard({ title, text, icon, link }: Props) {
         <IconContainer>{icon}</IconContainer>
         <CardTitle>{title}</CardTitle>
         <CardText>{text}</CardText>
-        <InverseButton
-          link={link}
-          secondary
-          text="Learn More"
-          style={{ position: "absolute", bottom: 5 }}
-          icon={<ArrowRight />}
-        />
+        <ButtonWrapper>
+          <InverseButton
+            link={link}
+            secondary
+            text="Learn More"
+            style={{ position: "absolute", bottom: 5 }}
+            icon={<ArrowRight />}
+          />
+        </ButtonWrapper>
       </Container>
     </Card>
   );
