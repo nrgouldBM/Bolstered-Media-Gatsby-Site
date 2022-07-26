@@ -5,7 +5,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import { SERVICES } from "../../constants";
@@ -15,11 +15,9 @@ import ArrowRight from "../Icons/ArrowRight";
 import Icon from "../molecules/Icon";
 
 const MainContainer = styled.div`
-  /* scroll-snap-type: y mandatory;
-  max-height: 80vh;
-  overflow-y: scroll; */
   margin-bottom: 10rem;
   position: relative;
+  max-width: 100vw;
 `;
 
 const ServiceContainer = styled.section`
@@ -34,61 +32,61 @@ const ServiceContainer = styled.section`
 
 const ServiceDiv = styled.div`
   width: 100vw;
-  height: 300px;
+  height: 350px;
   position: relative;
   max-height: 90vh;
-  margin: 20px;
+  /* margin: 20px; */
   background: #fff;
-  /* overflow: hidden; */
-  display: flex;
-  flex-direction: row;
 `;
 
 const ServiceTitle = styled(motion.h2)`
   margin: 0;
   color: ${COLORS.primaryText};
-  font-size: 56px;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.3;
-  max-width: 30rem;
+  max-width: 30vw;
   margin-bottom: 1rem;
 `;
 
 const ServiceText = styled(motion.p)`
   margin: 0;
   color: ${COLORS.primaryText};
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.5;
-  max-width: 30rem;
+  max-width: 30vw;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 4; /* number of lines to show */
   -webkit-box-orient: vertical;
   line-clamp: 4;
-  margin-bottom: 3rem;
+  /* margin-bottom: 1rem; */
 `;
 
 const SideContainer = styled.div`
-  left: calc(50% + 200px);
   position: absolute;
+  left: calc(50% + 200px);
+  top: 0;
+  bottom: 0;
+  padding: 2rem 0;
 `;
 
 const StyledCard = styled.div`
   position: absolute;
-  top: 0;
   left: 50%;
+  top: 0;
   bottom: 0;
   transform: translateX(-200px);
-  width: 100%;
   height: 100%;
+  max-width: 35vw;
 `;
 
 const SectionTitle = styled(motion.h1)`
   position: fixed;
   top: 45%;
-  left: 10%;
+  left: calc(10% - 100px);
   font-size: 3rem;
   z-index: 10;
 `;
@@ -142,8 +140,8 @@ function ServiceCard({
             link={`/services#${id}`}
             secondary
             text={buttonText ? `More About ${buttonText}` : "Learn More"}
-            style={{ position: "absolute", bottom: 0 }}
             icon={<ArrowRight />}
+            style={{ position: "absolute", left: 0 }}
           />
         </SideContainer>
       </ServiceDiv>
@@ -157,8 +155,6 @@ export default function ServicesAnimated() {
   const { ref, inView } = useInView({
     threshold: 0.15,
   });
-
-  console.log(inView);
 
   const { scrollYProgress } = useScroll({ target: ref2 });
 
@@ -179,12 +175,6 @@ export default function ServicesAnimated() {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
-  });
-
-  useEffect(() => {
-    scrollYProgress.onChange((latest) => {
-      console.log(latest);
-    });
   });
 
   return (

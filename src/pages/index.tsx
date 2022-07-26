@@ -38,7 +38,7 @@ const IndexPage = () => {
       <Hero />
       <BrandLogos />
       <CaseStudy />
-      {width < breakpoint ? <ServicesMobile /> : <ServicesAnimated />}
+      {width < 1100 ? <ServicesMobile /> : <ServicesAnimated />}
       <Experience />
       <CallToAction background />
     </Layout>

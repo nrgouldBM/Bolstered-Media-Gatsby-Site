@@ -7,10 +7,11 @@ import SouthernAttitudeLogo from "../../images/logos/SA.png";
 import ASDLogo from "../../images/logos/ASD logo.png";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import { motion } from "framer-motion";
 
 const Container = styled.section`
   margin: auto;
-  margin-top: 5rem;
+  margin-top: 8rem;
   background-color: ${COLORS.darkBrown};
   box-sizing: border-box;
   padding: 2.5rem 0;
@@ -82,12 +83,38 @@ const LOGOS = [
 
 export default function BrandLogos() {
   const { width } = useWindowDimensions();
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+    },
+  };
+
+  const logo = {
+    hidden: { y: -50, opacity: 0 },
+    show: { y: 0, opacity: 1 },
+  };
+
   return (
     <Container style={{ width: width }}>
-      <LogosText>Trusted By These Brands And More</LogosText>
-      <LogosContainer>
+      <LogosText>Trusted By Popular Brands</LogosText>
+      <LogosContainer
+        as={motion.div}
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
         {LOGOS.map(({ alt, image }, index) => (
-          <LogoWrapper key={index}>
+          <LogoWrapper
+            as={motion.div}
+            initial="hidden"
+            animate="show"
+            variants={logo}
+            whileHover={{ scale: 1.05 }}
+            key={index}
+          >
             <Logo alt={alt} src={image} />
             <ToolTip>{alt}</ToolTip>
           </LogoWrapper>

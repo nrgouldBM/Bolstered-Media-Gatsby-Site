@@ -21,6 +21,7 @@ export default function Layout({ children, bottomMargin, fullWidth }: Props) {
         style={{
           width: fullWidth ? "100%" : "80%",
           marginBottom: bottomMargin ? "5rem" : 0,
+          // overflowX: fullWidth ? "hidden" : "auto",
         }}
       >
         {children}

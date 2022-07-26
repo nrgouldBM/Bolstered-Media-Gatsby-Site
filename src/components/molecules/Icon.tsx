@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { IoBicycle } from "react-icons/io5";
 import {
-  FaSms,
   FaComment,
   FaPercentage,
   FaGlobe,

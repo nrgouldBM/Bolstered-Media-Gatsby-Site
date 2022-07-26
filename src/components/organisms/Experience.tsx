@@ -18,6 +18,7 @@ const Container = styled.div`
   justify-content: center;
   position: relative;
   height: ${HEIGHT + "px"};
+  overflow-x: hidden;
 
   @media (max-width: ${breakpoint + "px"}) {
     width: 90%;
@@ -55,17 +56,7 @@ const Box2 = styled(motion.div)`
 export default function Experience() {
   const ref = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-  });
-
-  const inView = useInView(ref);
-
-  useEffect(() => {
-    scrollYProgress.onChange((latest) => {
-      console.log(latest);
-    });
-  });
+  const inView = useInView(ref, { once: true });
 
   const variants = {
     visible: {
@@ -90,8 +81,10 @@ export default function Experience() {
         as={motion.h2}
         style={{ textAlign: "center" }}
         initial={{ opacity: 0, scale: 0.75 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
+        animate={
+          inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.75 }
+        }
+        transition={{ duration: 0.5, delay: 0.2 }}
         size="3rem"
       >
         Over <TextSpan>20 years</TextSpan>

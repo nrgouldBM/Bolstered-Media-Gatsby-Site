@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 const Container = styled.section`
   width: 80%;
   margin: auto;
-  margin-top: 5rem;
+  margin-top: 10rem;
   display: flex;
   position: relative;
   flex-wrap: wrap-reverse;
