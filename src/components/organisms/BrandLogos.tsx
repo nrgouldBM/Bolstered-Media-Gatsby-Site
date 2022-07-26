@@ -11,7 +11,7 @@ import { motion, useInView } from "framer-motion";
 
 const Container = styled.section`
   margin: auto;
-  margin-top: 8rem;
+  margin-top: 10rem;
   background-color: ${COLORS.darkBrown};
   box-sizing: border-box;
   padding: 2.5rem 0;
@@ -86,7 +86,7 @@ export default function BrandLogos() {
 
   const ref = useRef(null);
 
-  const inView = useInView(ref, { once: false });
+  const inView = useInView(ref, { once: true });
 
   const container = {
     hidden: { opacity: 0 },

@@ -90,6 +90,7 @@ export default function CaseStudy() {
         initial={{ y: 100 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
       >
         <StaticImage
           src="../../images/Bolstered Media - Case Study.png"

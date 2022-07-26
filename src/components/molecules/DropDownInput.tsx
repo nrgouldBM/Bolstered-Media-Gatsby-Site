@@ -6,9 +6,10 @@ import { breakpoint, COLORS, SHADOW } from "../../theme";
 import { FaChevronDown } from "react-icons/fa";
 
 const StyledField = styled(Field)`
-  border-radius: 8px;
-  border: 1px solid ${COLORS.border};
-  padding: 0.75rem 1rem;
+  /* border-radius: 8px; */
+  border: none;
+  border-bottom: 1px solid ${COLORS.border};
+  padding: 0.75rem 0;
   /* box-shadow: ${SHADOW.normal}; */
   font-family: "sora";
   font-weight: 500;
@@ -16,6 +17,7 @@ const StyledField = styled(Field)`
   color: ${COLORS.primaryText};
   position: relative;
   z-index: 5;
+  min-width: 15vw;
   -webkit-appearance: none;
   &::placeholder {
     font-family: "sora";
@@ -58,6 +60,7 @@ interface Props {
   placeholder?: string;
   children?: JSX.Element | JSX.Element[];
   handleChange: any;
+  margin?: boolean;
 }
 
 export default function DropDownInput({
@@ -66,14 +69,26 @@ export default function DropDownInput({
   placeholder,
   children,
   handleChange,
+  margin,
 }: Props) {
   const { width } = useWindowDimensions();
   return (
-    <Container style={width < breakpoint ? null : { marginRight: 16 }}>
+    <Container
+      style={{
+        width: width < breakpoint ? width / 1.3 : `calc(100% - 16px)`,
+        margin: margin ? "1rem" : "1rem 0",
+      }}
+    >
       <StyledLabel>{label}</StyledLabel>
-      <FieldContainer>
+      <FieldContainer
+        style={{
+          width: width < breakpoint ? width / 1.3 : "100%",
+        }}
+      >
         <StyledField
-          style={{ width: width < breakpoint ? width / 1.3 : "15rem" }}
+          style={{
+            width: width < breakpoint ? width / 1.3 : "100%",
+          }}
           name={name}
           as="select"
           placeholder={placeholder}

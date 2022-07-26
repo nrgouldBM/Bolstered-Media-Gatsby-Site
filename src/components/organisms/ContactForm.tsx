@@ -20,8 +20,9 @@ const encode = (data: any) => {
 const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 2rem;
+  min-width: 25vw;
   flex: 1 1;
 `;
 
@@ -102,50 +103,44 @@ export default function ContactForm({ style }: Props) {
             data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
-            <FormRow>
-              <TextInput
-                label="Name"
-                placeholder="John Doe"
-                name="name"
-                error={errors.name && touched.name ? errors.name : null}
-                value={values.name}
-                handleChange={handleChange}
-              />
-              <TextInput
-                label="Email"
-                placeholder="you@website.com"
-                name="email"
-                error={errors.email && touched.email ? errors.email : null}
-                value={values.email}
-                handleChange={handleChange}
-              />
-            </FormRow>
-            <FormRow>
-              <TextInput
-                label="Website"
-                name="website"
-                placeholder="www.yourcompany.com"
-                error={
-                  errors.website && touched.website ? errors.website : null
-                }
-                value={values.website}
-                handleChange={handleChange}
-              />
+            <TextInput
+              label="Name"
+              placeholder="John Doe"
+              name="name"
+              error={errors.name && touched.name ? errors.name : null}
+              value={values.name}
+              handleChange={handleChange}
+            />
+            <TextInput
+              label="Email"
+              placeholder="you@website.com"
+              name="email"
+              error={errors.email && touched.email ? errors.email : null}
+              value={values.email}
+              handleChange={handleChange}
+            />
+            <TextInput
+              label="Website"
+              name="website"
+              placeholder="www.yourcompany.com"
+              error={errors.website && touched.website ? errors.website : null}
+              value={values.website}
+              handleChange={handleChange}
+            />
 
-              <DropDownInput
-                handleChange={handleChange}
-                name="adSpend"
-                label="Monthly Ad Spend"
-              >
-                <option hidden disabled selected>
-                  – select an option –
-                </option>
-                <option>Less Than $2,000</option>
-                <option>$2,000 - $5,000</option>
-                <option>$5,000 - $10,000</option>
-                <option>Greater Than $20,000</option>
-              </DropDownInput>
-            </FormRow>
+            <DropDownInput
+              handleChange={handleChange}
+              name="adSpend"
+              label="Monthly Ad Spend"
+            >
+              <option hidden disabled selected>
+                – select an option –
+              </option>
+              <option>Less Than $2,000</option>
+              <option>$2,000 - $5,000</option>
+              <option>$5,000 - $10,000</option>
+              <option>Greater Than $20,000</option>
+            </DropDownInput>
             <TextArea
               label="Tell us about your business"
               name="description"
@@ -170,6 +165,15 @@ export default function ContactForm({ style }: Props) {
               type="submit"
               style={{ width: width < breakpoint ? width / 1.3 : "15rem" }}
             />
+            <body
+              style={{
+                color: COLORS.secondaryText,
+                fontSize: "0.8rem",
+                marginTop: "4px",
+              }}
+            >
+              We won't share your info with anyone else.
+            </body>
           </StyledForm>
         )}
       </Formik>

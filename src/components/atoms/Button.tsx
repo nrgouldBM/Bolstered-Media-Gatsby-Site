@@ -20,7 +20,8 @@ const primaryStyles = css`
 
 const disabledStyles = css`
   color: ${COLORS.secondaryText};
-  background: ${COLORS.gray};
+  border: 1px solid ${COLORS.border};
+  background: ${COLORS.lightGray};
   cursor: not-allowed;
 
   &:hover {

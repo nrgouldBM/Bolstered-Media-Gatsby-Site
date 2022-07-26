@@ -6,7 +6,8 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import Profile from "../../images/optimized/profile.jpg";
 import TestimonialCol from "../molecules/TestimonialCol";
 import Card from "../atoms/Card";
-import GoogleMapReact from "google-map-react";
+import { Title } from "../atoms/Title";
+import { SubTitle } from "../atoms/SubTitle";
 
 const Container = styled.div`
   display: flex;
@@ -23,6 +24,16 @@ const ContactContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid ${COLORS.border};
+  padding: 2rem 4rem;
+  border-radius: 8px;
 `;
 
 const RightContainer = styled.div`
@@ -55,14 +66,17 @@ export default function ContactSection() {
       <ContactContainer
       // style={width > breakpoint ? { marginRight: "5rem" } : null}
       >
-        <Card
-          width="100%"
-          height="fit-content"
-          justifyContent="space-between"
-          alignItems="center"
-        >
+        <FormContainer>
+          <SubTitle
+            style={{
+              marginBottom: "3rem",
+              maxWidth: "25rem",
+            }}
+          >
+            Fill out this simple form and we'll get back to you within 48 hours!
+          </SubTitle>
           <ContactForm style={{ marginBottom: "5rem" }} />
-        </Card>
+        </FormContainer>
       </ContactContainer>
     </Container>
   );

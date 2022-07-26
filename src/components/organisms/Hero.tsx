@@ -6,6 +6,7 @@ import { TextSpan } from "../atoms/TextSpan";
 import ButtonLink from "../atoms/ButtonLink";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { breakpoint } from "../../theme";
+import { motion } from "framer-motion";
 
 const StyledContainer = styled.section`
   width: 80%;
@@ -62,7 +63,7 @@ const StatsContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  margin-top: 3rem;
+  margin-top: 5rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
 `;
@@ -81,7 +82,11 @@ export default function Hero() {
             marginRight: width > breakpoint ? "5rem" : null,
           }}
         >
-          <StyledHeroTitle>
+          <StyledHeroTitle
+            as={motion.h1}
+            initial={{ y: 50 }}
+            animate={{ scale: 1, y: 0 }}
+          >
             <TextSpan>Full-Service</TextSpan> Digital <br /> Marketing Partner
           </StyledHeroTitle>
           <StyledHeroSubTitle>

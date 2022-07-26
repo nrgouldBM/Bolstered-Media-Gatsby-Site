@@ -4,14 +4,14 @@ import "../index.css";
 import Hero from "../components/organisms/Hero";
 import BrandLogos from "../components/organisms/BrandLogos";
 import CaseStudy from "../components/organisms/CaseStudy";
-import Services from "../components/organisms/Services";
 import Experience from "../components/organisms/Experience";
 import CallToAction from "../components/organisms/CallToAction";
 import Layout from "../components/organisms/Layout";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
-import { breakpoint } from "../theme";
 import ServicesMobile from "../components/organisms/ServicesMobile";
 import ServicesAnimated from "../components/organisms/ServicesAnimated";
+import ContactFormHome from "../components/organisms/ContactFormHome";
+import { COLORS } from "../theme";
 
 const IndexPage = () => {
   const { width } = useWindowDimensions();
@@ -40,7 +40,10 @@ const IndexPage = () => {
       <CaseStudy />
       {width < 1100 ? <ServicesMobile /> : <ServicesAnimated />}
       <Experience />
-      <CallToAction background />
+      <div style={{ backgroundColor: COLORS.primary3, padding: "5rem 0" }}>
+        <ContactFormHome />
+      </div>
+      {/* <CallToAction background /> */}
     </Layout>
   );
 };

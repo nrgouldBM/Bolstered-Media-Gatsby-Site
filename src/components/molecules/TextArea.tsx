@@ -44,6 +44,7 @@ interface Props {
   style?: object;
   handleChange: any;
   value: string;
+  width?: string;
 }
 
 export default function TextArea({
@@ -53,19 +54,21 @@ export default function TextArea({
   style,
   handleChange,
   value,
+  width,
 }: Props) {
-  const { width } = useWindowDimensions();
+  const { width: viewWidth } = useWindowDimensions();
   return (
     <Container
       style={{
-        width: width < breakpoint ? width / 1.3 : `100%`,
+        width:
+          viewWidth < breakpoint ? viewWidth / 1.3 : width ? width : `100%`,
         ...style,
       }}
     >
       <StyledLabel>{label}</StyledLabel>
       <StyledTextArea
         style={{
-          width: width < breakpoint ? width / 1.3 : `calc(100% - 16px)`,
+          width: viewWidth < breakpoint ? viewWidth / 1.3 : `calc(100% - 16px)`,
           ...style,
         }}
         name={name}
