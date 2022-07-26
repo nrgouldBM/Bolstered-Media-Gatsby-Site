@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import PineapplesLogo from "../../images/logos/21P Logo.png";
 import SuperXLogo from "../../images/logos/superX logo.png";
@@ -7,7 +7,7 @@ import SouthernAttitudeLogo from "../../images/logos/SA.png";
 import ASDLogo from "../../images/logos/ASD logo.png";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const Container = styled.section`
   margin: auto;
@@ -84,21 +84,33 @@ const LOGOS = [
 export default function BrandLogos() {
   const { width } = useWindowDimensions();
 
+  const ref = useRef(null);
+
+  const inView = useInView(ref, { once: false });
+
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.3,
+        when: "beforeChildren",
+      },
     },
   };
 
   const logo = {
-    hidden: { y: -50, opacity: 0 },
-    show: { y: 0, opacity: 1 },
+    hidden: { y: 50, opacity: 0 },
+    show: (index: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: index * 0.12, stiffness: 50, damping: 20 },
+    }),
   };
 
   return (
-    <Container style={{ width: width }}>
+    <Container style={{ width: width }} ref={ref}>
       <LogosText>Trusted By Popular Brands</LogosText>
       <LogosContainer
         as={motion.div}
@@ -106,14 +118,15 @@ export default function BrandLogos() {
         initial="hidden"
         animate="show"
       >
-        {LOGOS.map(({ alt, image }, index) => (
+        {LOGOS.map(({ alt, image }, i) => (
           <LogoWrapper
             as={motion.div}
             initial="hidden"
-            animate="show"
+            animate={inView ? "show" : "hidden"}
             variants={logo}
+            custom={i}
             whileHover={{ scale: 1.05 }}
-            key={index}
+            key={i}
           >
             <Logo alt={alt} src={image} />
             <ToolTip>{alt}</ToolTip>
