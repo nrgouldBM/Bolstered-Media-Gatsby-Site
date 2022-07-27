@@ -14,6 +14,7 @@ import { Title } from "../atoms/Title";
 import { motion, useInView } from "framer-motion";
 import { SERVICES } from "../../constants";
 import Icon from "../molecules/Icon";
+import { Body } from "../atoms/Body";
 
 const encode = (data: any) => {
   return Object.keys(data)
@@ -261,7 +262,7 @@ export default function ContactFormHome({ style }: Props) {
               type="submit"
               style={{ width: width < breakpoint ? width / 1.3 : "15rem" }}
             />
-            <body
+            <Body
               style={{
                 color: COLORS.secondaryText,
                 fontSize: "0.8rem",
@@ -269,7 +270,7 @@ export default function ContactFormHome({ style }: Props) {
               }}
             >
               We won't share your info with anyone else.
-            </body>
+            </Body>
           </StyledForm>
         )}
       </Formik>

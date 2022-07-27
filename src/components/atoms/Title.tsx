@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { breakpoint } from "../../theme";
+import { breakpoint, COLORS } from "../../theme";
 
 interface Props {
   size?: string | number;
@@ -7,6 +7,7 @@ interface Props {
 
 export const Title = styled.h1<Props>`
   font-size: ${(p) => p.size || "2rem"};
+  color: ${COLORS.primaryText};
   font-weight: 700;
   position: relative;
   overflow: hidden;
