@@ -3,10 +3,6 @@ import React from "react";
 import styled from "styled-components";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import Profile from "../../images/optimized/profile.jpg";
-import TestimonialCol from "../molecules/TestimonialCol";
-import Card from "../atoms/Card";
-import { Title } from "../atoms/Title";
 import { SubTitle } from "../atoms/SubTitle";
 
 const Container = styled.div`
@@ -36,18 +32,18 @@ const FormContainer = styled.div`
   border-radius: 8px;
 `;
 
-const RightContainer = styled.div`
-  background-color: ${COLORS.gray};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1 1;
-  padding: 2rem 4rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  min-width: 25rem;
-  max-width: 40rem;
-`;
+// const RightContainer = styled.div`
+//   background-color: ${COLORS.gray};
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   flex: 1 1;
+//   padding: 2rem 4rem;
+//   border-radius: 8px;
+//   margin-bottom: 2rem;
+//   min-width: 25rem;
+//   max-width: 40rem;
+// `;
 
 export default function ContactSection() {
   const { width } = useWindowDimensions();

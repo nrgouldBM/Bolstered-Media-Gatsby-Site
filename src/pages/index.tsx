@@ -5,7 +5,6 @@ import Hero from "../components/organisms/Hero";
 import BrandLogos from "../components/organisms/BrandLogos";
 import CaseStudy from "../components/organisms/CaseStudy";
 import Experience from "../components/organisms/Experience";
-import CallToAction from "../components/organisms/CallToAction";
 import Layout from "../components/organisms/Layout";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import ServicesMobile from "../components/organisms/ServicesMobile";
@@ -40,10 +39,7 @@ const IndexPage = () => {
       <CaseStudy />
       {width < 1100 ? <ServicesMobile /> : <ServicesAnimated />}
       <Experience />
-      <div style={{ backgroundColor: COLORS.primary3, padding: "5rem 0" }}>
-        <ContactFormHome />
-      </div>
-      {/* <CallToAction background /> */}
+      <ContactFormHome />
     </Layout>
   );
 };
