@@ -1,10 +1,13 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
-import PineapplesLogo from "../../images/logos/21P Logo.png";
+import PineapplesLogo from "../../images/logos/21pineapples_color.png";
 import SuperXLogo from "../../images/logos/superX logo.png";
-import OldSouthLogo from "../../images/logos/old-south.png";
+import OldSouthLogo from "../../images/logos/old_south.png";
 import SouthernAttitudeLogo from "../../images/logos/SA.png";
 import ASDLogo from "../../images/logos/ASD logo.png";
+import DBNLogo from "../../images/logos/DBN_LOGO.webp";
+import BHBLogo from "../../images/logos/BHB.png";
+import YALLLogo from "../../images/logos/yall_sweet_tea.png";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { motion, useInView } from "framer-motion";
@@ -25,15 +28,16 @@ const LogosContainer = styled.div`
   justify-content: space-evenly;
   padding-bottom: 3rem;
   flex-wrap: wrap;
+  /* overflow-x: scroll; */
 `;
 
 const ToolTip = styled.h5`
   color: ${COLORS.primaryText};
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 600;
   text-align: center;
   background-color: ${COLORS.lightGray};
-  padding: 0.35rem;
+  padding: 0.3rem;
   display: none;
   position: absolute;
   border-radius: 4px;
@@ -45,6 +49,7 @@ const ToolTip = styled.h5`
 `;
 
 const Logo = styled.img`
+  max-height: 3rem;
   max-width: 12rem;
   transition: all 200ms ease;
 
@@ -53,7 +58,7 @@ const Logo = styled.img`
   }
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 `;
 
@@ -66,19 +71,30 @@ const LogosText = styled.h3`
   /* padding-top: 2rem; */
 `;
 
-const LogoWrapper = styled.div`
+interface WrapperProps {
+  width: number;
+}
+
+const LogoWrapper = styled.div<WrapperProps>`
   position: relative;
   &:hover ${ToolTip} {
     display: block;
   }
+
+  /* @media (max-width: ${breakpoint + "px"}) {
+    width: ${(p) => p.width};
+  } */
 `;
 
 const LOGOS = [
   { alt: "Old South Apparel", image: OldSouthLogo },
   { alt: "Southern Attitude", image: SouthernAttitudeLogo },
   { alt: "21Pineapples", image: PineapplesLogo },
+  { alt: "Y'all Sweet Tea", image: YALLLogo },
   { alt: "American Steel Designs", image: ASDLogo },
   { alt: "SuperX Apparel", image: SuperXLogo },
+  { alt: "Dude. Be Nice", image: DBNLogo },
+  // { alt: "Bald Head Blues", image: BHBLogo },
 ];
 
 export default function BrandLogos() {
@@ -120,6 +136,7 @@ export default function BrandLogos() {
       >
         {LOGOS.map(({ alt, image }, i) => (
           <LogoWrapper
+            width={width}
             as={motion.div}
             initial="hidden"
             animate={inView ? "show" : "hidden"}

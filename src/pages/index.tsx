@@ -10,7 +10,6 @@ import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import ServicesMobile from "../components/organisms/ServicesMobile";
 import ServicesAnimated from "../components/organisms/ServicesAnimated";
 import ContactFormHome from "../components/organisms/ContactFormHome";
-import { COLORS } from "../theme";
 
 const IndexPage = () => {
   const { width } = useWindowDimensions();
