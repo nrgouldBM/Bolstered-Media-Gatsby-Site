@@ -2,7 +2,7 @@ import React from "react";
 import AlexImage from "../../images/optimized/alex_pfp.jpg";
 import PatrickImage from "../../images/optimized/patrick.jpg";
 import JordanImage from "../../images/optimized/jordan.jpg";
-import NicholasImage from "../../images/optimized/nicholas.jpg";
+import NicholasImage from "../../images/optimized/nicholas_pfp.png";
 import ProfileImage from "../../images/optimized/profile.jpeg";
 import MelissaImage from "../../images/optimized/melissa_pfp.jpg";
 import AliImage from "../../images/optimized/ali.png";

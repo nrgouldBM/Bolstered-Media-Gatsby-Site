@@ -2,7 +2,7 @@ import * as React from "react";
 import { Helmet } from "react-helmet";
 import "../index.css";
 import Hero from "../components/organisms/Hero";
-import BrandLogos from "../components/organisms/BrandLogos";
+import BrandLogosMobile from "../components/organisms/BrandLogos";
 import CaseStudy from "../components/organisms/CaseStudy";
 import Experience from "../components/organisms/Experience";
 import Layout from "../components/organisms/Layout";
@@ -34,7 +34,7 @@ const IndexPage = () => {
         ></meta>
       </Helmet>
       <Hero />
-      <BrandLogos />
+      <BrandLogosMobile />
       <CaseStudy />
       {width < 1100 ? <ServicesMobile /> : <ServicesAnimated />}
       <Experience />

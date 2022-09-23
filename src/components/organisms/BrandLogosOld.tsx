@@ -6,34 +6,10 @@ import OldSouthLogo from "../../images/logos/old_south.png";
 import SouthernAttitudeLogo from "../../images/logos/SA.png";
 import ASDLogo from "../../images/logos/ASD logo.png";
 import DBNLogo from "../../images/logos/DBN_LOGO.webp";
-import SewSouthern from "../../images/logos/SewSouthern.png";
-// import NewMoonMinerals from "../../images/logos/NewMoonMinerals.png";
-import BHBLogo from "../../images/logos/BHB.png";
 import YALLLogo from "../../images/logos/yall_sweet_tea.png";
 import { breakpoint, COLORS } from "../../theme";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import { motion } from "framer-motion";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 6,
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 5,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 600 },
-    items: 3,
-  },
-  mobile: {
-    breakpoint: { max: 600, min: 0 },
-    items: 2,
-  },
-};
+import { motion, useInView } from "framer-motion";
 
 const Container = styled.section`
   margin: auto;
@@ -46,24 +22,12 @@ const Container = styled.section`
 
 const LogosContainer = styled.div`
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  height: 6rem;
-
-  @media (max-width: ${breakpoint + "px"}) {
-    height: 12rem;
-  }
-`;
-
-const LogoContainer = styled.img`
-  display: inline-block;
-  max-height: 4rem;
-  max-width: 12rem;
-  transition: all 200ms ease;
-
-  @media (max-width: ${breakpoint + "px"}) {
-    margin: 0 2rem 3rem 2rem;
-  }
+  justify-content: space-evenly;
+  padding-bottom: 3rem;
+  flex-wrap: wrap;
+  /* overflow-x: scroll; */
 `;
 
 const ToolTip = styled.h5`
@@ -83,13 +47,17 @@ const ToolTip = styled.h5`
   z-index: 15;
 `;
 
-const LogoWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const Logo = styled.img`
+  max-height: 3rem;
+  max-width: 12rem;
+  transition: all 200ms ease;
 
-  &:hover ${ToolTip} {
-    display: block;
+  @media (max-width: ${breakpoint + "px"}) {
+    margin: 0 2rem 3rem 2rem;
+  }
+
+  &:hover {
+    transform: scale(1.02);
   }
 `;
 
@@ -99,68 +67,84 @@ const LogosText = styled.h3`
   font-weight: 600;
   margin-bottom: 2rem;
   text-align: center;
+  /* padding-top: 2rem; */
+`;
+
+interface WrapperProps {
+  width: number;
+}
+
+const LogoWrapper = styled.div<WrapperProps>`
+  position: relative;
+  &:hover ${ToolTip} {
+    display: block;
+  }
 `;
 
 const LOGOS = [
   { alt: "Old South Apparel", image: OldSouthLogo },
   { alt: "Southern Attitude", image: SouthernAttitudeLogo },
-  { alt: "Bald Head Blues", image: BHBLogo },
   { alt: "21Pineapples", image: PineapplesLogo },
   { alt: "Y'all Sweet Tea", image: YALLLogo },
   { alt: "American Steel Designs", image: ASDLogo },
   { alt: "SuperX Apparel", image: SuperXLogo },
   { alt: "Dude. Be Nice", image: DBNLogo },
-  { alt: "Sew Southern", image: SewSouthern },
+  // { alt: "Bald Head Blues", image: BHBLogo },
 ];
-
-function Logo({ src, alt }: { src: string; alt: string }) {
-  const logo = {
-    out: {
-      x: -200,
-      opacity: 0,
-      transition: { duration: 0.35, easing: "easeIn" },
-    },
-    in: {
-      x: 0,
-      opacity: 1,
-      transition: { duration: 0.35, easing: "easeIn" },
-    },
-    initial: {
-      opacity: 0,
-      x: 150,
-    },
-  };
-
-  return (
-    <motion.div initial="initial" animate={"in"} exit={"out"} variants={logo}>
-      <LogoContainer alt={alt} src={src}></LogoContainer>
-    </motion.div>
-  );
-}
 
 export default function BrandLogos() {
   const { width } = useWindowDimensions();
 
   const ref = useRef(null);
 
+  const inView = useInView(ref, { once: true });
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.3,
+        when: "beforeChildren",
+      },
+    },
+  };
+
+  const logo = {
+    hidden: { y: 50, opacity: 0 },
+    show: (index: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: index * 0.12, stiffness: 50, damping: 20 },
+    }),
+  };
+
   return (
     <Container style={{ width: width }} ref={ref}>
       <LogosText>Trusted By Popular Brands</LogosText>
-      <Carousel
-        responsive={responsive}
-        swipeable={true}
-        draggable={true}
-        ssr={true}
-        infinite={true}
-        autoPlay={true}
-        autoPlaySpeed={2000}
+      <LogosContainer
+        as={motion.div}
+        variants={container}
+        initial="hidden"
+        animate="show"
       >
         {LOGOS.map(({ alt, image }, i) => (
-          <LogoWrapper>
-            <Logo key={i} alt={alt} src={image} />
+          <LogoWrapper
+            width={width}
+            as={motion.div}
+            initial="hidden"
+            animate={inView ? "show" : "hidden"}
+            variants={logo}
+            custom={i}
+            whileHover={{ scale: 1.05 }}
+            key={i}
+          >
+            <Logo alt={alt} src={image} />
+            <ToolTip>{alt}</ToolTip>
           </LogoWrapper>
         ))}
-      </Carousel>
+      </LogosContainer>
     </Container>
   );
 }
