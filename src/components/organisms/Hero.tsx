@@ -53,9 +53,9 @@ const StyledTextContainer = styled.div`
 const StyledImageContainer = styled.div`
   flex: 1 1 20rem;
 
-  @media (max-width: ${breakpoint + "px"}) {
+  /* @media (max-width: ${breakpoint + "px"}) {
     display: none;
-  }
+  } */
 `;
 
 const StatsContainer = styled.div`
@@ -70,6 +70,10 @@ const StatsContainer = styled.div`
 
 const StyledHeroImage = styled.img`
   max-width: 45rem;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    max-width: 80vw;
+  }
 `;
 
 export default function Hero() {
