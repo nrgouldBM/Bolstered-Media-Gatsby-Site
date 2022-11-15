@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Title } from "../atoms/Title";
-import { TextSpan } from "../atoms/TextSpan";
 import ArrowRight from "../Icons/ArrowRight";
 import { breakpoint, COLORS } from "../../theme";
 import AvatarGroup from "../molecules/AvatarGroup";
 import ButtonLink from "../atoms/ButtonLink";
 import { motion, useInView, useScroll } from "framer-motion";
+import TextSpan from "../atoms/TextSpan";
 
 const HEIGHT = 600;
 

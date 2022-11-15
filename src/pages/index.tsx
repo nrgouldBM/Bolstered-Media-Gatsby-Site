@@ -11,6 +11,7 @@ import ServicesMobile from "../components/organisms/ServicesMobile";
 import ServicesAnimated from "../components/organisms/ServicesAnimated";
 import ContactFormHome from "../components/organisms/ContactFormHome";
 import PreferredPartners from "../components/organisms/PreferredPartners";
+import Values from "../components/organisms/Values";
 
 const IndexPage = () => {
   const { width } = useWindowDimensions();
@@ -38,6 +39,7 @@ const IndexPage = () => {
       <PreferredPartners />
       <BrandLogosMobile />
       <CaseStudy />
+      {/* <Values /> */}
       {width < 1100 ? <ServicesMobile /> : <ServicesAnimated />}
       <Experience />
       <ContactFormHome />

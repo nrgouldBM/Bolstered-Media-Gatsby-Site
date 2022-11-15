@@ -5,7 +5,6 @@ import Klaviyo from "../../images/logos/klaviyo.png";
 import Attentive from "../../images/logos/attentive.png";
 import { Title } from "../atoms/Title";
 import { breakpoint } from "../../theme";
-import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { motion, useInView } from "framer-motion";
 
 const Wrapper = styled.div`
@@ -61,8 +60,6 @@ const LOGOS = [
 ];
 
 export default function PreferredPartners() {
-  const { width } = useWindowDimensions();
-
   const ref = useRef(null);
 
   const inView = useInView(ref, { once: true });
@@ -106,7 +103,7 @@ export default function PreferredPartners() {
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             variants={logo}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
           >
             <Logo src={image} />
           </LogoContainer>
