@@ -10,6 +10,7 @@ import { useWindowDimensions } from "../hooks/useWindowDimensions";
 import ServicesMobile from "../components/organisms/ServicesMobile";
 import ServicesAnimated from "../components/organisms/ServicesAnimated";
 import ContactFormHome from "../components/organisms/ContactFormHome";
+import PreferredPartners from "../components/organisms/PreferredPartners";
 
 const IndexPage = () => {
   const { width } = useWindowDimensions();
@@ -34,6 +35,7 @@ const IndexPage = () => {
         ></meta>
       </Helmet>
       <Hero />
+      <PreferredPartners />
       <BrandLogosMobile />
       <CaseStudy />
       {width < 1100 ? <ServicesMobile /> : <ServicesAnimated />}

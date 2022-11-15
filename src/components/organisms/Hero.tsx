@@ -69,7 +69,11 @@ const StatsContainer = styled.div`
 `;
 
 const StyledHeroImage = styled.img`
-  max-width: 45rem;
+  max-width: 40vw;
+
+  @media (max-width: 1200px) {
+    max-width: 60vw;
+  }
 
   @media (max-width: ${breakpoint + "px"}) {
     max-width: 80vw;
@@ -113,11 +117,11 @@ export default function Hero() {
           <StyledHeroImage src={HeroImage} />
         </StyledImageContainer>
       </MainContentContainer>
-      <StatsContainer>
+      {/* <StatsContainer>
         <Statistic stat="$750,000" desc="Avg. Monthly Spend" />
         <Statistic stat="12,000,000" desc="Avg. Monthly Reach" />
         <Statistic stat="5.34%" desc="Avg. Conv. Rate" />
-      </StatsContainer>
+      </StatsContainer> */}
     </StyledContainer>
   );
 }

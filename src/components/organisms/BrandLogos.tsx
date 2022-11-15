@@ -42,7 +42,7 @@ const responsive = {
 
 const Container = styled.section`
   margin: auto;
-  background-color: ${COLORS.darkBrown};
+  background-color: ${COLORS.foreground};
   box-sizing: border-box;
   padding: 2rem 0;
   max-width: 100vw;
@@ -95,9 +95,9 @@ const LogoWrapper = styled.div`
 
 const LogosText = styled.h3`
   color: ${COLORS.primaryText};
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  /* margin-bottom: 2rem; */
+  margin-bottom: 0.5rem;
   text-align: center;
 `;
 
@@ -148,7 +148,7 @@ export default function BrandLogos() {
 
   return (
     <Wrapper>
-      <LogosText>Trusted By Popular Brands</LogosText>
+      <LogosText>Trusted By Popular Brands & Organizations</LogosText>
 
       <Container style={{ width: width }} ref={ref}>
         <Carousel

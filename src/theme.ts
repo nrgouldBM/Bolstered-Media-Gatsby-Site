@@ -4,6 +4,9 @@ export const COLORS = {
   primary2: "#ffe433",
   primary3: "#ffd333",
 
+  background: "#fff",
+  foreground: "#0f0f0f",
+
   secondary: "#305F6A",
   secondarySoft: "#567279",
 
