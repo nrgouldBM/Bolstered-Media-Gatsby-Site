@@ -38,7 +38,7 @@ const Container = styled.div`
 const LogoContainer = styled.div`
   width: 12rem;
   flex: 1 1 12rem;
-  margin-right: 4rem;
+  margin-right: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;

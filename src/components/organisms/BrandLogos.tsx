@@ -17,34 +17,55 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { motion } from "framer-motion";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import "../../styles.css";
 
-import { IoChevronForward } from "react-icons/io5";
+import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
     items: 6,
+    slidesToSlide: 2,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 5,
+    items: 4,
+    slidesToSlide: 2,
   },
   tablet: {
     breakpoint: { max: 1024, min: 600 },
     items: 3,
+    slidesToSlide: 1,
   },
   mobile: {
-    breakpoint: { max: 600, min: 0 },
+    breakpoint: { max: 700, min: 0 },
     items: 2,
+    slidesToSlide: 1,
   },
 };
+
+const LOGOS = [
+  { alt: "Old South Apparel", image: OldSouthLogo },
+  { alt: "Southern Attitude", image: SouthernAttitudeLogo },
+  { alt: "Bald Head Blues", image: BHBLogo },
+  { alt: "Christian Planner", image: ChristianPlanner },
+  { alt: "Coastland", image: CoastlandLogo },
+  { alt: "21Pineapples", image: PineapplesLogo },
+  { alt: "Y'all Sweet Tea", image: YALLLogo },
+  { alt: "New Moon Minerals", image: NewMoonMinerals },
+  { alt: "American Steel Designs", image: ASDLogo },
+  { alt: "SuperX Apparel", image: SuperXLogo },
+  { alt: "Dude. Be Nice", image: DBNLogo },
+  { alt: "Sew Southern", image: SewSouthern },
+];
 
 const Container = styled.section`
   margin: auto;
   background-color: ${COLORS.foreground};
   box-sizing: border-box;
   padding: 2rem 0;
+  padding-bottom: 4rem;
   max-width: 100vw;
 `;
 
@@ -84,9 +105,14 @@ const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 6rem;
+  height: 8rem;
   width: 12rem;
-  margin: 2rem;
+  margin: 2rem 0;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    height: auto;
+    width: 60vw;
+  }
 
   &:hover ${ToolTip} {
     display: block;
@@ -94,27 +120,12 @@ const LogoWrapper = styled.div`
 `;
 
 const LogosText = styled.h3`
-  color: ${COLORS.primaryText};
-  font-size: 1.5rem;
+  color: ${COLORS.primary2};
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin: 0 1rem;
   text-align: center;
 `;
-
-const LOGOS = [
-  { alt: "Old South Apparel", image: OldSouthLogo },
-  { alt: "Southern Attitude", image: SouthernAttitudeLogo },
-  { alt: "Bald Head Blues", image: BHBLogo },
-  { alt: "Christian Planner", image: ChristianPlanner },
-  { alt: "Coastland", image: CoastlandLogo },
-  { alt: "21Pineapples", image: PineapplesLogo },
-  { alt: "Y'all Sweet Tea", image: YALLLogo },
-  { alt: "New Moon Minerals", image: NewMoonMinerals },
-  { alt: "American Steel Designs", image: ASDLogo },
-  { alt: "SuperX Apparel", image: SuperXLogo },
-  { alt: "Dude. Be Nice", image: DBNLogo },
-  { alt: "Sew Southern", image: SewSouthern },
-];
 
 function Logo({ src, alt }: { src: string; alt: string }) {
   const logo = {
@@ -135,11 +146,34 @@ function Logo({ src, alt }: { src: string; alt: string }) {
   };
 
   return (
-    <motion.div initial="initial" animate={"in"} exit={"out"} variants={logo}>
+    <motion.div
+      initial="initial"
+      animate={"in"}
+      exit={"out"}
+      variants={logo}
+      whileHover={{ scale: 1.02 }}
+    >
       <LogoContainer alt={alt} src={src}></LogoContainer>
     </motion.div>
   );
 }
+
+interface CustomArrowProps {
+  onClick?: () => void;
+  position: "left" | "right";
+}
+
+const CustomArrow = ({ position, onClick }: CustomArrowProps) => {
+  return (
+    <button onClick={onClick} className={`arrow ${position}`}>
+      {position === "right" ? (
+        <IoChevronForward size={52} color={COLORS.white} />
+      ) : (
+        <IoChevronBack size={52} color={COLORS.white} />
+      )}
+    </button>
+  );
+};
 
 export default function BrandLogos() {
   const { width } = useWindowDimensions();
@@ -148,9 +182,8 @@ export default function BrandLogos() {
 
   return (
     <Wrapper>
-      <LogosText>Trusted By Popular Brands & Organizations</LogosText>
-
       <Container style={{ width: width }} ref={ref}>
+        <LogosText>Trusted By Popular Brands & Organizations</LogosText>
         <Carousel
           responsive={responsive}
           swipeable={true}
@@ -158,12 +191,10 @@ export default function BrandLogos() {
           ssr={true}
           infinite={true}
           autoPlay={true}
+          containerClass="carousel-container"
           autoPlaySpeed={2000}
-          // customRightArrow={
-          //   <>
-          //     <IoChevronForward size={50} color={COLORS.white} />
-          //   </>
-          // }
+          customRightArrow={<CustomArrow position="right" />}
+          customLeftArrow={<CustomArrow position="left" />}
         >
           {LOGOS.map(({ alt, image }, i) => (
             <LogoWrapper>

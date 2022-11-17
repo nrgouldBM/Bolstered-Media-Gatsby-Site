@@ -19,6 +19,9 @@ const TextSpanText = styled.span<TextProps>`
   border-radius: 4px;
   padding: 0 4px;
   margin: 0 4px;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  hyphens: auto;
 `;
 
 interface Props {

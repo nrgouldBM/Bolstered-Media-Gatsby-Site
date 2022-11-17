@@ -9,6 +9,12 @@ import TextSpan from "../atoms/TextSpan";
 const StyledContainer = styled.section`
   width: 80%;
   margin: auto;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    margin-top: 0;
+    width: 90vw;
+    max-width: 90vw;
+  }
 `;
 
 const MainContentContainer = styled.div`
@@ -17,19 +23,22 @@ const MainContentContainer = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 2rem;
-
-  @media (max-width: ${breakpoint + "px"}) {
-    margin-top: 0;
-  }
 `;
 const StyledHeroTitle = styled.h1`
   font-size: 2.8rem;
-  max-width: 30rem;
   margin: 0;
   margin-bottom: 1rem;
   z-index: 10;
   line-height: 4rem;
-  position: relative;
+  /* position: relative; */
+
+  @media (max-width: ${breakpoint + "px"}) {
+    max-width: 90vw;
+    font-size: 2.5rem;
+    overflow-wrap: break-word;
+    inline-size: 30rem;
+    hyphens: auto;
+  }
 `;
 
 const StyledHeroSubTitle = styled.h2`
@@ -39,6 +48,10 @@ const StyledHeroSubTitle = styled.h2`
   margin-bottom: 1rem;
   max-width: 30rem;
   line-height: 2rem;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    max-width: 90vw;
+  }
 `;
 
 const StyledTextContainer = styled.div`
@@ -52,17 +65,21 @@ const StyledTextContainer = styled.div`
 
 const StyledImageContainer = styled.div`
   flex: 1 1 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const StyledHeroImage = styled.img`
-  max-width: 40vw;
+  max-width: 30vw;
 
   @media (max-width: 1200px) {
     max-width: 60vw;
   }
 
   @media (max-width: ${breakpoint + "px"}) {
-    max-width: 80vw;
+    max-width: 90vw;
+    flex: 1;
   }
 `;
 
@@ -78,9 +95,11 @@ export default function Hero() {
         >
           <StyledHeroTitle>
             Achieve
-            <TextSpan color="success">sustainable growth</TextSpan>
+            <TextSpan>
+              sustainable <br /> growth
+            </TextSpan>
             {/* <TextSpan color="success">executive paid media strategies</TextSpan> */}
-            without
+            without <br />
             <TextSpan>aimless spending</TextSpan>
           </StyledHeroTitle>
           <StyledHeroSubTitle>
