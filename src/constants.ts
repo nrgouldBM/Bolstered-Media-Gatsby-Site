@@ -51,7 +51,7 @@ export const SERVICES = [
   {
     title: "Web Development",
     content:
-      "Your site layout and design matter.  Now more than ever.  It doesn’t matter how good you are at driving traffic, curating content and copy, or how good of an offer you have, if the customer lands on a dud site.  Our team has built and renovated numerous ecommerce sites that are now high-converting and extremely efficient.",
+      "Your site layout and design matter now more than ever. Regardless of how good you are at driving traffic, curating content and copy, or how good of an offer you have, if the customer lands on a dud site, it's game over.  Our team has built and renovated numerous ecommerce sites that as a result are high-converting and extremely efficient.",
     id: "web-dev",
     icon: {
       name: "web",
@@ -63,7 +63,7 @@ export const SERVICES = [
   {
     title: "Creative Content & Strategy",
     content:
-      "Content is king.  Plain and simple.  With the amount of competition that is on social media and other platforms, you have to stand out.  The one thing that does this is your content and creative strategy.  You need content that tells your story and stops the scroll.  Let us help.",
+      "Content is king.  Plain and simple.  With the amount of competition that is on social media and other platforms, you have to stand out.  The one thing that does this is your content and creative strategy.  You need content that tells your story and stops the scroll.",
     id: "creative-content",
     icon: {
       name: "content",
