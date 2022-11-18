@@ -7,7 +7,7 @@ import MobileServiceCard from "../molecules/MobileServiceCard";
 
 const Container = styled.section`
   /* width: 80%; */
-  margin-top: 10rem;
+  margin-top: 3rem;
   position: relative;
 `;
 
@@ -21,7 +21,9 @@ const MobileCardContainer = styled.div`
 export default function ServicesMobile() {
   return (
     <Container>
-      <Title style={{ textAlign: "center" }}>How we get it done</Title>
+      <Title style={{ textAlign: "center", marginBottom: "0.5rem" }}>
+        How we get it done
+      </Title>
       <MobileCardContainer>
         {SERVICES.map(({ title, content, id, icon }, index) => {
           return (

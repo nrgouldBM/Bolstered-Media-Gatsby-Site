@@ -17,6 +17,11 @@ const Container = styled.div<{ width: number | string }>`
   width: ${(props) => (props.width < breakpoint ? "90%" : "70%")};
   align-items: center;
   flex-wrap: wrap-reverse;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    margin: auto;
+    margin-top: 4rem;
+  }
 `;
 
 const Span = styled.a`

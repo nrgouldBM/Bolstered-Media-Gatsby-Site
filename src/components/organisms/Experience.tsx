@@ -22,7 +22,7 @@ const Container = styled.div`
 
   @media (max-width: ${breakpoint + "px"}) {
     width: 90%;
-    margin: 8rem auto;
+    margin: 4rem auto;
   }
 `;
 

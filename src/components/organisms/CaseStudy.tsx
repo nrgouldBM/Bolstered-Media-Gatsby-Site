@@ -14,10 +14,14 @@ import { motion } from "framer-motion";
 const Container = styled.section`
   width: 80%;
   margin: auto;
-  margin-top: 10rem;
+  margin-top: 5rem;
   display: flex;
   position: relative;
   flex-wrap: wrap-reverse;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    margin-top: 2rem;
+  }
 `;
 
 const ImageContainer = styled.div`

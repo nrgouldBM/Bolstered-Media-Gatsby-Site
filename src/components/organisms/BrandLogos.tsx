@@ -70,7 +70,11 @@ const Container = styled.section`
 `;
 
 const Wrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 4rem;
+
+  @media (max-width: ${breakpoint + "px"}) {
+    margin-top: 2rem;
+  }
 `;
 
 const LogoContainer = styled.img`
