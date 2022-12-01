@@ -44,8 +44,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: `content`,
-        path: `${__dirname}/src/content`,
+        name: `blogContent`,
+        path: `${__dirname}/src/content/blog`,
       },
     },
     {
