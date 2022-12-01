@@ -41,13 +41,13 @@ module.exports = {
         // modulePath: `${__dirname}/src/cms/cms.js`,
       },
     },
-    // {
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     name: `markdown-pages`,
-    //     path: `${__dirname}/case-studies`,
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `content`,
+        path: `${__dirname}/src/content`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

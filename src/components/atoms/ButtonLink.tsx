@@ -80,7 +80,7 @@ export const StyledButton = styled.div<ButtonProps>`
   margin-top: 1rem;
   border: none;
   cursor: pointer;
-  padding: 1.25rem 2.5rem;
+  padding: 1.1rem 2.5rem;
   border-radius: 8px;
   box-shadow: ${SHADOW.normal};
   transition: all 500ms ease;

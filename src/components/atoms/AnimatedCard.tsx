@@ -27,7 +27,7 @@ const flexStyles = css<styleProps>`
 
 export const AnimatedCard = styled.div<styleProps>`
   /* overflow: hidden; */
-  border-radius: 16px;
+  border-radius: 8px;
   width: ${(p) => p.width || "20rem"};
   min-width: 20rem;
   height: ${(p) => p.height || "30rem"};

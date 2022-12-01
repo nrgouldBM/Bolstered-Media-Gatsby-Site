@@ -22,9 +22,9 @@ const IconContainer = styled.div<{ bgColor: string; size: number }>`
 
 interface Props {
   color: string;
-  name: string;
+  name: string | "paid" | "sms" | "email" | "cro" | "web" | "content";
   size: number;
-  bgColor: string;
+  bgColor?: string;
   style?: object;
 }
 

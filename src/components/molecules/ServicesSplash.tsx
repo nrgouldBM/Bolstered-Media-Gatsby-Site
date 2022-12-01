@@ -9,7 +9,7 @@ const Container = styled.div`
   margin-bottom: 8rem;
   margin-right: 10rem;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1500px) {
     display: none;
   }
 `;
