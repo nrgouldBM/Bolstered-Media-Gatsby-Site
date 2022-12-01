@@ -9,7 +9,7 @@ public_folder: /assets
 collections:
   - name: case-studies
     label: Case Studies
-    folder: case-studies
+    folder: src/case-studies
     create: true
     fields:
       - { name: path, label: Path }
@@ -19,7 +19,7 @@ collections:
 
   - name: blog
     label: Blog
-    folder: blog
+    folder: src/blog
     create: true
     fields:
       - { name: title, label: Title }
