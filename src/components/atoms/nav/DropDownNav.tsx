@@ -63,20 +63,23 @@ export default function DropDownNav({ dropDownItems, linkTitle }: Props) {
     <React.Fragment>
       <Container
         onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
+        onMouseLeave={() => {
+          setOpen(false);
+          setHoverItem("");
+        }}
       >
         <LinkText
           style={{ color: open ? COLORS.primary3 : COLORS.primaryText }}
-          onClick={() => navigate("/services")}
+          onClick={() => navigate("/services/")}
         >
           {linkTitle}
         </LinkText>
         {open ? <FaChevronUp color={COLORS.primary3} /> : <FaChevronDown />}
         {open && (
           <OpenContainer>
-            {dropDownItems.map(({ title, id, icon }, index) => (
+            {dropDownItems.map(({ title, id, icon }, i) => (
               <StyledNavLink
-                key={index}
+                key={i}
                 style={{
                   marginBottom: "0.5rem",
                   color: hoverItem === id ? icon.color : COLORS.primaryText,
@@ -104,7 +107,14 @@ export default function DropDownNav({ dropDownItems, linkTitle }: Props) {
           </OpenContainer>
         )}
       </Container>
-      {open && <InivisibleBackdrop onClick={() => setOpen(false)} />}
+      {open && (
+        <InivisibleBackdrop
+          onClick={() => {
+            setOpen(false);
+            setHoverItem("");
+          }}
+        />
+      )}
     </React.Fragment>
   );
 }

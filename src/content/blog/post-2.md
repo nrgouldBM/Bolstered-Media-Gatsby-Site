@@ -1,5 +1,5 @@
 ---
-path: "/my-second-blog-post"
+path: "/blog/my-second-blog-post"
 date: "2022-11-25"
 title: "My second blog post"
 category: "CRO"

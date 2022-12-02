@@ -18,16 +18,22 @@ const MainContainer = styled.div`
   margin-bottom: 10rem;
   position: relative;
   max-width: 100vw;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 `;
 
-const ServiceContainer = styled.section`
+interface ServiceCardPropTypes {
+  scrollType: "center" | "none";
+}
+
+const ServiceContainer = styled.section<ServiceCardPropTypes>`
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  scroll-snap-align: center;
+  scroll-snap-align: ${(p) => p.scrollType};
   perspective: 500px;
+  transform-origin: center center;
 `;
 
 const ServiceDiv = styled.div`
@@ -35,7 +41,6 @@ const ServiceDiv = styled.div`
   height: 350px;
   position: relative;
   max-height: 90vh;
-  /* margin: 20px; */
   background: #fff;
 `;
 
@@ -110,20 +115,22 @@ function ServiceCard({
   content,
   id,
   icon,
+  scrollType,
 }: {
   title: string;
   buttonText: string;
   content: string;
   id: string;
   icon: any;
+  scrollType: "none" | "center";
 }) {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 300);
+  const y = useParallax(scrollYProgress, 350);
 
   return (
-    <ServiceContainer>
+    <ServiceContainer scrollType={scrollType}>
       <ServiceDiv ref={ref}>
         <StyledCard>
           <Icon
@@ -199,6 +206,7 @@ export default function ServicesAnimated() {
               title={title}
               content={content}
               buttonText={buttonText}
+              scrollType={inView ? "center" : "none"}
               id={id}
             />
           );

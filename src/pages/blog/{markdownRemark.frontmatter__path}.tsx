@@ -25,10 +25,8 @@ const ProgressBar = styled(motion.div)`
   border-radius: 4px;
 `;
 
-export default function BlogPostTemplate({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data; // data.markdownRemark holds your post data
+export default function BlogPostTemplate({ data }) {
+  const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
 
   const ref = useRef();

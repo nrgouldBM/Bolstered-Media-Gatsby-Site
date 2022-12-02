@@ -19,6 +19,8 @@ interface Props {
   title: string;
   path: string;
   date: string;
+  author: string;
+  category: "paid" | "sms" | "email" | "cro" | "web" | "content";
   style?: object;
 }
 
@@ -27,7 +29,9 @@ export default function BlogCard({
   title,
   path,
   tags,
+  author,
   date,
+  category,
   style,
 }: Props) {
   const { width } = useWindowDimensions();
@@ -42,10 +46,17 @@ export default function BlogCard({
     });
   }
 
-  console.log(body);
+  let categoryLower;
+
+  if (category) {
+    categoryLower = category.toLowerCase();
+  } else {
+    categoryLower = "text";
+  }
+  console.log(categoryLower);
 
   return (
-    <Link to={`.${path}`} style={{ textDecoration: "none" }}>
+    <Link to={path} style={{ textDecoration: "none" }}>
       <AnimatedCard
         justifyContent="space-between"
         alignItems="center"
@@ -69,12 +80,7 @@ export default function BlogCard({
           justifyContent="center"
           style={{ marginBottom: "2rem" }}
         >
-          <Icon
-            name={"cro"}
-            color={SERVICES[3].icon.color}
-            size={32}
-            style={{ margin: "1rem" }}
-          />
+          <Icon name={categoryLower} color={SERVICES[3].icon.color} size={50} />
 
           <SubTitle
             style={{
@@ -86,7 +92,6 @@ export default function BlogCard({
           >
             {title}
           </SubTitle>
-
           <SubTitle
             style={{
               fontSize: 16,
@@ -112,12 +117,10 @@ export default function BlogCard({
           >
             {body}
           </Body>
-          {/* <ButtonLink text="Read More" secondary link={`.${path}`} /> */}
           <InverseButton
             link={`.${path}`}
             secondary
             text="Read More"
-            //   style={{ position: "absolute", bottom: 5 }}
             icon={<ArrowRight />}
           />
         </FlexColumn>

@@ -9,6 +9,9 @@ import {
   FaVideo,
   FaBullhorn,
 } from "react-icons/fa";
+import { ImTextColor } from "react-icons/im";
+import { COLORS } from "../../theme";
+import { SERVICES } from "../../constants";
 
 const IconContainer = styled.div<{ bgColor: string; size: number }>`
   width: ${(p) => p.size + "px"};
@@ -33,23 +36,25 @@ export default function Icon({ color, name, size, bgColor, style }: Props) {
 
   switch (name) {
     case "paid":
-      icon = <FaBullhorn color={color} size={size} />;
+      icon = <FaBullhorn color={color || SERVICES[0].icon.color} size={size} />;
       break;
     case "sms":
-      icon = <FaComment color={color} size={size} />;
+      icon = <FaComment color={color || SERVICES[1].icon.color} size={size} />;
       break;
     case "email":
-      icon = <FaEnvelope color={color} size={size} />;
+      icon = <FaEnvelope color={color || SERVICES[2].icon.color} size={size} />;
       break;
     case "cro":
-      icon = <FaPercentage color={color} size={size} />;
+      icon = <FaPercentage color={color || SERVICES[3].icon.color} size={size} />;
       break;
     case "web":
-      icon = <FaGlobe color={color} size={size} />;
+      icon = <FaGlobe color={color || SERVICES[4].icon.color} size={size} />;
       break;
     case "content":
-      icon = <FaVideo color={color} size={size} />;
+      icon = <FaVideo color={color || SERVICES[5].icon.color} size={size} />;
       break;
+    case "text":
+      icon = <ImTextColor color={COLORS.primary3} size={size} />;
     default:
       break;
   }

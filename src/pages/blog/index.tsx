@@ -15,6 +15,16 @@ const TextContainer = styled.div`
   margin-bottom: 2rem;
 `;
 
+const BlogContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 60vw;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+`;
+
 export default function BlogIndex({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
   const { width } = useWindowDimensions();
@@ -42,9 +52,11 @@ export default function BlogIndex({ data }) {
           </Title>
         </TextContainer>
       </FlexRow>
-      <FlexRow alignItems="center" justifyContent="center" wrap="wrap">
+      <BlogContainer>
         {posts.map((post, i) => {
-          const { title, path, body, date } = post.node.frontmatter;
+          const { title, path, body, date, author, category } =
+            post.node.frontmatter;
+          const third = (i + 1) % 3 == 0 && width > breakpoint;
           return (
             <BlogCard
               key={i}
@@ -52,10 +64,13 @@ export default function BlogIndex({ data }) {
               path={path}
               date={date}
               body={body}
+              category={category}
+              author={author}
+              style={third ? { width: "52rem" } : null}
             />
           );
         })}
-      </FlexRow>
+      </BlogContainer>
       <CallToAction />
     </Layout>
   );
@@ -73,6 +88,8 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             body
+            author
+            category
           }
         }
       }
