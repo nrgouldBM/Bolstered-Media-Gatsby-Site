@@ -39,7 +39,7 @@ const IndexPage = () => {
       <PreferredPartners />
       <BrandLogosMobile />
       <CaseStudy />
-      <Values />
+      {/* <Values /> */}
       {width < 1100 ? <ServicesMobile /> : <ServicesAnimated />}
       <Experience />
       <ContactFormHome />
