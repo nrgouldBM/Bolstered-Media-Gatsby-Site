@@ -51,12 +51,38 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `case-studies`,
+        path: `${__dirname}/src/content/case-studies`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `componentImages`,
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: "G-WZ4GY8MSTD", // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-google-analytics", // default
+          anonymize: true, // default
+          allowAdFeatures: false, // default
+        },
+        googleTagManager: {
+          trackingId: "GTM-TZQMZ3W", // leave empty if you want to disable the tracker
+          cookieName: "gatsby-gdpr-google-tagmanager", // default
+          dataLayerName: "dataLayer", // default
+        },
+        // defines the environments where the tracking should be available  - default is ["production"]
+        environments: ["production", "development"],
+      },
+    },
+    "gatsby-cookie-notice",
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-typescript`,

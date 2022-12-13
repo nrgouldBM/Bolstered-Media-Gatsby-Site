@@ -5,6 +5,7 @@ import NavbarDesktop from "./NavbarDesktop";
 import NavbarMobile from "./NavbarMobile";
 import { breakpoint } from "../../theme";
 import Footer from "./Footer";
+import CookieConsent from "../molecules/CookieConsent";
 
 interface Props {
   children: JSX.Element | JSX.Element[];
@@ -27,6 +28,7 @@ export default function Layout({ children, bottomMargin, fullWidth }: Props) {
         {children}
       </Main>
       <Footer />
+      {/* <CookieConsent /> */}
     </>
   );
 }

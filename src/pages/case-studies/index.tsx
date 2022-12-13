@@ -31,7 +31,7 @@ const BlogContainer = styled.div`
   }
 `;
 
-export default function BlogIndex({ data }) {
+export default function CaseStudyIndex({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
   const { width } = useWindowDimensions();
 
@@ -45,7 +45,7 @@ export default function BlogIndex({ data }) {
       >
         <TextContainer>
           <SubTitle style={{ color: COLORS.secondary, marginBottom: "-1rem" }}>
-            Blog
+            Case Studies
           </SubTitle>
           <Title
             style={{
@@ -55,7 +55,7 @@ export default function BlogIndex({ data }) {
               lineHeight: width < breakpoint ? "2.8rem" : "3.5rem",
             }}
           >
-            Learn from the experts.
+            See our work in action.
           </Title>
         </TextContainer>
       </FlexRow>
@@ -97,7 +97,7 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      filter: { frontmatter: { templateKey: { eq: "case-study" } } }
     ) {
       edges {
         node {

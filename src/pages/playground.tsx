@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "../index.css";
 import { useTransform, useScroll } from "framer-motion";
 import ServicesAnimated from "../components/organisms/ServicesAnimated";
+import { Helmet } from "react-helmet";
 
 const HEIGHT = 600;
 
@@ -22,6 +23,7 @@ export default function playground() {
 
   return (
     <div>
+      <Helmet meta={[{ name: "robots", content: "noindex" }]} />
       <div style={{ height: "100vh", backgroundColor: "black" }} />
       <ServicesAnimated />
       <div style={{ height: "100vh", backgroundColor: "black" }} />

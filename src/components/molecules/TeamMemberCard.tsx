@@ -51,8 +51,8 @@ export default function TeamMemberCard({
       as={motion.div}
       initial={{ y: 50, opacity: 0 }}
       animate={animationControl}
-      hoverStyles
       secondary
+      whileHover={{ scale: 1.02 }}
       width={width < breakpoint ? "90vw" : "30rem"}
       height={width < breakpoint ? "fit-content" : "45rem"}
       style={{

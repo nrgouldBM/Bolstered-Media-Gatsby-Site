@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import styled from "styled-components";
+import { VALUES } from "../../constants";
 import { breakpoint, COLORS } from "../../theme";
 import { Title } from "../atoms/Title";
 
@@ -14,7 +15,7 @@ const Container = styled.div`
   padding: 2rem 0;
 
   @media (max-width: ${breakpoint + "px"}) {
-    width: 90%;
+    width: 100%;
     margin: 8rem auto;
   }
 `;
@@ -38,10 +39,10 @@ const ValueContainer = styled.div`
   justify-content: flex-start;
   background-color: ${COLORS.white};
 
-  margin: 1rem;
+  margin: 1rem 2rem;
   padding: 2rem 1rem;
   padding-top: 2.5rem;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   overflow: hidden;
   position: relative;
 `;
@@ -57,8 +58,9 @@ const NumberContainer = styled.div`
   justify-content: center;
 `;
 
-const NumberText = styled.h4`
+const NumberText = styled.h4<ValueProps>`
   font-size: 3rem;
+  color: ${(p) => p.color};
 `;
 
 const TextContainer = styled.div`
@@ -72,14 +74,16 @@ const ValueTitle = styled.h2`
   font-size: 1.8rem;
   margin: 0;
   margin-bottom: 0.8rem;
+  color: ${COLORS.primaryText};
 `;
 
 const ValueText = styled.h4`
   font-size: 1rem;
   max-width: 20rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.8rem;
   margin: 0;
+  color: ${COLORS.primaryText};
 `;
 
 const StyledBar = styled.div<ValueProps>`
@@ -88,30 +92,9 @@ const StyledBar = styled.div<ValueProps>`
   top: 0;
   left: 0;
   right: 0;
-  height: 8px;
+  height: 6px;
   background-color: ${(p) => p.color};
 `;
-
-const VALUES = [
-  {
-    title: "Reputation",
-    color: COLORS.success,
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque obcaecati laborum nam error consequatur ea culpa quae sit deleniti veritatis?",
-  },
-  {
-    title: "Performance",
-    color: COLORS.blue,
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque obcaecati laborum nam error consequatur ea culpa quae sit deleniti veritatis?",
-  },
-  {
-    title: "Speed",
-    color: COLORS.purple,
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque obcaecati laborum nam error consequatur ea culpa quae sit deleniti veritatis?",
-  },
-];
 
 export default function Values() {
   const ref = useRef(null);
@@ -156,10 +139,10 @@ export default function Values() {
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             variants={logo}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.01 }}
           >
             <NumberContainer>
-              <NumberText>{i + 1 + "."}</NumberText>
+              <NumberText color={value.color}>{i + 1 + "."}</NumberText>
             </NumberContainer>
             <TextContainer>
               <ValueTitle>{value.title}</ValueTitle>

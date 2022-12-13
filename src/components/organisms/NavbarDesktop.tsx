@@ -12,8 +12,8 @@ const StyledNavLinks = styled.ul`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  max-width: 30vw;
-  flex: 1;
+  max-width: 30rem;
+  flex: 2;
 `;
 
 const StyledContainer = styled.div`

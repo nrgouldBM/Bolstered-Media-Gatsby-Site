@@ -118,3 +118,24 @@ export const TEAM = [
     email: "ali@bolsteredmedia.com",
   },
 ];
+
+export const VALUES = [
+  {
+    title: "Reputation",
+    color: COLORS.success,
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque obcaecati laborum nam error consequatur ea culpa quae sit deleniti veritatis?",
+  },
+  {
+    title: "Performance",
+    color: COLORS.blue,
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque obcaecati laborum nam error consequatur ea culpa quae sit deleniti veritatis?",
+  },
+  {
+    title: "Speed",
+    color: COLORS.purple,
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque obcaecati laborum nam error consequatur ea culpa quae sit deleniti veritatis?",
+  },
+];

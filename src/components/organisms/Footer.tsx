@@ -15,7 +15,7 @@ const FooterContainer = styled.div`
   flex-direction: column;
   align-items: space-evenly;
   justify-content: center;
-  background-color: ${COLORS.darkBrown};
+  background-color: ${COLORS.foreground};
   padding: 2rem 5rem;
   flex-wrap: wrap;
 
@@ -79,15 +79,18 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex: 1 0 10rem;
 `;
 
 const ColumnTitle = styled.h3`
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   color: ${COLORS.white};
   font-weight: bold;
+  margin: 1rem 0;
 `;
+
+const SOCIAL_ICON_SIZE = 36;
 
 export default function Footer() {
   return (
@@ -126,19 +129,19 @@ export default function Footer() {
                 href="https://www.instagram.com/bolsteredmedia/"
                 target="_blank"
               >
-                <IoLogoInstagram size={42} color={COLORS.white} />
+                <IoLogoInstagram size={SOCIAL_ICON_SIZE} color={COLORS.white} />
               </ExternalLink>
               <ExternalLink
                 href="https://www.facebook.com/BolsteredMedia"
                 target="_blank"
               >
-                <IoLogoFacebook size={42} color={COLORS.white} />
+                <IoLogoFacebook size={SOCIAL_ICON_SIZE} color={COLORS.white} />
               </ExternalLink>
               <ExternalLink
                 href="https://www.linkedin.com/company/bolstered-media"
                 target="_blank"
               >
-                <IoLogoLinkedin size={42} color={COLORS.white} />
+                <IoLogoLinkedin size={SOCIAL_ICON_SIZE} color={COLORS.white} />
               </ExternalLink>
             </FlexRow>
           </Column>

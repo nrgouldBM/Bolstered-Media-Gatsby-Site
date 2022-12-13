@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { IoBicycle } from "react-icons/io5";
 import {
   FaComment,
   FaPercentage,
@@ -24,7 +23,7 @@ const IconContainer = styled.div<{ bgColor: string; size: number }>`
 `;
 
 interface Props {
-  color: string;
+  color?: string;
   name: string | "paid" | "sms" | "email" | "cro" | "web" | "content";
   size: number;
   bgColor?: string;
@@ -32,7 +31,7 @@ interface Props {
 }
 
 export default function Icon({ color, name, size, bgColor, style }: Props) {
-  let icon = <IoBicycle />;
+  let icon: any;
 
   switch (name) {
     case "paid":
@@ -45,7 +44,9 @@ export default function Icon({ color, name, size, bgColor, style }: Props) {
       icon = <FaEnvelope color={color || SERVICES[2].icon.color} size={size} />;
       break;
     case "cro":
-      icon = <FaPercentage color={color || SERVICES[3].icon.color} size={size} />;
+      icon = (
+        <FaPercentage color={color || SERVICES[3].icon.color} size={size} />
+      );
       break;
     case "web":
       icon = <FaGlobe color={color || SERVICES[4].icon.color} size={size} />;

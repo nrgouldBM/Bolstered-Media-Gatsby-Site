@@ -16,6 +16,12 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "case-study",
+        }
 
   - name: blog
     label: Blog
@@ -28,3 +34,9 @@ collections:
       - { name: author, label: Author }
       - { name: date, label: Date, widget: datetime }
       - { name: body, label: Body, widget: markdown }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }

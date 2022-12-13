@@ -8,6 +8,7 @@ import { StyledNavLink } from "../atoms/nav/StyledNavLink";
 import { StyledNavButton } from "../atoms/nav/StyledNavButton";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import FlexColumn from "../atoms/FlexColumn";
 
 interface Props {
   isOpen?: boolean;
@@ -16,9 +17,10 @@ interface Props {
 const StyledNavLinks = styled.ul`
   padding-top: 2rem;
   display: flex;
+  min-height: 95vh;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex: 1;
   &:last-child {
     margin-top: 2rem;
@@ -31,10 +33,13 @@ const MobileNavLink = styled(StyledNavLink)`
   padding: 0.75rem 1rem;
   margin-bottom: 8px;
   border-radius: 6px;
+  min-width: 90%;
+
   &:hover {
     background-color: ${COLORS.primarySoft};
     color: ${COLORS.primaryText};
   }
+
   &:last-of-type {
     margin-bottom: 2rem;
   }
@@ -47,6 +52,7 @@ const MobileNavButton = styled(StyledNavButton)`
   text-align: center;
   background-color: ${COLORS.secondary};
   color: white;
+  min-width: 90%;
   &:hover {
     background-color: ${COLORS.secondarySoft};
   }
@@ -128,31 +134,37 @@ export default function NavbarMobile() {
         transition={{ type: "tween", ease: "easeInOut" }}
       >
         <StyledNavLinks>
-          <MobileNavLink
-            onClick={handleOpen}
-            to="/"
-            style={{ width: NAV_LINK_WIDTH }}
+          <FlexColumn
+            alignItems="flex-start"
+            justifyContent="center"
+            style={{ width: "100%" }}
           >
-            Home
-          </MobileNavLink>
-          <MobileNavLink
-            onClick={handleOpen}
-            to="/services"
-            style={{ width: NAV_LINK_WIDTH }}
-          >
-            Services
-          </MobileNavLink>
-          <MobileNavLink
-            onClick={handleOpen}
-            to="/team/"
-            style={{ width: NAV_LINK_WIDTH }}
-          >
-            Team
-          </MobileNavLink>
+            <MobileNavLink
+              onClick={handleOpen}
+              to="/"
+              style={{ width: NAV_LINK_WIDTH }}
+            >
+              Home
+            </MobileNavLink>
+            <MobileNavLink
+              onClick={handleOpen}
+              to="/services"
+              style={{ width: NAV_LINK_WIDTH }}
+            >
+              Services
+            </MobileNavLink>
+            <MobileNavLink
+              onClick={handleOpen}
+              to="/team/"
+              style={{ width: NAV_LINK_WIDTH }}
+            >
+              Team
+            </MobileNavLink>
+          </FlexColumn>
           <MobileNavButton
             onClick={handleOpen}
             style={{ width: NAV_LINK_WIDTH }}
-            to="/contact"
+            to="/contact/"
           >
             Contact
           </MobileNavButton>

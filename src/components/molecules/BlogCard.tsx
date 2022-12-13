@@ -8,10 +8,10 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { AnimatedCard } from "../atoms/AnimatedCard";
 import Icon from "./Icon";
-import { SERVICES } from "../../constants";
 import InverseButton from "../atoms/InverseButton";
 import ArrowRight from "../Icons/ArrowRight";
 import { Link } from "gatsby";
+import FlexRow from "../atoms/FlexRow";
 
 interface Props {
   body: string;
@@ -28,7 +28,6 @@ export default function BlogCard({
   body,
   title,
   path,
-  tags,
   author,
   date,
   category,
@@ -56,7 +55,7 @@ export default function BlogCard({
   console.log(categoryLower);
 
   return (
-    <Link to={path} style={{ textDecoration: "none" }}>
+    <Link to={`.${path}`} style={{ textDecoration: "none" }}>
       <AnimatedCard
         justifyContent="space-between"
         alignItems="center"
@@ -65,13 +64,13 @@ export default function BlogCard({
         initial={{ y: 50, opacity: 0 }}
         animate={animationControl}
         secondary
-        whileHover={{ scale: 1.03 }}
+        whileHover={{ scale: 1.02 }}
         width={width < breakpoint ? "90vw" : "25rem"}
         height={width < breakpoint ? "fit-content" : "30rem"}
         style={{
           boxShadow: "none",
           ...style,
-          borderRadius: 4,
+          margin: "1rem",
         }}
       >
         <FlexColumn
@@ -80,7 +79,7 @@ export default function BlogCard({
           justifyContent="center"
           style={{ marginBottom: "2rem" }}
         >
-          <Icon name={categoryLower} color={SERVICES[3].icon.color} size={50} />
+          <Icon name={categoryLower} size={50} />
 
           <SubTitle
             style={{
@@ -92,16 +91,31 @@ export default function BlogCard({
           >
             {title}
           </SubTitle>
-          <SubTitle
-            style={{
-              fontSize: 16,
-              textAlign: "center",
-              lineHeight: "2rem",
-              margin: 0,
-            }}
-          >
-            {date}
-          </SubTitle>
+          <FlexRow alignItems="center" justifyContent="space-between">
+            <SubTitle
+              style={{
+                fontSize: 14,
+                textAlign: "center",
+                lineHeight: "2rem",
+                margin: 0,
+                marginRight: 4,
+                fontWeight: "normal",
+              }}
+            >
+              {author} –
+            </SubTitle>
+            <SubTitle
+              style={{
+                fontSize: 14,
+                textAlign: "center",
+                lineHeight: "2rem",
+                margin: 0,
+                fontWeight: "normal",
+              }}
+            >
+              {date}
+            </SubTitle>
+          </FlexRow>
         </FlexColumn>
         <FlexColumn wrap="wrap" alignItems="center" justifyContent="center">
           <Body

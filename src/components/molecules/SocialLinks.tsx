@@ -20,11 +20,13 @@ interface Props {
   primary?: boolean;
 }
 
+const SOCIAL_LINKS_SIZE = 36;
+
 export default function SocialLinks({ primary }: Props) {
   let color = COLORS.white;
 
   if (primary) {
-    color = COLORS.primary3;
+    color = COLORS.primaryText;
   }
   return (
     <Container>
@@ -37,19 +39,19 @@ export default function SocialLinks({ primary }: Props) {
           href="https://www.instagram.com/bolsteredmedia/"
           target="_blank"
         >
-          <IoLogoInstagram size={42} color={color} />
+          <IoLogoInstagram size={SOCIAL_LINKS_SIZE} color={color} />
         </ExternalLink>
         <ExternalLink
           href="https://www.facebook.com/BolsteredMedia"
           target="_blank"
         >
-          <IoLogoFacebook size={42} color={color} />
+          <IoLogoFacebook size={SOCIAL_LINKS_SIZE} color={color} />
         </ExternalLink>
         <ExternalLink
           href="https://www.linkedin.com/company/bolstered-media"
           target="_blank"
         >
-          <IoLogoLinkedin size={42} color={color} />
+          <IoLogoLinkedin size={SOCIAL_LINKS_SIZE} color={color} />
         </ExternalLink>
       </FlexRow>
     </Container>

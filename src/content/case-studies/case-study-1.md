@@ -1,10 +1,10 @@
 ---
-path: "/my-second-blog-post"
-templateKey: blog-post
-date: "2022-11-25"
-title: "My second blog post"
-category: "content"
-author: "Melissa Martin"
+path: "/case-studies/my-first-case-study"
+templateKey: "case-study"
+date: "2022-11-24"
+title: "My first case study"
+category: "sms"
+author: "Nicholas Gould"
 body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo ullamcorper a lacus vestibulum sed arcu non odio. Tempus iaculis urna id volutpat. Est ante in nibh mauris. A lacus vestibulum sed arcu non odio euismod. Neque vitae tempus quam pellentesque nec nam. Consequat interdum varius sit amet mattis vulputate enim nulla aliquet. Cursus vitae congue mauris rhoncus aenean vel elit. Ipsum nunc aliquet bibendum enim facilisis. Imperdiet nulla malesuada pellentesque elit. Ut placerat orci nulla pellentesque dignissim enim. Sed id semper risus in hendrerit. Facilisis magna etiam tempor orci. Quis varius quam quisque id diam vel quam elementum. Vel quam elementum pulvinar etiam. Maecenas sed enim ut sem viverra aliquet eget sit. Proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo. Vel pretium lectus quam id leo in vitae turpis. Sed augue lacus viverra vitae congue eu.
 
 Eu sem integer vitae justo eget magna fermentum iaculis eu. A pellentesque sit amet porttitor eget dolor morbi. Commodo viverra maecenas accumsan lacus. Arcu cursus euismod quis viverra. Dictum non consectetur a erat nam. Orci nulla pellentesque dignissim enim sit amet. Aliquet porttitor lacus luctus accumsan tortor posuere ac. Feugiat nibh sed pulvinar proin gravida hendrerit lectus. Nisi est sit amet facilisis. Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque.
