@@ -38,10 +38,10 @@ const ValueContainer = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   background-color: ${COLORS.white};
+  height: 20rem;
 
   margin: 1rem 2rem;
-  padding: 2rem 1rem;
-  padding-top: 2.5rem;
+  padding: 2.5rem 2rem 1rem 1rem;
   border-radius: 4px;
   overflow: hidden;
   position: relative;
@@ -52,7 +52,7 @@ const NumberContainer = styled.div`
   max-height: 4rem;
   width: 4rem;
   height: 4rem;
-  margin-right: 2rem;
+  margin-right: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;

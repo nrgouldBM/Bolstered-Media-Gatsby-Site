@@ -9,10 +9,16 @@ import styled from "styled-components";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { breakpoint, COLORS } from "../../theme";
 import FlexRow from "../../components/atoms/FlexRow";
+import ReactMarkdown from "react-markdown";
 
 const Container = styled.div`
+  margin: auto;
   margin-bottom: 3rem;
   min-height: 50vh;
+  max-width: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const ProgressBar = styled(motion.div)`
@@ -25,8 +31,19 @@ const ProgressBar = styled(motion.div)`
   border-radius: 4px;
 `;
 
-const BlogBody = styled(Body)`
+const BlogBody = styled.div`
   max-width: 40rem;
+
+  p {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 2rem;
+    font-weight: 500;
+    white-space: normal;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3rem;
+  }
 
   @media (max-width: ${breakpoint + "px"}) {
     width: 90%;
@@ -54,17 +71,21 @@ export default function BlogPostTemplate({ data }) {
       <Container ref={ref}>
         <FlexColumn alignItems="center" justifyContent="flex-start">
           <Title style={{ marginBottom: "1rem" }}>{frontmatter.title}</Title>
-          <FlexRow
+          <FlexColumn
             style={{ width: "100%" }}
-            alignItems="center"
-            justifyContent="space-around"
+            alignItems="flex-start"
+            justifyContent="space-evenly"
           >
-            <SubTitle style={{ fontSize: 16 }}>{frontmatter.date}</SubTitle>
-            <SubTitle style={{ fontSize: 16, fontWeight: "bold" }}>
+            <SubTitle style={{ fontSize: 16, marginBottom: 4 }}>
+              {frontmatter.date}
+            </SubTitle>
+            <SubTitle style={{ fontSize: 16, marginTop: 4 }}>
               {frontmatter.author}
             </SubTitle>
-          </FlexRow>
-          <BlogBody>{frontmatter.body}</BlogBody>
+          </FlexColumn>
+          <BlogBody>
+            <ReactMarkdown>{frontmatter.body}</ReactMarkdown>
+          </BlogBody>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </FlexColumn>
       </Container>

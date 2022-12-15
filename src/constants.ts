@@ -124,7 +124,7 @@ export const VALUES = [
     title: "Reputation",
     color: COLORS.success,
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque obcaecati laborum nam error consequatur ea culpa quae sit deleniti veritatis?",
+      "We pride ourselves on doing the hard work a put an emphasis on delivering high-quality services to our clients. We prioritize building and maintaining positive relationships with clients to fully understand how to grow their brands to new heights.",
   },
   {
     title: "Performance",
@@ -136,6 +136,6 @@ export const VALUES = [
     title: "Speed",
     color: COLORS.purple,
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque obcaecati laborum nam error consequatur ea culpa quae sit deleniti veritatis?",
+      "Efficiency is key in this industry. With our skilled and diverse team, we are able to quickly and effectively launch a wide variety of successful campaigns that generates a strong ROI.",
   },
 ];
