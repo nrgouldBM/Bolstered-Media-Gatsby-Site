@@ -2,14 +2,11 @@ import React, { useRef } from "react";
 import { graphql } from "gatsby";
 import Layout from "../../components/organisms/Layout";
 import FlexColumn from "../../components/atoms/FlexColumn";
-import { Title } from "../../components/atoms/Title";
-import { Body } from "../../components/atoms/Body";
-import { SubTitle } from "../../components/atoms/SubTitle";
 import styled from "styled-components";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { breakpoint, COLORS } from "../../theme";
-import FlexRow from "../../components/atoms/FlexRow";
 import ReactMarkdown from "react-markdown";
+import BlogHeader from "../../components/molecules/BlogHeader";
 
 const Container = styled.div`
   margin: auto;
@@ -70,26 +67,18 @@ export default function BlogPostTemplate({ data }) {
     <Layout>
       <Container ref={ref}>
         <FlexColumn alignItems="center" justifyContent="flex-start">
-          <Title style={{ marginBottom: "1rem" }}>{frontmatter.title}</Title>
-          <FlexColumn
-            style={{ width: "100%" }}
-            alignItems="flex-start"
-            justifyContent="space-evenly"
-          >
-            <SubTitle style={{ fontSize: 16, marginBottom: 4 }}>
-              {frontmatter.date}
-            </SubTitle>
-            <SubTitle style={{ fontSize: 16, marginTop: 4 }}>
-              {frontmatter.author}
-            </SubTitle>
-          </FlexColumn>
+          <BlogHeader
+            title={frontmatter.title}
+            author={frontmatter.author}
+            date={frontmatter.date}
+          />
           <BlogBody>
             <ReactMarkdown>{frontmatter.body}</ReactMarkdown>
           </BlogBody>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </FlexColumn>
       </Container>
-      <ProgressBar exit={{ opacity: 0 }} style={{ scaleX }} />
+      {/* <ProgressBar exit={{ opacity: 0 }} style={{ scaleX }} /> */}
     </Layout>
   );
 }
