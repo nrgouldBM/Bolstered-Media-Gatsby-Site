@@ -51,7 +51,6 @@ const LOGOS = [
   { alt: "Bald Head Blues", image: BHBLogo },
   { alt: "Christian Planner", image: ChristianPlanner },
   { alt: "Coastland", image: CoastlandLogo },
-  { alt: "21Pineapples", image: PineapplesLogo },
   { alt: "Y'all Sweet Tea", image: YALLLogo },
   { alt: "New Moon Minerals", image: NewMoonMinerals },
   { alt: "American Steel Designs", image: ASDLogo },

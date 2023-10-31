@@ -6,9 +6,10 @@ author: Jordan Hadding
 date: 2023-03-06T09:33:45.764Z
 templateKey: blog-post
 ---
+
 For decades, the Super Bowl has been more than a platform showcasing the NFL’s best two teams. Major companies have used the stage to launch high-budget, well-known advertisements that are talked about as much as the final score in offices around the world.
 
-We are going to dive into the campaigns in years past that have stood the test of time and how they impacted a brands identity and future marketing efforts. We’ll also take a look  at a few commercials from the 2023 game that have the potential to be considered legendary Super Bowl commercials for years to come.
+We are going to dive into the campaigns in years past that have stood the test of time and how they impacted a brands identity and future marketing efforts. We’ll also take a look at a few commercials from the 2023 game that have the potential to be considered legendary Super Bowl commercials for years to come.
 
 Legendary Campaigns from Years Past:
 
@@ -16,13 +17,13 @@ Legendary Campaigns from Years Past:
 
 This Fast Food giant has been known in the 21st century for their social media team’s subtle jabs at competitors.
 
-![]("../../images/blog/super-bowl.png")
+![](../../images/blog/super-bowl.png)
 
 However, this is something the company has been doing for decades prior to the invention of Twitter. In 1984, Wendy’s aired an iconic Super Bowl commercial titled “Where’s the Beef?”. There are three elderly women looking at a massive bun but they’re confused because the proportion of meat to bun is a little off.
 
 This was aimed at McDonald’s and their small patty to bun ratio for their burgers. The commercial helped the Fast Food staple to increase revenue by 31% in 84.
 
-## Pepsi - Cindy Crawford (1992) 
+## Pepsi - Cindy Crawford (1992)
 
 The pinnacle of Super Bowl commercials might just be Pepsi’s 1992 commercial that features Cindy Crawford and 2 young boys.
 
@@ -69,4 +70,3 @@ The salty snack had a 60 second ad and crushed it with the help of Breaking Bad 
 Iconic scenes were quickly recreated and they tied it all together in the end with the tagline “breaking into something good” using periodic table elements in the text just like the show did with their intro.
 
 Popcorners is a newcomer to the Super Bowl landscape but it will be interesting to see if this great campaign can help grow revenue like Wendy’s campaign did four decades prior.
-
